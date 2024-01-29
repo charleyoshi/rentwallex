@@ -4,9 +4,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <!--<a href="">-->
-  <!--  <img src="images/logo.png" alt="Logo" width="80" height="80">-->
-  <!--</a>-->
+  Current progress:
+  <img src="currentProgress.gif" alt="Current Progress" width="80" height="80">
+  
 
   <h3 align="center">Rentwallex's Landing Page</h3>
 
