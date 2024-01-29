@@ -75,7 +75,7 @@ todo: enter more description about the project, if any
 <!-- GETTING STARTED -->
 ## Getting Started
 
-These instructions will guide you through the process of setting up and running the React app named "client" on your local machine. Ensure that you have Node.js and npm installed before proceeding.
+These instructions will guide you through the process of setting up and running the React app `client` on your local machine, as well as the backend `server` (not implemented yet). Ensure that you have Node.js and npm installed before proceeding.
 
 ### Prerequisites
 Frontend (Client):
