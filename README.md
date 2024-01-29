@@ -74,35 +74,41 @@ todo: enter more description about the project, if any
 
 <!-- GETTING STARTED -->
 ## Getting Started
-todo
-<!--This is an example of how you may give instructions on setting up your project locally.-->
-<!--To get a local copy up and running follow these simple example steps.-->
+
+These instructions will guide you through the process of setting up and running the React app named "client" on your local machine. Ensure that you have Node.js and npm installed before proceeding.
 
 ### Prerequisites
+Frontend (Client):
+* Node.js: [Download and install Node.js](https://nodejs.org/en)
+* npm (Node Package Manager): npm is included with Node.js installation.
 
-<!--This is an example of how to list things you need to use the software and how to install them.-->
-<!--* npm-->
-<!--  ```sh-->
-<!--  npm install npm@latest -g-->
-<!--  ```-->
+Backend (Server):
+* todo
+
 
 ### Installation
 
-<!--_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._-->
+1. Clone the repository to your local machine
+    ```sh
+    git clone https://github.com/charleyoshi/rentwallex.git
+    ```
+2. For frontend, navigate to the "client" directory.
+   ```sh
+   cd client
+   ```
+    1. Install NPM packages
+        ```sh
+        npm install
+        ```
+    2. Running the App
+       ```sh
+       npm start
+       ```
+        (For more running options, see `readme.md` in `client` folder created by React)
 
-<!--1. Get a free API Key at [https://example.com](https://example.com)-->
-<!--2. Clone the repo-->
-<!--   ```sh-->
-<!--   git clone https://github.com/your_username_/Project-Name.git-->
-<!--   ```-->
-<!--3. Install NPM packages-->
-<!--   ```sh-->
-<!--   npm install-->
-<!--   ```-->
-<!--4. Enter your API in `config.js`-->
-<!--   ```js-->
-<!--   const API_KEY = 'ENTER YOUR API';-->
-<!--   ```-->
+
+
+3. For backend: todo
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
