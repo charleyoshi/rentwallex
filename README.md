@@ -139,8 +139,8 @@ See the [open issues](https://github.com/charleyoshi/rentwallex/issues) for a fu
 
 <!-- LICENSE -->
 ## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+todo: add license (if needed)
+<!-- Distributed under the MIT License. See `LICENSE.txt` for more information. -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
