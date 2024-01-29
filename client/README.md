@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Dependencies
-- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [`react-router-dom`](https://www.npmjs.com/package/react-router-dom)
 
 
 ## Available Scripts

@@ -177,6 +177,6 @@ Yemi Ifegbuyi - yemi@cozii.co
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 * [React](https://create-react-app.dev/)
-
+* [Google Fonts](https://fonts.google.com/icons)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

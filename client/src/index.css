@@ -6,7 +6,7 @@
   --primary-background: #f4f3f0;
   --secondary-background: #082f32;
   --tertiary-background: #228069;
-  --quaternary-border: #e8f2f0; 
+  --quaternary-background: #b8d2cd;
   /* ^ for icon background and border */
 
   --primary-text: #082f32;
@@ -28,10 +28,99 @@ body {
 }
 
 body {
-  transition: all 1s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 body.modal-open {
   height: 100vh;
   overflow-y: hidden;
 }
+
+
+/* Navbar  */
+.Navbar {
+  background: var(--primary-background);
+  padding: 22px 28px;
+  border:  solid;
+}
+
+.Navbar .container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Navbar a {
+  color: var(--primary-text);
+  text-decoration: none;
+}
+
+.Navbar .container .right {
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .icon-menu {
+    font-size: 220%;
+    cursor: pointer;
+  }
+}
+
+
+
+/* Button */
+.button {
+  padding: 16px 24px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-weight: bold;
+  font-size: 90%;
+  transition: color 0.4s ease;
+  transition: background 0.4s ease;
+
+  .text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
+
+.button.default {
+  background-color: var(--tertiary-background);
+  color: white;
+
+  &:hover {
+    background-color: var(--secondary-background);
+  }
+}
+
+.button.secondary {
+  background-color: var(--primary-background);
+  border-color: var(--quaternary-background);
+  color: var(--primary-text);
+
+  .icon {
+    color: var(--primary-hover);
+  }
+
+  &:hover {
+    background-color: var(--secondary-background);
+
+    .text,
+    .icon {
+      color: white;
+    }
+  }
+}
+
+
+/* width adjustment */
+
+@media only screen and (max-width: 980px) {}
