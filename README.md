@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   Current progress:
-  <img src="currentProgress.gif" alt="Current Progress" width="80" height="80">
+  <img src="currentProgress.png" alt="Current Progress" width="80" height="80">
   
 
   <h3 align="center">Rentwallex's Landing Page</h3>
