@@ -19,9 +19,9 @@ export default function Navbar(props) {
                     <h4>Rentwallex Icon</h4>
                 </Link>
                 <div className="right">
-                    <Button text="Find a rent" icon="home" theme="secondary" />
-                    <Button text="Register my rent" icon='apartment' />
-                    {/* <Button text="Add my rent"/> */}
+                    <Link>How it works</Link>
+                    <Link>Mission</Link>
+                    <Link>for Property Managers</Link>
                     <span className="icon-menu material-symbols-rounded">menu</span>
                 </div>
             </div>
