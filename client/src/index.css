@@ -138,6 +138,14 @@ body.modal-open {
 
 }
 
+.home .bgWrapper-primary {
+  background-color: var(--primary-background);
+}
+
+.home .bgWrapper-purple {
+  background-color: var(--purple);
+}
+
 .home section.one {
   padding: 28px 0;
   display: flex;
@@ -172,6 +180,24 @@ body.modal-open {
     margin: 0 auto;
     padding: 12px 0;
   }
+}
+
+.home section.three{
+  /* border: solid; */
+  padding: 96px 0;
+  text-align: center;
+  color: var(--white);
+  
+  h1{
+    margin: 28px 0;
+    font-size: 900%;
+  }
+
+  h4 {
+    font-size: 180%;
+    font-weight: 300;
+  }
+
 }
 
 
