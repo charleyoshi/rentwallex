@@ -33,7 +33,10 @@
 }
 
 .image-container {
-  margin-left: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  
+
 }
 
 .image-container img {
