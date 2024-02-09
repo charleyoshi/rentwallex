@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+.steps-container {
+  display: flex;
+  margin-top: 50px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  width: 200px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.step:hover {
+  background-color: #f0f0f0;
+}
+
+.step.active {
+  background-color: #e0e0e0;
+}
+
+.step p {
+  margin-top: 10px;
+}
+
+.image-container {
+  margin-left: auto;
+  margin-right: auto;
+  
+
+}
+
+.image-container img {
+  width: 300px;
+  height: auto;
+}
