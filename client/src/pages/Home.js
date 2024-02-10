@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Button from '../components/Button'
 import dummy_calendar from '../assets/dummy_calendar.png'
 
+//Can Input Any Question and Answer Here: (Can Be Moved to Database)
+const FAQs = [
+  {
+    question: "What is Cozii?",
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+  },
+  {
+    question: "How much does it cost?",
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+  },
+  {
+    question: "Can I cancel my subscription anytime?",
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+  },
+  // Add more FAQs as needed
+];
+
 export default function Home() {
+
+  const [activeIndex, setActiveIndex] = useState(null);
+  const toggleAnswer = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <div className='home'>
       <Navbar forPage="home" />
@@ -41,9 +64,19 @@ export default function Home() {
           <h4>Renters across Canada are excited to try Rentwallex</h4>
         </section>
       </div>
+
       <section className='four'>
-        (FAQs)
+        <h2>Frequently Asked Questions</h2>
+        {FAQs.map((FAQ, index) => (
+          <div key={index} className="faq-item" onClick={() => toggleAnswer(index)}>
+            <div className='Question'>
+              <h3>{FAQ.question}</h3><button >{activeIndex === index ? '-' : '+'}</button>
+            </div>
+            {activeIndex === index && <p>{FAQ.answer}</p>}
+          </div>
+        ))}
       </section>
     </div>
   )
 }
+//▲
