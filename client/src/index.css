@@ -242,46 +242,47 @@ body.modal-open {
   }
 }
 
-/* Mission Page */
-.mission {}
+  /* Mission Page */
+  .mission {
 
-/* Article Component */
-.article {
-  margin: auto;
+  /* Article Component */
+  .article {
+    margin: auto;
 
-}
+  }
 
-.article .articleTitle {
-  font-size: 350%;
-  text-align: left;
-  padding: 3% 13% 3% 8%;
-  background-color: var(--secondary-background);
-  color: var(--primary-text);
-}
-
-
-.articleContentWrapper {
-  padding: 6% 0 12% 0;
-}
-
-.article .articleContent {
-  margin: auto;
-  width: 66%;
-  color: var(--secondary-text);
-}
+  .article .articleTitle {
+    font-size: 350%;
+    text-align: left;
+    padding: 3% 13% 3% 8%;
+    background-color: var(--secondary-background);
+    color: var(--primary-text);
+  }
 
 
-.articleSocialMediaContainer {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: absolute;
+  .articleContentWrapper {
+    padding: 6% 0 12% 0;
+  }
 
-  left: 6%;
-  margin: auto;
-  flex-direction: column;
+  .article .articleContent {
+    margin: auto;
+    width: 66%;
+    color: var(--secondary-text);
+  }
 
-}
+
+  .articleSocialMediaContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+
+    left: 6%;
+    margin: auto;
+    flex-direction: column;
+
+  }
+
 
 .articleSocialMediaContainer .buttonSmallRound {
   padding: 8px;
@@ -298,30 +299,67 @@ body.modal-open {
     font-size: large;
     font-weight: 600;
     margin-top: 2px;
+   }
+
+    &:hover {
+      background-color: var(--purple);
+      span {
+        color: var(--white);
+      }
+    }
+ 
+  }
+}
 
 
+
+
+  /* Wait List Page */
+  .waitlist .pageWrapper {
+    border: solid;
+    padding: 28px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    .left {
+      margin: auto;
+      width: 26%;
+      border: solid;
+      padding: 18px;
+      text-align: start;
+
+      &:hover {
+        background-color: var(--purple);
+
+        span {
+            color: var(--white);
+        }
+      }
+    }
+    .right {
+      border: solid;
+      top: 0;
+      width: 68%;
+      margin: auto;
+      padding: 12px 0;
+
+    }
   }
 
-  &:hover {
-    background-color: var(--purple);
 
-    span {
-      color: var(--white);
+
+  /* width adjustment */
+
+  @media only screen and (max-width: 980px) {
+    .articleSocialMediaContainer {
+      display: none;
     }
 
+    .article .articleTitle {
+      padding-left: 4%;
+      padding-right: 0;
+      font-size: 230%;
+    }
   }
-}
-
-/* width adjustment */
-
-@media only screen and (max-width: 980px) {
-  .articleSocialMediaContainer {
-    display: none;
-  }
-
-  .article .articleTitle {
-    padding-left: 4%;
-    padding-right: 0;
-    font-size: 230%;
-  }
-}
