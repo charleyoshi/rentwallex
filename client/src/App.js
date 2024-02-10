@@ -7,10 +7,10 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 function App() {
   return (
     <div className="App">
-     <BrowserRouter>
+      <BrowserRouter>
         <div className="pages">
           <Routes>
-            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<Home />} />
             <Route path="404" element={<NotFound />} />
             <Route path="*" element={<Navigate replace to="/404" />} />
           </Routes>
