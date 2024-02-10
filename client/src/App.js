@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import WaitList from './pages/WaitList';
 
 import Mission from './pages/Mission';
+import OurMap from './pages/OurMap';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Home/>} />
             <Route path="waitlist" element={<WaitList/>} />
             <Route path="mission" element={<Mission />} />
+            <Route path="ourmap" element={<OurMap />} />
             <Route path="404" element={<NotFound />} />
             <Route path="*" element={<Navigate replace to="/404" />} />
           </Routes>
