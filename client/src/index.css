@@ -200,7 +200,45 @@ body.modal-open {
 
 }
 
+/* FAQ Section by Shahil*/
+.home section.four {
+  h2 {
+    text-align: center;
+  }
 
+  .Question {
+    border: 1px solid black;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 100%;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .Question button {
+    background: none;
+    border: none;
+    font-size: x-large;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+  .Answer {
+    position: relative;
+    bottom: 18px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    padding-left: +15px;
+    font-size: medium;
+=======
 /* Mission Page */
 .mission {}
 
@@ -266,6 +304,7 @@ body.modal-open {
     span {
       color: var(--white);
     }
+
   }
 }
 

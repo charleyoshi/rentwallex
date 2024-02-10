@@ -8,7 +8,7 @@ import Mission from './pages/Mission';
 function App() {
   return (
     <div className="App">
-     <BrowserRouter>
+      <BrowserRouter>
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home/>} />
