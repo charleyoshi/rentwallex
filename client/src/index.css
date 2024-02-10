@@ -40,7 +40,7 @@ body.modal-open {
 .Navbar {
   background: var(--secondary-background);
   padding: 22px 28px;
-  border: solid;
+  /* border: solid; */
 }
 
 .Navbar .container {
@@ -201,6 +201,29 @@ body.modal-open {
 }
 
 
+/* Mission Page */
+.mission {
+
+}
+
+/* Article Component */
+.article {
+  border: solid tomato;
+  /* padding: 3% 18% 3% 18%; */
+  margin: auto;
+
+}
+
+.article .articleTitle {
+  font-size: 500%;
+  text-align: left;
+  border: solid;
+  padding: 3% 18% 3% 18%;
+}
+
+.article .articleContent {
+  padding: 3% 18% 3% 18%;
+}
 
 /* width adjustment */
 
