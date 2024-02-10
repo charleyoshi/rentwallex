@@ -1,12 +1,17 @@
 import React from 'react'
 import ArticleTitle from './ArticleTitle'
 import ArticleContent from './ArticleContent'
+import ArticleSocialMediaContainer from './ArticleSocialMediaContainer'
 
 export default function Article() {
     return (
         <div className='article'>
             <ArticleTitle />
-            <ArticleContent />
+            <div className='articleContentWrapper'>
+                <ArticleSocialMediaContainer/>
+                <ArticleContent />
+            </div>
+            
         </div>
     )
 }
