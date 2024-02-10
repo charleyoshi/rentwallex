@@ -229,6 +229,7 @@ body.modal-open {
     font-weight: 700;
     margin-left: 10px;
   }
+
   .Answer {
     position: relative;
     bottom: 18px;
@@ -238,7 +239,9 @@ body.modal-open {
     padding: 10px;
     padding-left: +15px;
     font-size: medium;
-=======
+  }
+}
+
 /* Mission Page */
 .mission {}
 
@@ -280,7 +283,7 @@ body.modal-open {
 
 }
 
-.articleSocialMediaContainer .buttonSmallRound{
+.articleSocialMediaContainer .buttonSmallRound {
   padding: 8px;
   margin: 6px;
   width: 32px;
@@ -290,8 +293,8 @@ body.modal-open {
   cursor: pointer;
 
   span {
-    color: var(--purple); 
-    vertical-align: middle; 
+    color: var(--purple);
+    vertical-align: middle;
     font-size: large;
     font-weight: 600;
     margin-top: 2px;
@@ -301,6 +304,7 @@ body.modal-open {
 
   &:hover {
     background-color: var(--purple);
+
     span {
       color: var(--white);
     }
