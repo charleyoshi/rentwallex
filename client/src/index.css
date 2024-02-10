@@ -269,6 +269,36 @@ body.modal-open {
   }
 }
 
+
+/* Wait List Page */
+.waitlist .pageWrapper {
+  border: solid;
+  padding: 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  
+  .left {
+    margin: auto;
+    width: 26%;
+    border: solid;
+    padding: 18px;
+    text-align: start;
+    
+  }
+  .right {
+    border: solid;
+    top: 0;
+    width: 68%;
+    margin: auto;
+    padding: 12px 0;
+
+  }
+}
+
+
+
 /* width adjustment */
 
 @media only screen and (max-width: 980px) {

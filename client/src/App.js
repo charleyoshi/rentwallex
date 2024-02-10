@@ -16,11 +16,8 @@ function App() {
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home/>} />
-
             <Route path="waitlist" element={<WaitList/>} />
-
             <Route path="mission" element={<Mission />} />
-
             <Route path="404" element={<NotFound />} />
             <Route path="*" element={<Navigate replace to="/404" />} />
           </Routes>
