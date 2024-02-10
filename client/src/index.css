@@ -40,7 +40,7 @@ body.modal-open {
 .Navbar {
   background: var(--secondary-background);
   padding: 22px 28px;
-  border: solid;
+  /* border: solid; */
 }
 
 .Navbar .container {
@@ -182,13 +182,13 @@ body.modal-open {
   }
 }
 
-.home section.three{
+.home section.three {
   /* border: solid; */
   padding: 96px 0;
   text-align: center;
   color: var(--white);
-  
-  h1{
+
+  h1 {
     margin: 28px 0;
     font-size: 900%;
   }
@@ -201,7 +201,84 @@ body.modal-open {
 }
 
 
+/* Mission Page */
+.mission {}
+
+/* Article Component */
+.article {
+  margin: auto;
+
+}
+
+.article .articleTitle {
+  font-size: 350%;
+  text-align: left;
+  padding: 3% 13% 3% 8%;
+  background-color: var(--secondary-background);
+  color: var(--primary-text);
+}
+
+
+.articleContentWrapper {
+  padding: 6% 0 12% 0;
+}
+
+.article .articleContent {
+  margin: auto;
+  width: 66%;
+  color: var(--secondary-text);
+}
+
+
+.articleSocialMediaContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+
+  left: 6%;
+  margin: auto;
+  flex-direction: column;
+
+}
+
+.articleSocialMediaContainer .buttonSmallRound{
+  padding: 8px;
+  margin: 6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-color: var(--secondary-background);
+  cursor: pointer;
+
+  span {
+    color: var(--purple); 
+    vertical-align: middle; 
+    font-size: large;
+    font-weight: 600;
+    margin-top: 2px;
+
+
+  }
+
+  &:hover {
+    background-color: var(--purple);
+    span {
+      color: var(--white);
+    }
+  }
+}
 
 /* width adjustment */
 
-@media only screen and (max-width: 980px) {}
+@media only screen and (max-width: 980px) {
+  .articleSocialMediaContainer {
+    display: none;
+  }
+
+  .article .articleTitle {
+    padding-left: 4%;
+    padding-right: 0;
+    font-size: 230%;
+  }
+}
