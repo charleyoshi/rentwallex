@@ -28,7 +28,7 @@ export default function Navbar(props) {
         <div className="right">
           <Link>How it works</Link>
           <Link to="/mission">Mission</Link>
-          <Link>for Property Managers</Link>
+          <Link to="/PropertyManagers">for Property Managers</Link>
           <span className="icon-menu material-symbols-rounded">menu</span>
         </div>
       </div>
