@@ -48,7 +48,7 @@
         width: 28%;
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
         overflow-y: auto;
-        height: 680px;
+        height: 100vh;
         .title {
             margin: 16px auto;
             font-weight: 600;
@@ -56,12 +56,16 @@
     }
 
     .right {
-        border-radius: 12px;
+        border-radius: 18px;
         overflow: hidden;
-        /* border: darkgreen solid 0.5px; */
+        border: darkgreen solid 4px;
         box-shadow: 10px 3px 10px rgba(9, 7, 7, 0.2);
         width: 70%;
+        * {
+            transition: none;
+        }
     }
+    
 }
 
 
