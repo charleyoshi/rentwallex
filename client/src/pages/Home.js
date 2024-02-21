@@ -2,23 +2,31 @@ import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Button from '../components/Button'
 import HowItWorks from "../components/howItWorks";
-import dummy_calendar from '../assets/dummy_calendar.png'
+import dummy_picture from '../assets/dummy_picture.png'
 
 
 //Can Input Any Question and Answer Here: (Can Be Moved to Database)
 const FAQs = [
   {
-    question: "What is Cozii?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+    question: "What is Rentwallex?",
+    answer: "Rentwallex is a rent financing service that offers innovative solutions for tenants to manage their rental expenses conveniently through installment payment options."
   },
   {
-    question: "How much does it cost?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+    question: "Who can use Rentwallex?",
+    answer: "Rentwallex is available to tenants across various rental properties, including apartments, houses, and commercial spaces. Whether you&#39;re a student, young professional, or anyone renting a property, our service offers flexibility and peace of mind."
   },
   {
-    question: "Can I cancel my subscription anytime?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+    question: "Can I use Rentwallex for any rental property?",
+    answer: "Yes, Rentwallex can be used for most rental properties, including apartments, houses, and condominiums. As long as your landlord or property manager accepts rent payments through our platform, you can benefit from our service."
   },
+  {
+    question: "What sets Rentwallex apart from other rent financing services?",
+    answer: "Rentwallex stands out for its focus on providing flexible solutions tailored to tenants&#39; needs. We prioritize user convenience, security, and transparency, making us the preferred choice for hassle-free rent payments."
+  },
+  {
+    question: "When can I start using Rentwallex?",
+    answer: "Be the first on know when we launch in your city. Registered now to join the waitlist. Become part of the movement to make rent payment flexible and hassle-free."
+  }
   // Add more FAQs as needed
 ];
 
@@ -32,15 +40,15 @@ export default function Home() {
   return (
     <div className="home">
       <Navbar forPage="home" />
-      <div className="bgWrapper-primary">
+      <div className="container">
         <section className="one">
           <div className="left">
             <h1 className="headline">
-              Did you know that you can split your rent into small payment?
+              Rentwallex is the <br />
+              new way to pay rent
             </h1>
             <h4 className="headline-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
+              Don&#39;t let rent payments weigh you down any longer. Start enjoying the freedom of flexible rent payment.
             </h4>
             {/* <Button text="Find a rent" icon="home" theme="secondary" />
           <Button text="Register my rent" icon='apartment' /> */}
@@ -49,35 +57,48 @@ export default function Home() {
           <div className="right">
             <img
               referrerPolicy="no-referrer"
-              src={dummy_calendar}
-              alt="dummy_calendar"
+              src={dummy_picture}
+              alt="dummy_picture"
               width="100%"
             />
           </div>
         </section>
       </div>
 
-      <section className="two">
-        <HowItWorks />
-      </section>
-
-      <div className="bgWrapper-purple">
-        <section className="three">
-          <h1>150</h1>
-          <h4>Renters across Canada are excited to try Rentwallex</h4>
+      <div className='container'>
+        <section className="two">
+          <HowItWorks />
         </section>
       </div>
-      <section className='four'>
-        <h2>Frequently Asked Questions</h2>
-        {FAQs.map((FAQ, index) => (
-          <div key={index} className="faq-item" onClick={() => toggleAnswer(index)}>
-            <div className='Question'>
-              <h3>{FAQ.question}</h3><button >{activeIndex === index ? '-' : '+'}</button>
+
+
+      <div className="bgWrapper-purple">
+        <section className="three container">
+          <h1>1,250</h1>
+          <h4>Renters registered to date</h4>
+          <h5>Become part of a growing community of renters who are taking control of their finances with
+            Rentwallex. <br />Say goodbye to rent-related stress and hello to peace of mind!</h5>
+          <br />
+          <Button text="Join the Waitlist now" theme="secondary"/>
+        </section>
+      </div>
+
+
+
+      <div className='container'>
+        <section className='four'>
+          <h2>Frequently Asked Questions</h2>
+          {FAQs.map((FAQ, index) => (
+            <div key={index} className="faq-item" onClick={() => toggleAnswer(index)}>
+              <div className='Question'>
+                <h3>{FAQ.question}</h3><button >{activeIndex === index ? '–' : '+'}</button>
+              </div>
+              {activeIndex === index && <div className="Answer">{FAQ.answer}</div>}
             </div>
-            {activeIndex === index && <p classname = "Answer">{FAQ.answer}</p>}
-          </div>
-        ))}
-      </section>
+          ))}
+          <br /><br />
+        </section>
+      </div>
     </div>
   );
 }

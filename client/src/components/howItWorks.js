@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import "../Css/howItWorks.css";
-import Logo1 from "../assets/Logo1.png";
-import Logo2 from "../assets/Logo2.png";
-import Logo3 from "../assets/Logo3.png";
-
+import "../styles/howItWorks.css";
+import dummy_picture from '../assets/dummy_picture.png'
 function HowItWorks() {
   const [selectedStep, setSelectedStep] = useState(null);
 
@@ -11,18 +8,18 @@ function HowItWorks() {
     {
       title: "Step 1",
       content: "This is the first step. Here's some more information about it.",
-      image: Logo1,
+      image: dummy_picture,
     },
     {
       title: "Step 2",
       content:
         "This is the second step. Here's some more information about it.",
-      image: Logo2,
+      image: dummy_picture,
     },
     {
       title: "Step 3",
       content: "This is the third step. Here's some more information about it.",
-      image: Logo3,
+      image: dummy_picture,
     },
   ];
 
@@ -31,28 +28,39 @@ function HowItWorks() {
   };
 
   return (
-    <div className="App">
-      <h1>How it Works</h1>
-      <div className="steps-container">
-        <div className="steps">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className={`step ${selectedStep === index ? "active" : ""}`}
-              onClick={() => handleStepClick(index)}
-            >
-              <h2>{step.title}</h2>
-              {selectedStep === index && <p>{step.content}</p>}
-            </div>
-          ))}
+    <div className="howItWorks">
+      <h1>How does Rentwallex work?</h1>
+      <h2>We partner with property managers and registered landlords to make it easy to split your rent into manageable payments.</h2>
+      <div className="steps">
+        <div className="step">
+          <p>Step 1</p>
+          <img src={dummy_picture} alt="dummy_picture" />
+          <h3>Get Approved</h3>
+          <h4>Sign up in minutes. Our simple approval process ensures hassle-free
+            access to our community financing solutions.</h4>
         </div>
-        <div className="image-container">
-          {selectedStep !== null && (
-            <img
-              src={steps[selectedStep].image}
-              alt={`Step ${selectedStep + 1}`}
-            />
-          )}
+        <div className="step">
+          <p>Step 2</p>
+          <img src={dummy_picture} alt="dummy_picture" />
+          <h3>Customize your payment</h3>
+          <h4>Select the rent payment plan that best fits your budget and
+            preferences. We help you to customize repayment based on your pay slip, ensuring a
+            seamless alignment with your income.</h4>
+        </div>
+        <div className="step">
+          <p>Step 3</p>
+          <img src={dummy_picture} alt="dummy_picture" />
+          <h3>Seamless rent payment</h3>
+          <h4>Once your payment plan is set, Rentwallex facilitates
+            automated, no-interest community financing. Your rent is paid directly to your property
+            manager or registered landlord in full. No late payment. No harassment.</h4>
+        </div>
+        <div className="step">
+          <p>Step 4</p>
+          <img src={dummy_picture} alt="dummy_picture" />
+          <h3>Enjoy true financial freedom</h3>
+          <h4>Experience the freedom of manageable rent payments,
+            allowing you to focus on what matters most.</h4>
         </div>
       </div>
     </div>

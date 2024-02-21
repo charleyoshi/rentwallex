@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "./Button";
-import logo from "../assets/Logo1.png";
+import logo from "../assets/rentwallex_logo_cropped.png";
 
 // props for Navbar:
 //  - forPage : specify for which page. e.g. `home`
@@ -19,16 +19,16 @@ export default function Navbar(props) {
         <Link to="/">
           <img
             className="logo"
-            width={150}
-            height={100}
+            height={68}
             src={logo}
             alt="logo"
           />
         </Link>
         <div className="right">
+          <Link to="/mission">Who we are</Link>
+          <Link>Use case</Link>
           <Link>How it works</Link>
-          <Link to="/mission">Mission</Link>
-          <Link>for Property Managers</Link>
+          <Link>For Property Managers</Link>
           <span className="icon-menu material-symbols-rounded">menu</span>
         </div>
       </div>

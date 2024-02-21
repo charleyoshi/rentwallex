@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Css/ourMap.css';
+import '../styles/ourMap.css';
 import Navbar from '../components/Navbar'
 import MapPageTopBanner from '../components/OurMapPage/MapPageTopBanner'
 import RentItem from '../components/OurMapPage/RentItem';
