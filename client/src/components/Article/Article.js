@@ -6,12 +6,13 @@ import ArticleSocialMediaContainer from './ArticleSocialMediaContainer'
 export default function Article() {
     return (
         <div className='article'>
+
             <ArticleTitle />
             <div className='articleContentWrapper'>
-                <ArticleSocialMediaContainer/>
+                <ArticleSocialMediaContainer />
                 <ArticleContent />
             </div>
-            
+
         </div>
     )
 }

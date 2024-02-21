@@ -1,5 +1,5 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@200;800&display=swap');
 
 /* layout */
 :root {
@@ -22,12 +22,20 @@
 body {
   background: var(--primary-background);
   margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
   color: var(--primary-text);
 }
 
 * {
   transition: all 0.5s ease-in-out;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0
+}
+
+/* Make all link texts black with no text decoration */
+a {
+  text-decoration: none;
 }
 
 body.modal-open {
@@ -36,18 +44,39 @@ body.modal-open {
 }
 
 
+/* All images must not be larger than parent container */
+img {
+  width: 100%;
+}
+
+/* Centers it, sets a maximum width and make sure elements can flow past it*/
+
+.container {
+  margin: 0 auto;
+  max-width: 1320px;
+  overflow: visible;
+}
+
 /* Navbar  */
 .Navbar {
   background: var(--secondary-background);
-  padding: 22px 28px;
-  /* border: solid; */
+  padding: 18px 0;
+
+  .logo {
+    padding-left: 10px;
+  }
 }
 
-.Navbar .container {
-  margin: 0 auto;
+.container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .Navbar a {
@@ -56,10 +85,12 @@ body.modal-open {
 }
 
 .Navbar .container .right {
-  padding: 0px 20px;
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 28px;
+  font-size: 120%;
+  font-weight: 400;
+  padding-right: 10px;
 
   .icon-menu {
     font-size: 220%;
@@ -132,113 +163,183 @@ body.modal-open {
 
 /* Home page */
 .home section {
-  width: 70%;
-  margin: 56px auto;
+  width: 100%;
   border-bottom: solid var(--secondary-background);
-
+  display: flex;
+  padding: 3rem 0;
 }
 
-.home .bgWrapper-primary {
-  background-color: var(--primary-background);
-}
 
 .home .bgWrapper-purple {
   background-color: var(--purple);
 }
 
 .home section.one {
-  padding: 28px 0;
+
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
-  /* gap: 20%; */
 
   .left {
-    width: 51%;
+    width: 42%;
     margin: 0 auto;
-    /* border: solid; */
+    text-align: left;
+    padding: 0 10px;
 
     .headline {
       margin: 0;
-      line-height: 0.9em;
-      font-size: 300%;
+      font-size: 240%;
       color: var(--primary-text);
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .headline-2 {
-      margin: 38px 0;
-      font-weight: 400;
+      margin: 28px 0;
+      line-height: 2rem;
+      font-weight: 300;
       color: var(--secondary-text);
-      font-size: small;
+      font-size: 126%;
     }
   }
 
   .right {
-    /* border: solid; */
-    width: 49%;
+    width: 58%;
     margin: 0 auto;
-    padding: 12px 0;
+    padding: 0 10px;
+
+    img {
+      border: 0.5px solid;
+
+    }
   }
 }
+
+.home section.two {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+
+  .howItWorks {
+    /* background-color: #09ca8a; */
+    width: 100%;
+
+    h1 {
+      font-size: 240%;
+      font-weight: 500;
+      margin: 12px auto;
+    }
+
+    h2 {
+      font-size: 136%;
+      font-weight: 350;
+      margin: 48px auto;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      /* padding-left: 10px;
+      padding-right: 10px; */
+
+      .step {
+        padding: 0 8px;
+        width: 25%;
+        text-align: left;
+        line-height: 1.6rem;
+
+        p {
+          text-align: center;
+          font-size: 160%;
+          font-weight: 400;
+          margin: 16px auto;
+        }
+
+        h3 {
+          font-size: 130%;
+          font-weight: 500;
+          margin: 16px auto;
+        }
+
+        h4 {
+          font-size: 100%;
+          font-weight: 300;
+          line-height: 1.8rem;
+        }
+      }
+    }
+  }
+
+
+}
+
 
 .home section.three {
   /* border: solid; */
   padding: 96px 0;
   text-align: center;
+  flex-direction: column;
   color: var(--white);
 
   h1 {
-    margin: 28px 0;
+    margin: 72px 0 28px 0;
     font-size: 900%;
+    font-weight: 600;
   }
 
   h4 {
     font-size: 180%;
-    font-weight: 300;
+    font-weight: 400;
+    margin: 18px auto;
+  }
+
+  h5 {
+    font-size: 120%;
+    font-weight: 200;
+    line-height: 1.9rem;
   }
 
 }
 
 /* FAQ Section by Shahil*/
 .home section.four {
+  flex-direction: column;
+
   h2 {
     text-align: center;
+    margin: 28px auto;
+    font-size: 240%;
+    font-weight: 500;
   }
 
   .Question {
-    border: 1px solid black;
-    height: 50px;
-    padding: 10px;
+    border-bottom: solid 0.5px;
+    height: 70px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+
   }
 
   h3 {
-    font-size: 100%;
-    font-weight: 700;
-    margin: 0;
+    font-size: 120%;
+    font-weight: 500;
+
   }
 
   .Question button {
     background: none;
     border: none;
     font-size: x-large;
-    font-weight: 700;
+    font-weight: 500;
     margin-left: 10px;
   }
 
   .Answer {
     position: relative;
-    bottom: 18px;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    padding: 10px;
-    padding-left: +15px;
-    font-size: medium;
+    padding: 12px 15px;
+    font-size: 120%;
+    margin-bottom: 10px;
   }
 }
 
@@ -248,13 +349,13 @@ body.modal-open {
   /* Article Component */
   .article {
     margin: auto;
-
   }
 
   .article .articleTitle {
     font-size: 350%;
     text-align: left;
-    padding: 3% 13% 3% 8%;
+    width: 100%;
+    padding-left: 30px;
     background-color: var(--secondary-background);
     color: var(--primary-text);
   }
@@ -350,7 +451,33 @@ body.modal-open {
   }
 }
 
+footer {
+  background-color: var(--secondary-background);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 
+  .left {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: center;
+    a {
+      color: var(--secondary-text);
+    }
+  }
+
+  .right img{
+      cursor: pointer;
+      opacity: 50%;
+      width: 32px !important;
+      &:hover {
+        opacity: 100%;
+      }
+  
+  }
+}
 
 
 /* width adjustment */
@@ -361,8 +488,6 @@ body.modal-open {
   }
 
   .article .articleTitle {
-    padding-left: 4%;
-    padding-right: 0;
     font-size: 230%;
   }
 }

@@ -6,10 +6,12 @@ export default function Mission() {
   return (
     <div className='mission'>
       {/* todo: change Navbar content if needed */}
-      <Navbar />  
+      <Navbar />
       <Article />
 
-      
+
+
+
     </div>
   )
 }
