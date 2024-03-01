@@ -353,22 +353,26 @@ img {
 
   .article .articleTitle {
     font-size: 350%;
-    text-align: left;
+    text-align: center;
     width: 100%;
     padding-left: 30px;
-    background-color: var(--secondary-background);
+    background-color: white;
     color: var(--primary-text);
   }
 
 
   .articleContentWrapper {
-    padding: 6% 0 12% 0;
+    padding: 3% 0 7% 0;
   }
 
   .article .articleContent {
     margin: auto;
     width: 66%;
     color: var(--secondary-text);
+
+    .ContentP {
+      font-size: large;
+    }
   }
 
 
@@ -378,9 +382,10 @@ img {
     justify-content: center;
     position: absolute;
 
-    left: 6%;
+    top: 215px;
+    left: 65%;
     margin: auto;
-    flex-direction: column;
+    flex-direction: row;
 
   }
 
@@ -463,19 +468,21 @@ footer {
     justify-content: space-between;
     gap: 24px;
     align-items: center;
+
     a {
       color: var(--secondary-text);
     }
   }
 
-  .right img{
-      cursor: pointer;
-      opacity: 50%;
-      width: 32px !important;
-      &:hover {
-        opacity: 100%;
-      }
-  
+  .right img {
+    cursor: pointer;
+    opacity: 50%;
+    width: 32px !important;
+
+    &:hover {
+      opacity: 100%;
+    }
+
   }
 }
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import RentwallexLogo from '../assets/Rentwallex_Logo_3.png';
 import LinkIn from '../assets/linkedin.png';
-import Facebook from '../assets/facebook.png';
-import Instagram from '../assets/instagram.png';
-import Twitter from '../assets/twitter.png';
+import Facebook from '../assets/Facebook.png';
+import Instagram from '../assets/Instagram.png';
+import Twitter from '../assets/Twitter.png';
 
 export default function Footer() {
   const logoStyle = { width: '250px', height: 'auto', marginRight: '10px' };
