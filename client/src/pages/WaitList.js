@@ -31,7 +31,7 @@ export default function WaitList() {
 
                 </div>
                 <div className='right'>
-                    <h3>The wait list from for renters goes here</h3>
+                    <h3>Join the Wait List by filling your Rent Information</h3>
                     <form>
                         <label> Field 1&nbsp;
                             <input type="text" />
