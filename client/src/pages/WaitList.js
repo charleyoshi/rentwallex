@@ -8,7 +8,8 @@ export default function WaitList() {
             <div className='pageWrapper'>
                 <div className='left'>
                     <h3>Join Rentwallex community to revolutionize e rent payment</h3>
-                    <p>Lorem ipsum dolor sit
+                    <br /><br />
+                    <h4>Lorem ipsum dolor sit
                         amet, consectetur
                         adipiscing elit, sed do
                         eiusmod tempor incididunt
@@ -26,7 +27,7 @@ export default function WaitList() {
                         cupidatat non proident,
                         sunt in culpa qui officia
                         deserunt mollit anim id est
-                        laborum."</p>
+                        laborum."</h4>
 
                 </div>
                 <div className='right'>
