@@ -418,36 +418,101 @@ img {
 
 /* Wait List Page */
 .waitlist .pageWrapper {
-  border: solid;
-  padding: 28px 0;
+  padding: 28px 15px;
+  max-width: 1320px;
+  margin: auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 1px;
+
 
   .left {
-    margin: auto;
-    width: 26%;
+    background-color: var(--purple);
+    margin: 12px;
+    width: 350px;
+    height: fit-content;
     border: solid;
-    padding: 18px;
+    border-radius: 28px;
+    padding: 38px 28px;
     text-align: start;
+    color: var(--white);
 
-    &:hover {
-      background-color: var(--purple);
+    h3 {
+      font-size: 180%;
+      font-weight: 600;
+    }
 
-      span {
-        color: var(--white);
-      }
+    h4 {
+      font-size: 110%;
+      font-weight: 300;
     }
   }
 
   .right {
-    border: solid;
     top: 0;
-    width: 68%;
-    margin: auto;
-    padding: 12px 0;
+    width: 80%;
+    margin: 0 auto;
+    padding: 38px 18px;
 
+    h1 {
+      font-size: 400%;
+      font-weight: 700;
+      line-height: 5rem;
+    }
+
+    h2 {
+      font-size: 180%;
+      font-weight: 500;
+      line-height: 4rem;
+    }
+
+    form {
+      .field {
+        margin: 18px auto;
+
+        label {
+          font-size: 110%;
+          line-height: 1rem;
+        }
+
+        input {
+          width: 100%;
+          padding: 12px 0;
+          margin-bottom: 1px;
+          font-size: 100%;
+          border: 0;
+          border-bottom: 1px solid grey;
+          border-radius: 0;
+          color: var(--dark-purple);
+
+          &:focus {
+            outline: none;
+            border-bottom: 1px solid var(--purple);
+          }
+        }
+
+
+        select {
+          min-width: 300px;
+          appearance: none;
+          outline: none;
+          /* safari */
+          -webkit-appearance: none;
+          /* other styles for aesthetics */
+          font-size: 1.15rem;
+          padding: 0.675em 6em 0.675em 1em;
+          background-color: #fff;
+          border: 1px solid #caced1;
+          border-radius: 0.25rem;
+          color: #000;
+          cursor: pointer;
+        }
+      }
+
+      .half input {
+        width: 50%;
+        display: block;
+      }
+    }
   }
 }
 
@@ -463,19 +528,21 @@ footer {
     justify-content: space-between;
     gap: 24px;
     align-items: center;
+
     a {
       color: var(--secondary-text);
     }
   }
 
-  .right img{
-      cursor: pointer;
-      opacity: 50%;
-      width: 32px !important;
-      &:hover {
-        opacity: 100%;
-      }
-  
+  .right img {
+    cursor: pointer;
+    opacity: 50%;
+    width: 32px !important;
+
+    &:hover {
+      opacity: 100%;
+    }
+
   }
 }
 
