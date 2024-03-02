@@ -33,7 +33,7 @@ export default function Footer() {
           <img src={linkedIn} alt="LinkedIn" style={iconsStyle} />
           <img src={facebook} alt="Facebook" style={iconsStyle} />
           {/* <img src={instagram} alt="Instagram" style={iconsStyle} /> */}
-          <img src={require('../assets/twitter.png')} alt="Twitter" style={iconsStyle} />
+          {/* <img src={require('../assets/twitter.png')} alt="Twitter" style={iconsStyle} /> */}
         </div>
         <br className='linebreak' />
         <br className='linebreak'/>
