@@ -14,7 +14,7 @@ const FAQs = [
   },
   {
     question: "Who can use Rentwallex?",
-    answer: "Rentwallex is available to tenants across various rental properties, including apartments, houses, and commercial spaces. Whether you&#39;re a student, young professional, or anyone renting a property, our service offers flexibility and peace of mind."
+    answer: "Rentwallex is available to tenants across various rental properties, including apartments, houses, and commercial spaces. Whether you're a student, young professional, or anyone renting a property, our service offers flexibility and peace of mind."
   },
   {
     question: "Can I use Rentwallex for any rental property?",
@@ -22,7 +22,7 @@ const FAQs = [
   },
   {
     question: "What sets Rentwallex apart from other rent financing services?",
-    answer: "Rentwallex stands out for its focus on providing flexible solutions tailored to tenants&#39; needs. We prioritize user convenience, security, and transparency, making us the preferred choice for hassle-free rent payments."
+    answer: "Rentwallex stands out for its focus on providing flexible solutions tailored to tenants' needs. We prioritize user convenience, security, and transparency, making us the preferred choice for hassle-free rent payments."
   },
   {
     question: "When can I start using Rentwallex?",
