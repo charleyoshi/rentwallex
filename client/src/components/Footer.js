@@ -1,7 +1,7 @@
 import React from 'react';
 import RentwallexLogo from '../assets/Rentwallex_Logo_3.png';
 import linkedIn from '../assets/linkedin.png';
-import facebookIcon from '../assets/facebookIcon';
+import facebookIcon from '../assets/facebookIcon.png';
 // import instagram from '../assets/instagram.png';
 // import twitter from '../assets/twitter.png';
 import { Link } from 'react-router-dom';
