@@ -543,7 +543,7 @@ footer {
   align-items: center;
   width: 100%;
   bottom: 0;
-  position: fixed;
+  margin-top: -10px;
 
   .left {
     display: flex;
