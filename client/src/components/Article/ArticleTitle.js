@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function ArticleTitle() {
+export default function ArticleTitle(props) {
   return (
     <div className='articleTitle'>
-      Our mission at Rentwallex
+      <div className='widthWrapper'>
+        {props.title}
+      </div>
     </div>
   )
 }

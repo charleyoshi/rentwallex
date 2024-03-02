@@ -7,9 +7,10 @@ export default function Article() {
     return (
         <div className='article'>
 
-            <ArticleTitle />
+            <ArticleTitle title="Who we are" />
             <div className='articleContentWrapper'>
-                <ArticleSocialMediaContainer />
+                {/* <ArticleSocialMediaContainer /> */}
+
                 <ArticleContent />
             </div>
 
