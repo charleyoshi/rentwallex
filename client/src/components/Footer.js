@@ -1,7 +1,7 @@
 import React from 'react';
 import RentwallexLogo from '../assets/Rentwallex_Logo_3.png';
 import linkedIn from '../assets/linkedin.png';
-// import facebook from '../assets/facebook.png';
+import Facebook from '../assets/facebook';
 // import instagram from '../assets/instagram.png';
 // import twitter from '../assets/twitter.png';
 import { Link } from 'react-router-dom';
@@ -31,7 +31,7 @@ export default function Footer() {
         {/* Right section */}
         <div className='right'>
           <img src={linkedIn} alt="LinkedIn" style={iconsStyle} />
-          {/* <img src={facebook} alt="Facebook" style={iconsStyle} /> */}
+          <img src={Facebook} alt="Facebook" style={iconsStyle} />
           {/* <img src={instagram} alt="Instagram" style={iconsStyle} />
           <img src={twitter} alt="Twitter" style={iconsStyle} /> */}
         </div>
