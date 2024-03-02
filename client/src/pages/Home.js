@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Button from '../components/Button'
 import HowItWorks from "../components/howItWorks";
@@ -58,6 +58,7 @@ export default function Home() {
             </Link>
 
           </div>
+          <br className='linebreak'/>
           <div className="right">
             <img
               referrerPolicy="no-referrer"
