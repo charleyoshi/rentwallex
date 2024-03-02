@@ -609,29 +609,44 @@ footer {
 @media only screen and (max-width: 768px) {
 
   .Navbar .container .right {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
     font-size: 100%;
+
+    a {
+      font-size: 100%;
+    }
+
+    .menu-toggle {
+      
+     position: relative; 
+    }
+
+    .menu-items {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      text-align: right;
+      width: 100%;
+      padding: 28px 30px;
+      margin: auto;
+      background-color: var(--secondary-background);
+      right: 0px;
+    }
+
+
+    .menu-items.open {
+      display: flex;
+    }
+
+    .icon-menu {
+      display: inline-block;
+    }
+
   }
 
-  .Navbar .container .right a {
-    font-size: 100%;
-  }
-
-  .Navbar .container .right .icon-menu {
-    display: inline-block;
-  }
-
-  .menu-items {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu-items.open {
-    display: flex;
-  }
 
 
   .linebreak {
@@ -675,28 +690,32 @@ footer {
 
     section.three {
       width: 90%;
+
       h1 {
         font-size: 650%;
       }
     }
 
-   
+
   }
 
   .waitlist {
-    .pageWrapper{
+    .pageWrapper {
       flex-direction: column;
+
       .left {
         width: 100%;
         margin: auto;
       }
+
       .right {
 
         width: 100%;
-        
+
         h1 {
           font-size: 300%;
         }
+
         form .field select {
           min-width: 100%;
           width: 100%;

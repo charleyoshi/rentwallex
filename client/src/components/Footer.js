@@ -36,7 +36,7 @@ export default function Footer() {
           <img src={Twitter} alt="Twitter" style={iconsStyle} />
         </div>
         <br className='linebreak' />
-      <br className='linebreak'/>
+        <br className='linebreak'/>
       </div>
 
       

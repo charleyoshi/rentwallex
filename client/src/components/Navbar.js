@@ -26,14 +26,14 @@ export default function Navbar(props) {
           <img className="logo" height={68} src={logo} alt="logo" />
         </Link>
         <div className="right">
+          <div className="menu-toggle" onClick={toggleMenu}>
+            <span className="icon-menu material-symbols-rounded">menu</span>
+          </div>
           <div className={`menu-items ${menuOpen ? "open" : ""}`}>
             <Link to="/mission">Who we are</Link>
             <Link>Use case</Link>
             <Link>How it works</Link>
             <Link>For Property Managers</Link>
-          </div>
-          <div className="menu-toggle" onClick={toggleMenu}>
-            <span className="icon-menu material-symbols-rounded">menu</span>
           </div>
         </div>
       </div>
