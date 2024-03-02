@@ -24,6 +24,7 @@ body {
   margin: 0;
   font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
   color: var(--primary-text);
+  width: 100vw;
 }
 
 * {
@@ -85,12 +86,15 @@ img {
 }
 
 .Navbar .container .right {
-  display: flex;
   align-items: center;
-  gap: 28px;
   font-size: 120%;
   font-weight: 400;
   padding-right: 10px;
+
+  .menu-items {
+    display: flex;
+    gap: 28px;
+  }
 
   .icon-menu {
     font-size: 220%;
@@ -162,7 +166,7 @@ img {
 
 
 /* Home page */
-.home section {
+.home section, .forPropertyManager section {
   width: 100%;
   border-bottom: solid var(--secondary-background);
   display: flex;
@@ -174,7 +178,7 @@ img {
   background-color: var(--purple);
 }
 
-.home section.one {
+.home section.one, .forPropertyManager section.one {
 
   display: flex;
   /* align-items: center; */
@@ -208,13 +212,13 @@ img {
     padding: 0 10px;
 
     img {
-      border: 0.5px solid;
+      /* border: 1px dashed; */
 
     }
   }
 }
 
-.home section.two {
+.home section.two, .forPropertyManager section.two {
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
@@ -313,7 +317,7 @@ img {
 
   .Question {
     border-bottom: solid 0.5px;
-    height: 70px;
+    height: fit-content;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -358,6 +362,12 @@ img {
     padding-left: 30px;
     background-color: var(--secondary-background);
     color: var(--primary-text);
+
+    .widthWrapper {
+      padding-left: 10px;
+      margin: 0 auto;
+      max-width: 1320px;
+    }
   }
 
 
@@ -367,21 +377,52 @@ img {
 
   .article .articleContent {
     margin: auto;
-    width: 66%;
     color: var(--secondary-text);
+
+    h1,
+    h3,
+    h5,
+    li {
+      width: 68%;
+      margin: auto;
+    }
+
+    h3,
+    h5,
+    li {
+      line-height: 1.6rem;
+    }
+
+    hr {
+      width: 80%;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 260%;
+      font-weight: 400;
+      color: var(--primary-text);
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 160%;
+      font-weight: 400;
+      color: var(--primary-text);
+    }
+
+    h5,
+    li {
+      font-size: 110%;
+      font-weight: 300;
+    }
   }
 
 
   .articleSocialMediaContainer {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-
-    left: 6%;
-    margin: auto;
-    flex-direction: column;
-
+    margin: 0 auto;
   }
 
 
@@ -516,12 +557,103 @@ img {
   }
 }
 
+
+/* For Property Manager Page */
+.forPropertyManager {
+  section.three {
+    padding-left: 15px;
+    padding-right: 15px;  
+    flex-direction: column;
+    
+    top: 0;
+    margin: 0 auto;
+    padding: 38px 18px;
+
+    h1 {
+      font-size: 260%;
+      font-weight: 600;
+      line-height: 5rem;
+    }
+
+    h2 {
+      font-size: 180%;
+      font-weight: 500;
+      line-height: 4rem;
+    }
+
+    form {
+
+      .field {
+        margin: 18px auto;
+
+        label {
+          font-size: 110%;
+          line-height: 1rem;
+        }
+
+        input {
+          width: 100%;
+          padding: 12px 0;
+          margin-bottom: 1px;
+          font-size: 100%;
+          border: 0;
+          border-bottom: 1px solid grey;
+          border-radius: 0;
+          color: var(--dark-purple);
+
+          &:focus {
+            outline: none;
+            border-bottom: 1px solid var(--purple);
+          }
+        }
+
+
+        select {
+          min-width: 300px;
+          appearance: none;
+          outline: none;
+          /* safari */
+          -webkit-appearance: none;
+          /* other styles for aesthetics */
+          font-size: 1.15rem;
+          padding: 0.675em 6em 0.675em 1em;
+          background-color: #fff;
+          border: 1px solid #caced1;
+          border-radius: 0.25rem;
+          color: #000;
+          cursor: pointer;
+        }
+      }
+
+      .half input {
+        width: 50%;
+        display: block;
+      }
+
+      .sameRow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .field{
+          width: 100%;
+          input {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+  
+}
+
 footer {
   background-color: var(--secondary-background);
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  bottom: 0;
+  margin-top: -10px;
 
   .left {
     display: flex;
@@ -546,6 +678,9 @@ footer {
   }
 }
 
+.linebreak {
+  display: none;
+}
 
 /* width adjustment */
 
@@ -557,4 +692,170 @@ footer {
   .article .articleTitle {
     font-size: 230%;
   }
+}
+
+/* Media queries for mobile devices Nav */
+@media only screen and (max-width: 768px) {
+
+  .Navbar .container .right {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 100%;
+
+    a {
+      font-size: 100%;
+    }
+
+    .menu-toggle {
+      
+     position: relative; 
+    }
+
+    .menu-items {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      text-align: right;
+      width: 100%;
+      padding: 28px 30px;
+      margin: auto;
+      background-color: var(--secondary-background);
+      right: 0px;
+    }
+
+
+    .menu-items.open {
+      display: flex;
+    }
+
+    .icon-menu {
+      display: inline-block;
+    }
+
+  }
+
+
+
+  .linebreak {
+    display: block;
+  }
+
+
+  .home, .forPropertyManager {
+    section.one {
+      flex-direction: column;
+      width: 100%;
+
+      .left {
+
+        width: 100%;
+      }
+
+      .right {
+        width: 100%;
+      }
+    }
+
+    section.two .howItWorks .steps {
+
+      flex-direction: column;
+      width: 100%;
+
+      .step {
+        width: 100%;
+        text-align: center;
+
+        img {
+          width: 80%;
+        }
+
+        h4 {
+          text-align: start;
+        }
+      }
+    }
+
+    section.three {
+      width: 90%;
+
+      h1 {
+        font-size: 650%;
+      }
+    }
+
+
+  }
+
+  .waitlist {
+    .pageWrapper {
+      flex-direction: column;
+
+      .left {
+        width: 100%;
+        margin: auto;
+      }
+
+      .right {
+
+        width: 100%;
+
+        h1 {
+          font-size: 300%;
+        }
+
+        form .field select {
+          min-width: 100%;
+          width: 100%;
+          padding: 8px;
+        }
+      }
+    }
+  }
+
+  .forPropertyManager {
+    section.three{
+      h1 {
+        font-size: 180%;
+      }
+      form {
+        h2 {
+          font-size: 120%;
+        }
+        .field{
+
+          width: 100%;
+          input {
+            width: 100%;
+          }
+        }
+        .sameRow {
+          flex-direction: column;
+          .field{
+            width: 100%;
+            input {
+              width: 100%;
+            }
+          }
+        }
+      }
+      
+    }
+  }
+
+  footer .container {
+    flex-direction: column;
+
+    .left {
+      flex-direction: column;
+
+      a img {
+        margin-right: 0px !important;
+      }
+    }
+
+  }
+
+
 }

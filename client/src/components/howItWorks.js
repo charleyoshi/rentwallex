@@ -2,30 +2,7 @@ import React, { useState } from "react";
 import "../styles/howItWorks.css";
 import dummy_picture from '../assets/dummy_picture.png'
 function HowItWorks() {
-  const [selectedStep, setSelectedStep] = useState(null);
-
-  const steps = [
-    {
-      title: "Step 1",
-      content: "This is the first step. Here's some more information about it.",
-      image: dummy_picture,
-    },
-    {
-      title: "Step 2",
-      content:
-        "This is the second step. Here's some more information about it.",
-      image: dummy_picture,
-    },
-    {
-      title: "Step 3",
-      content: "This is the third step. Here's some more information about it.",
-      image: dummy_picture,
-    },
-  ];
-
-  const handleStepClick = (index) => {
-    setSelectedStep(index === selectedStep ? null : index);
-  };
+  
 
   return (
     <div className="howItWorks">
@@ -39,6 +16,8 @@ function HowItWorks() {
           <h4>Sign up in minutes. Our simple approval process ensures hassle-free
             access to our community financing solutions.</h4>
         </div>
+        <br className='linebreak'/>
+        <br className='linebreak'/>
         <div className="step">
           <p>Step 2</p>
           <img src={dummy_picture} alt="dummy_picture" />
@@ -47,6 +26,8 @@ function HowItWorks() {
             preferences. We help you to customize repayment based on your pay slip, ensuring a
             seamless alignment with your income.</h4>
         </div>
+        <br className='linebreak'/>
+        <br className='linebreak'/>
         <div className="step">
           <p>Step 3</p>
           <img src={dummy_picture} alt="dummy_picture" />
@@ -55,6 +36,8 @@ function HowItWorks() {
             automated, no-interest community financing. Your rent is paid directly to your property
             manager or registered landlord in full. No late payment. No harassment.</h4>
         </div>
+        <br className='linebreak'/>
+        <br className='linebreak'/>
         <div className="step">
           <p>Step 4</p>
           <img src={dummy_picture} alt="dummy_picture" />

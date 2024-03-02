@@ -8,6 +8,7 @@ import WaitList from './pages/WaitList';
 
 import Mission from './pages/Mission';
 import OurMap from './pages/OurMap';
+import ForPropertyManager from './pages/ForPropertyManager';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="waitlist" element={<WaitList/>} />
             <Route path="mission" element={<Mission />} />
             <Route path="ourmap" element={<OurMap />} />
+            <Route path="for-property-manager" element={<ForPropertyManager />} />
             <Route path="404" element={<NotFound />} />
             <Route path="*" element={<Navigate replace to="/404" />} />
           </Routes>
