@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const logoStyle = { width: '250px', height: 'auto', marginRight: '10px' };
-  const iconsStyle = { width: '50px', height: 'auto', marginRight: '10px' };
+  const iconsStyle = { width: '50px', height: 'auto', marginRight: '10px', borderRadius: '50px' };
 
   return (
 
