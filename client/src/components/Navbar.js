@@ -33,7 +33,7 @@ export default function Navbar(props) {
             <Link to="/mission">Who we are</Link>
             <Link>Use case</Link>
             <Link>How it works</Link>
-            <Link>For Property Managers</Link>
+            <Link to="/for-property-manager">For Property Managers</Link>
           </div>
         </div>
       </div>

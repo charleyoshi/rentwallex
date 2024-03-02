@@ -2,30 +2,7 @@ import React, { useState } from "react";
 import "../styles/howItWorks.css";
 import dummy_picture from '../assets/dummy_picture.png'
 function HowItWorks() {
-  const [selectedStep, setSelectedStep] = useState(null);
-
-  const steps = [
-    {
-      title: "Step 1",
-      content: "This is the first step. Here's some more information about it.",
-      image: dummy_picture,
-    },
-    {
-      title: "Step 2",
-      content:
-        "This is the second step. Here's some more information about it.",
-      image: dummy_picture,
-    },
-    {
-      title: "Step 3",
-      content: "This is the third step. Here's some more information about it.",
-      image: dummy_picture,
-    },
-  ];
-
-  const handleStepClick = (index) => {
-    setSelectedStep(index === selectedStep ? null : index);
-  };
+  
 
   return (
     <div className="howItWorks">

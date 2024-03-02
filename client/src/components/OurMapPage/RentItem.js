@@ -7,11 +7,11 @@ export default function RentItem() {
             <div className='row one'>2004-70 Gloucester Street, Ottawa</div>
             <div className='row two'>
 
-                <span className="icon material-symbols-rounded">bed</span>
+                {/* <span className="icon material-symbols-rounded">bed</span>
                 <span className='text'>2 bedrooms</span>
                 &nbsp;
                 <span className="icon material-symbols-rounded">payments</span>
-                <span className='text'>bi-weekly</span>
+                <span className='text'>bi-weekly</span> */}
 
 
             </div>
