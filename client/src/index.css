@@ -349,6 +349,7 @@ img {
   /* Article Component */
   .article {
     margin: auto;
+    max-width: 1320px;
   }
 
   .article .articleTitle {
@@ -367,21 +368,40 @@ img {
 
   .article .articleContent {
     margin: auto;
-    width: 66%;
     color: var(--secondary-text);
+
+    h1, h3, h5, li {
+      width: 68%;
+      margin: auto;
+    }
+    hr {
+      width: 80%;
+      margin: auto;
+    }
+    h1{
+      text-align: center;
+      font-size: 260%;
+      font-weight: 400;
+      color: var(--primary-text);
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 160%;
+      font-weight: 400;
+      color: var(--primary-text);
+    }
+
+    h5 , li{
+      font-size: 100%;
+      font-weight: 300;
+    }
   }
 
 
   .articleSocialMediaContainer {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-
-    left: 6%;
-    margin: auto;
-    flex-direction: column;
-
+    margin: 0 auto;
   }
 
 

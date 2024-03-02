@@ -9,7 +9,8 @@ export default function Article() {
 
             <ArticleTitle />
             <div className='articleContentWrapper'>
-                <ArticleSocialMediaContainer />
+                {/* <ArticleSocialMediaContainer /> */}
+                
                 <ArticleContent />
             </div>
 
