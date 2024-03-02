@@ -1,7 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
+import Button from '../components/Button';
+
+
+const resetForm = {
+    propertyAddress: "",
+    propertyManagerName: "",
+    rentalCost: "",
+    wagePaymentFrequency: "",
+    email: "",
+    employmentStatus: ""
+}
 
 export default function WaitList() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    const [formData, setFormData] = useState(resetForm);
+
+    const handleChange = (e) => {
+        const key = e.target.name;
+        const value = e.target.value;
+        setFormData({ ...formData, [key]: value });
+        console.log(formData)
+    };
+
+
     return (
         <div className='waitlist'>
             <Navbar />
@@ -31,33 +56,72 @@ export default function WaitList() {
 
                 </div>
                 <div className='right'>
-                    <h3>Join the Wait List by filling your Rent Information</h3>
+                    <h1>Join the wait list</h1>
+                    <br /><br />
                     <form>
-                        <label> Field 1&nbsp;
-                            <input type="text" />
-                        </label> <br />
-                        <label>Field 2&nbsp;
-                            <input type="text" />
-                        </label> <br />
-                        <label>Field 3&nbsp;
-                            <input type="text" />
-                        </label> <br />
-                        <label>Field 4&nbsp;
-                            <input type="text" />
-                        </label> <br />
-                        <label> Field 5&nbsp;
-                            <input type="text" />
-                        </label> <br />
-                        <label>Field 6&nbsp;
-                            <input type="text" />
-                        </label> <br />
-                        <label>Field 7&nbsp;
-                            <input type="text" />
-                        </label> <br />
-                        <label>Field 8&nbsp;
-                            <input type="text" />
-                        </label> <br />
-                        Submit
+                        <h2>1 - Address</h2>
+
+                        <div className="field">
+                            <label>Property address</label>
+                            <input
+                                name="propertyAddress"
+                                type="text"
+                                value={formData.propertyAddress}
+                                onChange={handleChange} required />
+                        </div>
+                        <br />
+                        <div className="field half">
+                            <label>Property manager name</label>
+                            <input
+                                name="propertyManagerName"
+                                type="text"
+                                value={formData.propertyManagerName}
+                                onChange={handleChange} required />
+                        </div>
+                        <br /><br />
+                        <h2>2 - Lease</h2>
+                        <div className="field">
+                            <label>Rental cost</label>
+                            <input
+                                name="rentalCost"
+                                type="text"
+                                value={formData.rentalCost}
+                                onChange={handleChange} required />
+                        </div>
+                        <br />
+                        <div className="field">
+                            <label>Wage payment frequency</label>
+                            <input
+                                name="wagePaymentFrequency"
+                                type="text"
+                                value={formData.wagePaymentFrequency}
+                                onChange={handleChange} required />
+                        </div>
+                        <br /><br />
+                        <h2>3 - Identification</h2>
+                        <div className="field half">
+                            <label>Email</label>
+                            <input
+                                name="email"
+                                type="text"
+                                value={formData.email}
+                                onChange={handleChange} required />
+                        </div>
+                        <br />
+                        <div className="field">
+                            <label>Employment Status</label><br /><br />
+                            <select onChange={handleChange}>
+                                <option name="fulltimeemployee"> Full-time employee</option>
+                                <option name="partimeemployee">Part-time employee</option>
+                                <option name="independentcontractor">Independent contractor</option>
+                                <option name="retired">Retired</option>
+                                <option name="unemployed">Unemployed</option>
+                            </select>
+                        </div>
+
+
+                        <br /><br /><br />
+                        <Button text="Submit" />
                     </form>
 
                 </div>

@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Button from '../components/Button'
 import HowItWorks from "../components/howItWorks";
 import dummy_picture from '../assets/dummy_picture.png'
+import { Link } from 'react-router-dom';
 
 
 //Can Input Any Question and Answer Here: (Can Be Moved to Database)
@@ -52,7 +53,10 @@ export default function Home() {
             </h4>
             {/* <Button text="Find a rent" icon="home" theme="secondary" />
           <Button text="Register my rent" icon='apartment' /> */}
-            <Button text="Join Waitlist" />
+            <Link to="/waitlist">
+              <Button text="Join Waitlist" />
+            </Link>
+
           </div>
           <div className="right">
             <img
@@ -79,7 +83,9 @@ export default function Home() {
           <h5>Become part of a growing community of renters who are taking control of their finances with
             Rentwallex. <br />Say goodbye to rent-related stress and hello to peace of mind!</h5>
           <br />
-          <Button text="Join the Waitlist now" theme="secondary"/>
+          <Link to="/waitlist">
+            <Button text="Join the Waitlist now" theme="secondary" />
+          </Link>
         </section>
       </div>
 
