@@ -166,7 +166,7 @@ img {
 
 
 /* Home page */
-.home section {
+.home section, .forPropertyManager section {
   width: 100%;
   border-bottom: solid var(--secondary-background);
   display: flex;
@@ -178,7 +178,7 @@ img {
   background-color: var(--purple);
 }
 
-.home section.one {
+.home section.one, .forPropertyManager section.one {
 
   display: flex;
   /* align-items: center; */
@@ -212,13 +212,13 @@ img {
     padding: 0 10px;
 
     img {
-      border: 1px dashed;
+      /* border: 1px dashed; */
 
     }
   }
 }
 
-.home section.two {
+.home section.two, .forPropertyManager section.two {
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
@@ -557,6 +557,95 @@ img {
   }
 }
 
+
+/* For Property Manager Page */
+.forPropertyManager {
+  section.three {
+    padding-left: 15px;
+    padding-right: 15px;  
+    flex-direction: column;
+    
+    top: 0;
+    margin: 0 auto;
+    padding: 38px 18px;
+
+    h1 {
+      font-size: 260%;
+      font-weight: 600;
+      line-height: 5rem;
+    }
+
+    h2 {
+      font-size: 180%;
+      font-weight: 500;
+      line-height: 4rem;
+    }
+
+    form {
+
+      .field {
+        margin: 18px auto;
+
+        label {
+          font-size: 110%;
+          line-height: 1rem;
+        }
+
+        input {
+          width: 100%;
+          padding: 12px 0;
+          margin-bottom: 1px;
+          font-size: 100%;
+          border: 0;
+          border-bottom: 1px solid grey;
+          border-radius: 0;
+          color: var(--dark-purple);
+
+          &:focus {
+            outline: none;
+            border-bottom: 1px solid var(--purple);
+          }
+        }
+
+
+        select {
+          min-width: 300px;
+          appearance: none;
+          outline: none;
+          /* safari */
+          -webkit-appearance: none;
+          /* other styles for aesthetics */
+          font-size: 1.15rem;
+          padding: 0.675em 6em 0.675em 1em;
+          background-color: #fff;
+          border: 1px solid #caced1;
+          border-radius: 0.25rem;
+          color: #000;
+          cursor: pointer;
+        }
+      }
+
+      .half input {
+        width: 50%;
+        display: block;
+      }
+
+      .sameRow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .field{
+          width: 100%;
+          input {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+  
+}
+
 footer {
   background-color: var(--secondary-background);
   display: flex;
@@ -654,7 +743,7 @@ footer {
   }
 
 
-  .home {
+  .home, .forPropertyManager {
     section.one {
       flex-direction: column;
       width: 100%;
@@ -725,6 +814,35 @@ footer {
     }
   }
 
+  .forPropertyManager {
+    section.three{
+      h1 {
+        font-size: 180%;
+      }
+      form {
+        h2 {
+          font-size: 120%;
+        }
+        .field{
+
+          width: 100%;
+          input {
+            width: 100%;
+          }
+        }
+        .sameRow {
+          flex-direction: column;
+          .field{
+            width: 100%;
+            input {
+              width: 100%;
+            }
+          }
+        }
+      }
+      
+    }
+  }
 
   footer .container {
     flex-direction: column;
