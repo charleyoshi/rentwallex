@@ -39,6 +39,8 @@ function HowItWorks() {
           <h4>Sign up in minutes. Our simple approval process ensures hassle-free
             access to our community financing solutions.</h4>
         </div>
+        <br className='linebreak'/>
+        <br className='linebreak'/>
         <div className="step">
           <p>Step 2</p>
           <img src={dummy_picture} alt="dummy_picture" />
@@ -47,6 +49,8 @@ function HowItWorks() {
             preferences. We help you to customize repayment based on your pay slip, ensuring a
             seamless alignment with your income.</h4>
         </div>
+        <br className='linebreak'/>
+        <br className='linebreak'/>
         <div className="step">
           <p>Step 3</p>
           <img src={dummy_picture} alt="dummy_picture" />
@@ -55,6 +59,8 @@ function HowItWorks() {
             automated, no-interest community financing. Your rent is paid directly to your property
             manager or registered landlord in full. No late payment. No harassment.</h4>
         </div>
+        <br className='linebreak'/>
+        <br className='linebreak'/>
         <div className="step">
           <p>Step 4</p>
           <img src={dummy_picture} alt="dummy_picture" />
