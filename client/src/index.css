@@ -94,6 +94,7 @@ img {
   .menu-items {
     display: flex;
     gap: 28px;
+    font-weight: 500;
   }
 
   .icon-menu {
@@ -194,7 +195,7 @@ img {
       margin: 0;
       font-size: 240%;
       color: var(--primary-text);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .headline-2 {
@@ -229,7 +230,7 @@ img {
 
     h1 {
       font-size: 240%;
-      font-weight: 500;
+      font-weight: 600;
       margin: 12px auto;
     }
 
@@ -260,7 +261,7 @@ img {
 
         h3 {
           font-size: 130%;
-          font-weight: 500;
+          font-weight: 600;
           margin: 16px auto;
         }
 

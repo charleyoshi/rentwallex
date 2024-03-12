@@ -7,7 +7,9 @@ function HowItWorks() {
   return (
     <div className="howItWorks">
       <h1>How does Rentwallex work?</h1>
-      <h2>We partner with property managers and registered landlords to make it easy to split your rent into manageable payments.</h2>
+      <h2>We partner with property managers and registered landlords
+        <br />
+        to make it easy to split your rent into manageable payments.</h2>
       <div className="steps">
         <div className="step">
           <p>Step 1</p>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
 import Button from '../components/Button'
-import dummy_picture from '../assets/dummy_picture.png'
+import dummy_picture from '../assets/picture_placeholder.png'
 
 
 
