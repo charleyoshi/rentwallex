@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Button from '../components/Button'
 import HowItWorks from "../components/howItWorks";
-import dummy_picture from '../assets/dummy_picture.png'
+import dummy_picture from '../assets/picture_placeholder.png'
 import { Link } from 'react-router-dom';
 
 
