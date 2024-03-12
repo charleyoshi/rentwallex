@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/howItWorks.css";
-import dummy_picture from '../assets/dummy_picture.png'
+import dummy_picture from '../assets/picture_placeholder.png'
 function HowItWorks() {
   
 
