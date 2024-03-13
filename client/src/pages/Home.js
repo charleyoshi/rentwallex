@@ -77,7 +77,7 @@ export default function Home() {
       </div>
 
 
-      <div className="bgWrapper-purple">
+      <div className="bgWrapper-brand-blue">
         <section className="three container">
           <h1>1,250</h1>
           <h4>Renters registered to date</h4>

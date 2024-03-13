@@ -17,6 +17,10 @@
 
   --success: #1aac83;
   --error: #e7195a;
+  
+  --navyblue: #00206B;
+  --brand-blue: #0050FF;
+  --brand-green: #39B54A;
 }
 
 body {
@@ -108,7 +112,7 @@ img {
   color: var(--secondary-text);
 
   &:hover {
-    color: var(--lime);
+    color: var(--brand-green);
   }
 }
 
@@ -138,17 +142,17 @@ img {
 }
 
 .button.default {
-  background-color: var(--purple);
+  background-color: var(--brand-blue);
   color: white;
 
   &:hover {
-    background-color: var(--dark-purple);
+    background-color: var(--navyblue);
   }
 }
 
 .button.secondary {
   background-color: var(--white);
-  color: var(--purple);
+  color: var(--brand-green);
 
   .icon {
     color: var(--purple);
@@ -174,8 +178,8 @@ img {
 }
 
 
-.home .bgWrapper-purple {
-  background-color: var(--purple);
+.home .bgWrapper-brand-blue, .articleContent .bgWrapper-brand-blue {
+  background-color: var(--brand-blue);
 }
 
 .home section.one, .forPropertyManager section.one {
@@ -344,6 +348,7 @@ img {
     padding: 12px 15px;
     font-size: 120%;
     margin-bottom: 10px;
+    font-weight: 300;
   }
 }
 
@@ -379,23 +384,18 @@ img {
     margin: auto;
     color: var(--secondary-text);
 
-    h1,
-    h3,
-    h5,
-    li {
-      width: 68%;
+    .textWrapper {
+      max-width: 78%;
       margin: auto;
+      padding-left: 25px;
+      padding-right: 25px;
+   
     }
 
     h3,
     h5,
     li {
       line-height: 1.6rem;
-    }
-
-    hr {
-      width: 80%;
-      margin: auto;
     }
 
     h1 {
@@ -417,6 +417,14 @@ img {
       font-size: 110%;
       font-weight: 300;
     }
+
+        
+    .bgWrapper-brand-blue-whiteText {
+      background-color: var(--brand-blue);  
+      h3, h5 {
+        color: white;
+      }
+    } 
   }
 
 
@@ -467,7 +475,7 @@ img {
 
 
   .left {
-    background-color: var(--purple);
+    background-color: var(--navyblue);
     margin: 12px;
     width: 350px;
     height: fit-content;
