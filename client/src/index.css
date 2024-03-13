@@ -17,6 +17,8 @@
 
   --success: #1aac83;
   --error: #e7195a;
+
+  --blue: #0050FF;
 }
 
 body {
@@ -138,7 +140,7 @@ img {
 }
 
 .button.default {
-  background-color: var(--purple);
+  background-color: var(--blue);
   color: white;
 
   &:hover {
@@ -175,7 +177,7 @@ img {
 
 
 .home .bgWrapper-purple {
-  background-color: var(--purple);
+  background-color: var(--blue);
 }
 
 .home section.one, .forPropertyManager section.one {
