@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const logoStyle = { width: '250px', height: 'auto', marginRight: '10px' };
-  const iconsStyle = { width: '50px', height: 'auto', marginRight: '10px' };
+  const iconsStyle = { width: '50px', height: 'auto', marginRight: '10px', borderRadius: '50px' };
 
   return (
 
@@ -30,8 +30,6 @@ export default function Footer() {
         <br className='linebreak' />
         {/* Right section */}
         <div className='right'>
-          <img src={linkedIn} alt="LinkedIn" style={iconsStyle} />
-          <img src={facebook} alt="Facebook" style={iconsStyle} />
           <img src={linkedIn} alt="LinkedIn" style={iconsStyle} />
           <img src={facebook} alt="Facebook" style={iconsStyle} />
           <img src={instagram} alt="Instagram" style={iconsStyle} />
