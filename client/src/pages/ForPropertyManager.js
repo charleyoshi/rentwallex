@@ -71,7 +71,7 @@ export default function ForPropertyManager() {
                         {/* <h2>We partner with property managers and registered landlords to make it easy to split your rent into manageable payments.</h2> */}
                         <div className="steps">
                             <div className="step">
-                                <p>Step 1</p>
+                                {/* <p>Step 1</p> */}
                                 <img src={dummy_picture} alt="dummy_picture" />
                                 <h3>Sign Up</h3>
                                 <h4>Simply sign up, provide some basic information about your property. Seamlessly integrate Rentwallex into your existing property management systems with minimal setup required.</h4>
@@ -79,7 +79,7 @@ export default function ForPropertyManager() {
                             <br className='linebreak' />
                             <br className='linebreak' />
                             <div className="step">
-                                <p>Step 2</p>
+                                {/* <p>Step 2</p> */}
                                 <img src={dummy_picture} alt="dummy_picture" />
                                 <h3>Invite Tenants</h3>
                                 <h4>Once your account is set up, invite your tenants to join Rentwallex. They can sign up and start making payments in just a few simple steps.</h4>
@@ -87,7 +87,7 @@ export default function ForPropertyManager() {
                             <br className='linebreak' />
                             <br className='linebreak' />
                             <div className="step">
-                                <p>Step 3</p>
+                                {/* <p>Step 3</p> */}
                                 <img src={dummy_picture} alt="dummy_picture" />
                                 <h3>Automated Rent Collection</h3>
                                 <h4>Sit back and relax as Rentwallex automates the rent collection process. Payments are deposited directly into your account, saving you time and effort.</h4>
@@ -95,7 +95,7 @@ export default function ForPropertyManager() {
                             <br className='linebreak' />
                             <br className='linebreak' />
                             <div className="step">
-                                <p>Step 4</p>
+                                {/* <p>Step 4</p> */}
                                 <img src={dummy_picture} alt="dummy_picture" />
                                 <h3>Monitor Payments</h3>
                                 <h4>Keep track of rent payments and account activity through the Rentwallex dashboard. Access real-time data to stay informed and in control.</h4>
@@ -103,7 +103,7 @@ export default function ForPropertyManager() {
                             <br className='linebreak' />
                             <br className='linebreak' />
                             <div className="step">
-                                <p>Step 5</p>
+                                {/* <p>Step 5</p> */}
                                 <img src={dummy_picture} alt="dummy_picture" />
                                 <h3>Dedicated Support</h3>
                                 <h4>Enjoy personalized support from the Rentwallex team, ensuring any questions or concerns are addressed promptly and effectively.</h4>
