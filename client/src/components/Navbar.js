@@ -30,8 +30,8 @@ export default function Navbar(props) {
             <span className="icon-menu material-symbols-rounded">menu</span>
           </div>
           <div className={`menu-items ${menuOpen ? "open" : ""}`}>
-            <Link to="/mission">Who we are</Link>
-            <Link>Use case</Link>
+            <Link to="/who-we-are">Who we are</Link>
+            <Link to= "/usecase">Use case</Link>
             <Link>How it works</Link>
             <Link to="/for-property-manager">For Property Managers</Link>
           </div>
