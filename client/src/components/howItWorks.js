@@ -12,7 +12,7 @@ function HowItWorks() {
         to make it easy to split your rent into manageable payments.</h2>
       <div className="steps">
         <div className="step">
-          <p>Step 1</p>
+          {/* <p>Step 1</p> */}
           <img src={dummy_picture} alt="dummy_picture" />
           <h3>Get Approved</h3>
           <h4>Sign up in minutes. Our simple approval process ensures hassle-free
@@ -21,7 +21,6 @@ function HowItWorks() {
         <br className='linebreak'/>
         <br className='linebreak'/>
         <div className="step">
-          <p>Step 2</p>
           <img src={dummy_picture} alt="dummy_picture" />
           <h3>Customize your payment</h3>
           <h4>Select the rent payment plan that best fits your budget and
@@ -31,7 +30,6 @@ function HowItWorks() {
         <br className='linebreak'/>
         <br className='linebreak'/>
         <div className="step">
-          <p>Step 3</p>
           <img src={dummy_picture} alt="dummy_picture" />
           <h3>Seamless rent payment</h3>
           <h4>Once your payment plan is set, Rentwallex facilitates
@@ -41,7 +39,6 @@ function HowItWorks() {
         <br className='linebreak'/>
         <br className='linebreak'/>
         <div className="step">
-          <p>Step 4</p>
           <img src={dummy_picture} alt="dummy_picture" />
           <h3>Enjoy true financial freedom</h3>
           <h4>Experience the freedom of manageable rent payments,
