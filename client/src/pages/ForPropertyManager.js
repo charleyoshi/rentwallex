@@ -15,7 +15,7 @@ const resetForm = {
     email: "",
     phoneNumber: "",
     totalUnitsManagedInPortfolio: "",
-    propertyManagementSoftware: ""
+    propertyManagementSoftware: "notusingany"
 }
 export default function ForPropertyManager() {
     useEffect(() => {
@@ -192,6 +192,7 @@ export default function ForPropertyManager() {
                                     name="phoneNumber"
                                     type="tel"
                                     value={formData.phoneNumber}
+                                    pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
                                     onChange={handleChange} required />
                             </div>
                         </div>
