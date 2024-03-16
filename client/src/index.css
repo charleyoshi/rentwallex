@@ -41,11 +41,15 @@ body {
 /* Make all link texts black with no text decoration */
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 body.modal-open {
   height: 100vh;
   overflow-y: hidden;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 

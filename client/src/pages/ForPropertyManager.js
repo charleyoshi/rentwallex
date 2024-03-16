@@ -31,6 +31,12 @@ export default function ForPropertyManager() {
         console.log(formData)
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData)
+        alert("All inputs are valid")
+    }
+
     return (
         <div className='forPropertyManager'>
             <Navbar forPage="home" />
@@ -117,25 +123,26 @@ export default function ForPropertyManager() {
                 <section className='three'>
                     <h1>Sign up</h1>
                     <br /><br />
-                    <form>
+                    <form onSubmit={e => handleSubmit(e)}>
                         <h2>1 - Identification</h2>
 
-                        <div className="field">
-                            <label>First name</label>
-                            <input
-                                name="firstName"
-                                type="text"
-                                value={formData.firstName}
-                                onChange={handleChange} required />
-                        </div>
-                        <br />
-                        <div className="field">
-                            <label>Last name</label>
-                            <input
-                                name="lastName"
-                                type="text"
-                                value={formData.lastName}
-                                onChange={handleChange} required />
+                        <div className='sameRow'>
+                            <div className="field half">
+                                <label>First name</label>
+                                <input
+                                    name="firstName"
+                                    type="text"
+                                    value={formData.firstName}
+                                    onChange={handleChange} required />
+                            </div>
+                            <div className="field half">
+                                <label>Last name</label>
+                                <input
+                                    name="lastName"
+                                    type="text"
+                                    value={formData.lastName}
+                                    onChange={handleChange} required />
+                            </div>
                         </div>
                         <br /><br />
                         <h2>2 - Business information</h2>
@@ -170,44 +177,48 @@ export default function ForPropertyManager() {
                         <br /><br />
                         <h2>3 - Contact</h2>
 
-                        <div className="field half">
-                            <label>Email</label>
-                            <input
-                                name="email"
-                                type="text"
-                                value={formData.email}
-                                onChange={handleChange} required />
-                        </div>
-                        <br />
-                        <div className="field half">
-                            <label>Phone Number</label>
-                            <input
-                                name="phoneNumber"
-                                type="text"
-                                value={formData.phoneNumber}
-                                onChange={handleChange} required />
+                        <div className='sameRow'>
+                            <div className="field half">
+                                <label>Email</label>
+                                <input
+                                    name="email"
+                                    type="email"
+                                    value={formData.email}
+                                    onChange={handleChange} required />
+                            </div>
+                            <div className="field half">
+                                <label>Phone Number</label>
+                                <input
+                                    name="phoneNumber"
+                                    type="tel"
+                                    value={formData.phoneNumber}
+                                    onChange={handleChange} required />
+                            </div>
                         </div>
                         <br /><br />
                         <h2>4 - Business scale</h2>
-
-                        <div className="field half">
-                            <label>Total units managed in portfolio</label>
-                            <input
-                                name="totalUnitsManagedInPortfolio"
-                                type="text"
-                                value={formData.totalUnitsManagedInPortfolio}
-                                onChange={handleChange} required />
+                        <div className='sameRow'>
+                            <div className="field half">
+                                <label>Total units managed in portfolio</label><br /><br />
+                                <input
+                                    name="totalUnitsManagedInPortfolio"
+                                    type="number"
+                                    value={formData.totalUnitsManagedInPortfolio}
+                                    onChange={handleChange} required />
+                            </div>
+                            <div className="field half">
+                                <label>What property management software do you use?</label> <br /><br />
+                                <select value={formData.propertyManagementSoftware} onChange={(event) => setFormData({ ...formData, propertyManagementSoftware: event.target.value })}>
+                                    <option value="buildingstack">Building Stack</option>
+                                    <option value="buildium">Buildium</option>
+                                    <option value="capterra">Capterra</option>
+                                    <option value="doorloop">Doorloop</option>
+                                    <option value="totalmanagement">Total management</option>
+                                    <option value="notusingany">Not using any</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
                         </div>
-                        <br />
-                        <div className="field half">
-                            <label>What property management software do you use?</label>
-                            <input
-                                name="propertyManagementSoftware"
-                                type="text"
-                                value={formData.propertyManagementSoftware}
-                                onChange={handleChange} required />
-                        </div>
-
 
 
                         <br /><br /><br />
