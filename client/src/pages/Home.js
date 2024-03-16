@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Button from '../components/Button'
 import HowItWorks from "../components/howItWorks";
@@ -30,17 +30,21 @@ const FAQs = [
   }
   // Add more FAQs as needed
 ];
+const scrollTo = (elemRef) => {
+  window.scrollTo({ top: elemRef.current.offsetTop, behavior: 'smooth' });
+}
 
 export default function Home() {
-
+  const howItWorksSection = useRef(null);
   const [activeIndex, setActiveIndex] = useState(null);
   const toggleAnswer = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+
   return (
     <div className="home">
-      <Navbar forPage="home" />
+      <Navbar forPage="home" scrollTo={scrollTo} />
       <div className="container">
         <section className="one">
           <div className="left">
@@ -58,7 +62,7 @@ export default function Home() {
             </Link>
 
           </div>
-          <br className='linebreak'/>
+          <br className='linebreak' />
           <div className="right">
             <img
               referrerPolicy="no-referrer"
@@ -71,7 +75,7 @@ export default function Home() {
       </div>
 
       <div className='container'>
-        <section className="two">
+        <section className="two" id="how-it-works" ref={howItWorksSection}>
           <HowItWorks />
         </section>
       </div>
