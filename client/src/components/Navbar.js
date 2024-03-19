@@ -1,7 +1,6 @@
-import { Link, unstable_HistoryRouter, useLocation, useNavigate } from "react-router-dom";
-import Button from "./Button";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/rentwallex_logo_cropped.png";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 // props for Navbar:
 //  - forPage : specify for which page. e.g. `home`
@@ -19,9 +18,8 @@ export default function Navbar(props) {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  
+
   const navigate = useNavigate();
-  const location = useLocation();
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -29,15 +27,6 @@ export default function Navbar(props) {
     }
   };
 
-  const handleHowItWorksClick = (e) => {
-    e.preventDefault();
-    const isHomePage = location.pathname === '/';
-    if (isHomePage) {
-      scrollToSection("how-it-works");
-    } else {
-      navigateToHomeAndScroll();
-    }
-  };
 
   const navigateToHomeAndScroll = () => {
     navigate('/', { replace: true });
@@ -60,7 +49,6 @@ export default function Navbar(props) {
             <Link to="/who-we-are">Who we are</Link>
             <Link to="/usecase">Use case</Link>
             <Link to="/ourmap">Our Map</Link>
-            <a onClick={handleHowItWorksClick}>How it works</a> 
             <Link to="/for-property-manager">For Property Managers</Link>
           </div>
         </div>
