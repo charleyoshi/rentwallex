@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Button from '../components/Button'
 import HowItWorks from "../components/howItWorks";
@@ -58,7 +58,7 @@ export default function Home() {
             {/* <Button text="Find a rent" icon="home" theme="secondary" />
           <Button text="Register my rent" icon='apartment' /> */}
             <Link to="/waitlist">
-              <Button text="Join Waitlist" />
+              <Button text="Join waitlist" />
             </Link>
 
           </div>
@@ -89,7 +89,7 @@ export default function Home() {
             Rentwallex. <br />Say goodbye to rent-related stress and hello to peace of mind!</h5>
           <br />
           <Link to="/waitlist">
-            <Button text="Join the Waitlist now" theme="secondary" />
+            <Button text="Join the waitlist now" theme="secondary" />
           </Link>
         </section>
       </div>
