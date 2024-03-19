@@ -17,7 +17,7 @@
 
   --success: #1aac83;
   --error: #e7195a;
-  
+
   --navyblue: #00206B;
   --brand-blue: #0050FF;
   --brand-green: #39B54A;
@@ -48,6 +48,7 @@ body.modal-open {
   height: 100vh;
   overflow-y: hidden;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -174,7 +175,8 @@ img {
 
 
 /* Home page */
-.home section, .forPropertyManager section {
+.home section,
+.forPropertyManager section {
   width: 100%;
   border-bottom: solid var(--secondary-background);
   display: flex;
@@ -182,11 +184,13 @@ img {
 }
 
 
-.home .bgWrapper-brand-blue, .articleContent .bgWrapper-brand-blue {
+.home .bgWrapper-brand-blue,
+.articleContent .bgWrapper-brand-blue {
   background-color: var(--brand-blue);
 }
 
-.home section.one, .forPropertyManager section.one {
+.home section.one,
+.forPropertyManager section.one {
 
   display: flex;
   /* align-items: center; */
@@ -226,7 +230,8 @@ img {
   }
 }
 
-.home section.two, .forPropertyManager section.two {
+.home section.two,
+.forPropertyManager section.two {
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
@@ -357,7 +362,8 @@ img {
 }
 
 /* WhoWeAre Page */
-.whoweare, .usecase {
+.whoweare,
+.usecase {
 
   /* Article Component */
   .article {
@@ -381,10 +387,11 @@ img {
 
 
   .articleContentWrapper {
-    padding: 6% 0 12% 0;
+    padding: 3% 0 12% 0;
   }
 
-  .article .articleContent, .article .useCaseContent {
+  .article .articleContent,
+  .article .useCaseContent {
     margin: auto;
     color: var(--secondary-text);
 
@@ -393,7 +400,7 @@ img {
       margin: auto;
       padding-left: 25px;
       padding-right: 25px;
-   
+
     }
 
     h3,
@@ -422,22 +429,29 @@ img {
       font-weight: 300;
     }
 
-        
+
     .bgWrapper-brand-blue-whiteText {
-      background-color: var(--brand-blue);  
-      h3, h5 {
+      background-color: var(--brand-blue);
+
+      h3,
+      h5 {
         color: white;
       }
-    } 
+    }
   }
 
   .headlineBanner {
+    width: 100%;
     height: 100%;
     position: relative;
 
     img {
+      position: relative;
+      right: 18%;
+      width: 1950px;
+      height: 100%;
       object-fit: cover;
-      
+
     }
 
     h1 {
@@ -596,9 +610,9 @@ img {
 .forPropertyManager {
   section.three {
     padding-left: 15px;
-    padding-right: 15px;  
+    padding-right: 15px;
     flex-direction: column;
-    
+
     top: 0;
     margin: 0 auto;
     padding: 38px 18px;
@@ -668,8 +682,10 @@ img {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        .field{
+
+        .field {
           width: 100%;
+
           input {
             width: 80%;
           }
@@ -677,7 +693,7 @@ img {
       }
     }
   }
-  
+
 }
 
 footer {
@@ -742,8 +758,8 @@ footer {
     }
 
     .menu-toggle {
-      
-     position: relative; 
+
+      position: relative;
     }
 
     .menu-items {
@@ -777,7 +793,8 @@ footer {
   }
 
 
-  .home, .forPropertyManager {
+  .home,
+  .forPropertyManager {
     section.one {
       flex-direction: column;
       width: 100%;
@@ -849,32 +866,38 @@ footer {
   }
 
   .forPropertyManager {
-    section.three{
+    section.three {
       h1 {
         font-size: 180%;
       }
+
       form {
         h2 {
           font-size: 120%;
         }
-        .field{
+
+        .field {
 
           width: 100%;
+
           input {
             width: 100%;
           }
         }
+
         .sameRow {
           flex-direction: column;
-          .field{
+
+          .field {
             width: 100%;
+
             input {
               width: 100%;
             }
           }
         }
       }
-      
+
     }
   }
 
