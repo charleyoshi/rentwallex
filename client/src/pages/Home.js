@@ -1,8 +1,8 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Button from '../components/Button'
 import HowItWorks from "../components/howItWorks";
-import dummy_picture from '../assets/dummy_picture.png'
+import dummy_picture from '../assets/picture_placeholder.png'
 import { Link } from 'react-router-dom';
 
 
@@ -30,17 +30,21 @@ const FAQs = [
   }
   // Add more FAQs as needed
 ];
+const scrollTo = (elemRef) => {
+  window.scrollTo({ top: elemRef.current.offsetTop, behavior: 'smooth' });
+}
 
 export default function Home() {
-
+  const howItWorksSection = useRef(null);
   const [activeIndex, setActiveIndex] = useState(null);
   const toggleAnswer = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+
   return (
     <div className="home">
-      <Navbar forPage="home" />
+      <Navbar forPage="home" scrollTo={scrollTo} />
       <div className="container">
         <section className="one">
           <div className="left">
@@ -54,11 +58,11 @@ export default function Home() {
             {/* <Button text="Find a rent" icon="home" theme="secondary" />
           <Button text="Register my rent" icon='apartment' /> */}
             <Link to="/waitlist">
-              <Button text="Join Waitlist" />
+              <Button text="Join waitlist" />
             </Link>
 
           </div>
-          <br className='linebreak'/>
+          <br className='linebreak' />
           <div className="right">
             <img
               referrerPolicy="no-referrer"
@@ -71,13 +75,13 @@ export default function Home() {
       </div>
 
       <div className='container'>
-        <section className="two">
+        <section className="two" id="how-it-works" ref={howItWorksSection}>
           <HowItWorks />
         </section>
       </div>
 
 
-      <div className="bgWrapper-purple">
+      <div className="bgWrapper-brand-blue">
         <section className="three container">
           <h1>1,250</h1>
           <h4>Renters registered to date</h4>
@@ -85,7 +89,7 @@ export default function Home() {
             Rentwallex. <br />Say goodbye to rent-related stress and hello to peace of mind!</h5>
           <br />
           <Link to="/waitlist">
-            <Button text="Join the Waitlist now" theme="secondary" />
+            <Button text="Join the waitlist now" theme="secondary" />
           </Link>
         </section>
       </div>

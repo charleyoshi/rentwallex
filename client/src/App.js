@@ -6,12 +6,14 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import WaitList from './pages/WaitList';
 
-import Mission from './pages/Mission';
+import WhoWeAre from './pages/WhoWeAre';
 import OurMap from './pages/OurMap';
 import ForPropertyManager from './pages/ForPropertyManager';
+import UseCase from './pages/UseCase';
 
 
 function App() {
+  
   return (
     <div className="App">
       <BrowserRouter>
@@ -19,7 +21,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="waitlist" element={<WaitList/>} />
-            <Route path="mission" element={<Mission />} />
+            <Route path="who-we-are" element={<WhoWeAre />} />
+            <Route path="usecase" element={<UseCase />} />
             <Route path="ourmap" element={<OurMap />} />
             <Route path="for-property-manager" element={<ForPropertyManager />} />
             <Route path="404" element={<NotFound />} />
