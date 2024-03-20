@@ -3,7 +3,6 @@ import React from 'react'
 export default function ArticleContent() {
     return (
         <div className='articleContent'>
-
             <div className='textWrapper'>
                 <h1>We are changing the way people think about rent payment</h1>
                 <br />
