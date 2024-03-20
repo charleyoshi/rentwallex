@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import Button from "./Button";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/rentwallex_logo_cropped.png";
 import { useState } from "react";
 
@@ -19,6 +18,23 @@ export default function Navbar(props) {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const navigate = useNavigate();
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
+  const navigateToHomeAndScroll = () => {
+    navigate('/', { replace: true });
+    setTimeout(() => {
+      scrollToSection("how-it-works");
+    }, 100); // Adjust the delay as needed
+  };
+
   return (
     <header className="Navbar">
       <div className="container">

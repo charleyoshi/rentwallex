@@ -9,7 +9,7 @@ const resetForm = {
     rentalCost: "",
     wagePaymentFrequency: "",
     email: "",
-    employmentStatus: ""
+    employmentStatus: "fulltimeemployee"
 }
 
 export default function WaitList() {
@@ -19,13 +19,24 @@ export default function WaitList() {
 
     const [formData, setFormData] = useState(resetForm);
 
+
     const handleChange = (e) => {
         const key = e.target.name;
         const value = e.target.value;
         setFormData({ ...formData, [key]: value });
-        console.log(formData)
+    
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData)
+        alert("All inputs are valid")
+        // if (handleValidation()) {
+        //     alert("Form submitted");
+        // } else {
+        //     alert("Form has errors.")
+        // }
+    }
 
     return (
         <div className='waitlist'>
@@ -58,7 +69,7 @@ export default function WaitList() {
                 <div className='right'>
                     <h1>Join the wait list</h1>
                     <br /><br />
-                    <form>
+                    <form onSubmit={e => handleSubmit(e)}>
                         <h2>1 - Address</h2>
 
                         <div className="field">
@@ -84,7 +95,7 @@ export default function WaitList() {
                             <label>Rental cost</label>
                             <input
                                 name="rentalCost"
-                                type="text"
+                                type="number"
                                 value={formData.rentalCost}
                                 onChange={handleChange} required />
                         </div>
@@ -103,19 +114,19 @@ export default function WaitList() {
                             <label>Email</label>
                             <input
                                 name="email"
-                                type="text"
+                                type="email"
                                 value={formData.email}
                                 onChange={handleChange} required />
                         </div>
                         <br />
                         <div className="field">
                             <label>Employment Status</label><br /><br />
-                            <select onChange={handleChange}>
-                                <option name="fulltimeemployee"> Full-time employee</option>
-                                <option name="partimeemployee">Part-time employee</option>
-                                <option name="independentcontractor">Independent contractor</option>
-                                <option name="retired">Retired</option>
-                                <option name="unemployed">Unemployed</option>
+                            <select value={formData.employmentStatus} onChange={(event) => setFormData({ ...formData, employmentStatus: event.target.value })}>
+                                <option value="fulltimeemployee">Full-time employee</option>
+                                <option value="partimeemployee">Part-time employee</option>
+                                <option value='independentcontractor'>Independent contractor</option>
+                                <option value="retired">Retired</option>
+                                <option value="unemployed">Unemployed</option>
                             </select>
                         </div>
 

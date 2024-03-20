@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
 import Button from '../components/Button'
-import dummy_picture from '../assets/dummy_picture.png'
+import dummy_picture from '../assets/picture_placeholder.png'
 
 
 
@@ -15,7 +15,7 @@ const resetForm = {
     email: "",
     phoneNumber: "",
     totalUnitsManagedInPortfolio: "",
-    propertyManagementSoftware: ""
+    propertyManagementSoftware: "notusingany"
 }
 export default function ForPropertyManager() {
     useEffect(() => {
@@ -30,6 +30,12 @@ export default function ForPropertyManager() {
         setFormData({ ...formData, [key]: value });
         console.log(formData)
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData)
+        alert("All inputs are valid")
+    }
 
     return (
         <div className='forPropertyManager'>
@@ -71,7 +77,7 @@ export default function ForPropertyManager() {
                         {/* <h2>We partner with property managers and registered landlords to make it easy to split your rent into manageable payments.</h2> */}
                         <div className="steps">
                             <div className="step">
-                                <p>Step 1</p>
+                                {/* <p>Step 1</p> */}
                                 <img src={dummy_picture} alt="dummy_picture" />
                                 <h3>Sign Up</h3>
                                 <h4>Simply sign up, provide some basic information about your property. Seamlessly integrate Rentwallex into your existing property management systems with minimal setup required.</h4>
@@ -79,7 +85,7 @@ export default function ForPropertyManager() {
                             <br className='linebreak' />
                             <br className='linebreak' />
                             <div className="step">
-                                <p>Step 2</p>
+                                {/* <p>Step 2</p> */}
                                 <img src={dummy_picture} alt="dummy_picture" />
                                 <h3>Invite Tenants</h3>
                                 <h4>Once your account is set up, invite your tenants to join Rentwallex. They can sign up and start making payments in just a few simple steps.</h4>
@@ -87,7 +93,7 @@ export default function ForPropertyManager() {
                             <br className='linebreak' />
                             <br className='linebreak' />
                             <div className="step">
-                                <p>Step 3</p>
+                                {/* <p>Step 3</p> */}
                                 <img src={dummy_picture} alt="dummy_picture" />
                                 <h3>Automated Rent Collection</h3>
                                 <h4>Sit back and relax as Rentwallex automates the rent collection process. Payments are deposited directly into your account, saving you time and effort.</h4>
@@ -95,7 +101,7 @@ export default function ForPropertyManager() {
                             <br className='linebreak' />
                             <br className='linebreak' />
                             <div className="step">
-                                <p>Step 4</p>
+                                {/* <p>Step 4</p> */}
                                 <img src={dummy_picture} alt="dummy_picture" />
                                 <h3>Monitor Payments</h3>
                                 <h4>Keep track of rent payments and account activity through the Rentwallex dashboard. Access real-time data to stay informed and in control.</h4>
@@ -103,7 +109,7 @@ export default function ForPropertyManager() {
                             <br className='linebreak' />
                             <br className='linebreak' />
                             <div className="step">
-                                <p>Step 5</p>
+                                {/* <p>Step 5</p> */}
                                 <img src={dummy_picture} alt="dummy_picture" />
                                 <h3>Dedicated Support</h3>
                                 <h4>Enjoy personalized support from the Rentwallex team, ensuring any questions or concerns are addressed promptly and effectively.</h4>
@@ -117,25 +123,26 @@ export default function ForPropertyManager() {
                 <section className='three'>
                     <h1>Sign up</h1>
                     <br /><br />
-                    <form>
+                    <form onSubmit={e => handleSubmit(e)}>
                         <h2>1 - Identification</h2>
 
-                        <div className="field">
-                            <label>First name</label>
-                            <input
-                                name="firstName"
-                                type="text"
-                                value={formData.firstName}
-                                onChange={handleChange} required />
-                        </div>
-                        <br />
-                        <div className="field">
-                            <label>Last name</label>
-                            <input
-                                name="lastName"
-                                type="text"
-                                value={formData.lastName}
-                                onChange={handleChange} required />
+                        <div className='sameRow'>
+                            <div className="field half">
+                                <label>First name</label>
+                                <input
+                                    name="firstName"
+                                    type="text"
+                                    value={formData.firstName}
+                                    onChange={handleChange} required />
+                            </div>
+                            <div className="field half">
+                                <label>Last name</label>
+                                <input
+                                    name="lastName"
+                                    type="text"
+                                    value={formData.lastName}
+                                    onChange={handleChange} required />
+                            </div>
                         </div>
                         <br /><br />
                         <h2>2 - Business information</h2>
@@ -170,44 +177,49 @@ export default function ForPropertyManager() {
                         <br /><br />
                         <h2>3 - Contact</h2>
 
-                        <div className="field half">
-                            <label>Email</label>
-                            <input
-                                name="email"
-                                type="text"
-                                value={formData.email}
-                                onChange={handleChange} required />
-                        </div>
-                        <br />
-                        <div className="field half">
-                            <label>Phone Number</label>
-                            <input
-                                name="phoneNumber"
-                                type="text"
-                                value={formData.phoneNumber}
-                                onChange={handleChange} required />
+                        <div className='sameRow'>
+                            <div className="field half">
+                                <label>Email</label>
+                                <input
+                                    name="email"
+                                    type="email"
+                                    value={formData.email}
+                                    onChange={handleChange} required />
+                            </div>
+                            <div className="field half">
+                                <label>Phone Number</label>
+                                <input
+                                    name="phoneNumber"
+                                    type="tel"
+                                    value={formData.phoneNumber}
+                                    pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+                                    onChange={handleChange} required />
+                            </div>
                         </div>
                         <br /><br />
                         <h2>4 - Business scale</h2>
-
-                        <div className="field half">
-                            <label>Total units managed in portfolio</label>
-                            <input
-                                name="totalUnitsManagedInPortfolio"
-                                type="text"
-                                value={formData.totalUnitsManagedInPortfolio}
-                                onChange={handleChange} required />
+                        <div className='sameRow'>
+                            <div className="field half">
+                                <label>Total units managed in portfolio</label><br /><br />
+                                <input
+                                    name="totalUnitsManagedInPortfolio"
+                                    type="number"
+                                    value={formData.totalUnitsManagedInPortfolio}
+                                    onChange={handleChange} required />
+                            </div>
+                            <div className="field half">
+                                <label>What property management software do you use?</label> <br /><br />
+                                <select value={formData.propertyManagementSoftware} onChange={(event) => setFormData({ ...formData, propertyManagementSoftware: event.target.value })}>
+                                    <option value="buildingstack">Building Stack</option>
+                                    <option value="buildium">Buildium</option>
+                                    <option value="capterra">Capterra</option>
+                                    <option value="doorloop">Doorloop</option>
+                                    <option value="totalmanagement">Total management</option>
+                                    <option value="notusingany">Not using any</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
                         </div>
-                        <br />
-                        <div className="field half">
-                            <label>What property management software do you use?</label>
-                            <input
-                                name="propertyManagementSoftware"
-                                type="text"
-                                value={formData.propertyManagementSoftware}
-                                onChange={handleChange} required />
-                        </div>
-
 
 
                         <br /><br /><br />

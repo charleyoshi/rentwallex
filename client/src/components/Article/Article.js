@@ -1,17 +1,17 @@
 import React from 'react'
-import ArticleTitle from './ArticleTitle'
 import ArticleContent from './ArticleContent'
-import ArticleSocialMediaContainer from './ArticleSocialMediaContainer'
+import UseCaseContent from './UseCaseContent'
 
-export default function Article() {
+export default function Article(props) {
     return (
         <div className='article'>
 
-            <ArticleTitle title="Who we are" />
             <div className='articleContentWrapper'>
                 {/* <ArticleSocialMediaContainer /> */}
-
-                <ArticleContent />
+                {props.forUseCase ?
+                    <UseCaseContent /> :
+                    <ArticleContent />
+                }
             </div>
 
         </div>
