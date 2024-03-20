@@ -48,7 +48,7 @@ export default function Home() {
       <div className="container">
         <section className="one">
           <div className="left">
-            <h1 className="headline">
+            <h1 className="headline" style={{ fontWeight: 'bold' }}>
               Rentwallex is the <br />
               new way to pay rent
             </h1>
