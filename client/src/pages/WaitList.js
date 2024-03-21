@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Navbar from '../components/Navbar'
 import Button from '../components/Button';
+
+import { initAutocomplete } from '../helpers/autocompleteAddress.js';
+
 
 
 const resetForm = {
@@ -13,8 +16,12 @@ const resetForm = {
 }
 
 export default function WaitList() {
+    const addressRef = useRef(null);
+    const addressNextRef = useRef(null);
+    
     useEffect(() => {
         window.scrollTo(0, 0);
+        initAutocomplete(addressRef.current, addressNextRef.current);
     }, []);
 
     const [formData, setFormData] = useState(resetForm);
@@ -24,13 +31,16 @@ export default function WaitList() {
         const key = e.target.name;
         const value = e.target.value;
         setFormData({ ...formData, [key]: value });
-    
+
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setFormData({ ...formData, 'propertyAddress': addressRef.current.value });
+
         console.log(formData)
-        alert("All inputs are valid")
+        // console.log(addressRef.current.value)
+        alert("Submitted")
         // if (handleValidation()) {
         //     alert("Form submitted");
         // } else {
@@ -73,21 +83,25 @@ export default function WaitList() {
                         <h2>1 - Address</h2>
 
                         <div className="field">
-                            <label>Property address</label>
+                            <label>Property address (updating)</label>
                             <input
+                                ref={addressRef}
                                 name="propertyAddress"
-                                type="text"
-                                value={formData.propertyAddress}
-                                onChange={handleChange} required />
+                                id="propertyAddress"
+                                required
+                                autoComplete="off"
+                                // onChange={handleChange}
+                            />
                         </div>
                         <br />
                         <div className="field half">
                             <label>Property manager name</label>
                             <input
+                                ref={addressNextRef}
                                 name="propertyManagerName"
                                 type="text"
                                 value={formData.propertyManagerName}
-                                onChange={handleChange} required />
+                                required onChange={handleChange}/>
                         </div>
                         <br /><br />
                         <h2>2 - Lease</h2>
@@ -132,6 +146,10 @@ export default function WaitList() {
 
 
                         <br /><br /><br />
+
+
+
+                       
                         <Button text="Submit" />
                     </form>
 
