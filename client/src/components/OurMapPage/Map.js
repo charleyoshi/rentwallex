@@ -40,7 +40,11 @@ export default function Map() {
     >
       {coordinates.map(({ lat, lng, title }, index) => (
         <Pin
-          key={index} lat={lat} lng={lng} text={index} tooltip={title}
+          key={index}
+          lat={lat}
+          lng={lng}
+          text={index}
+          tooltip={title}
           // onClick={onMarkerClick} // you need to manage this prop on your Marker component!
           // draggable={true}
           // onDragStart={(e, { latLng }) => {}}
