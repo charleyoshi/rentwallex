@@ -76,12 +76,7 @@ export default function ForPropertyManager() {
                         <h1>How Rentwallex Works for Property Managers and Landlords</h1>
                         {/* <h2>We partner with property managers and registered landlords to make it easy to split your rent into manageable payments.</h2> */}
                         <div className="steps">
-                            <div className="step">
-                                {/* <p>Step 1</p> */}
-                                <img src={dummy_picture} alt="dummy_picture" />
-                                <h3>Sign Up</h3>
-                                <h4>Simply sign up, provide some basic information about your property. Seamlessly integrate Rentwallex into your existing property management systems with minimal setup required.</h4>
-                            </div>
+                            <br className='linebreak' />
                             <br className='linebreak' />
                             <br className='linebreak' />
                             <div className="step">
@@ -216,7 +211,7 @@ export default function ForPropertyManager() {
                                     <option value="doorloop">Doorloop</option>
                                     <option value="totalmanagement">Total management</option>
                                     <option value="notusingany">Not using any</option>
-                                    <option value="others">Others</option>
+                                    <option value="other">Other</option>
                                 </select>
                             </div>
                         </div>
