@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ArticleContent() {
+export default function WhoWeAreContent() {
     return (
         <div className='articleContent'>
             <div className='textWrapper'>
