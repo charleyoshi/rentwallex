@@ -1,10 +1,16 @@
 import React from 'react'
+import banner_placeholder from '../../assets/banner_placeholder2.png'
 
 export default function WhoWeAreContent() {
     return (
         <div className='articleContent'>
-            <div className='textWrapper'>
+            <div className='headlineBanner'>
+                <img src={banner_placeholder} alt="Use Case Banner" />
                 <h1>We are changing the way people think about rent payment</h1>
+                <br /><br />
+            </div>
+
+            <div className='textWrapper'>
                 <br />
                 <h5>Rentwallex is a forward-thinking financial technology company dedicated to transforming the way people pay rent. We believe in making the rental process more affordable, convenient, and empowering for tenants. With a commitment to financial well-being, we strive to bridge the gap between renters and landlords, fostering a harmonious relationship across communities. </h5>
                 <br /><br />
