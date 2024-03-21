@@ -7,7 +7,7 @@ export default function UseCase() {
         <div className='usecase'>
             {/* todo: change Navbar content if needed */}
             <Navbar />
-            <Article forUseCase={true} title="Rentwallex use case"/>
+            <Article forUseCase={true}/>
 
 
 

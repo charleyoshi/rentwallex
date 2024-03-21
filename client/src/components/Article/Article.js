@@ -1,6 +1,6 @@
 import React from 'react'
-import ArticleContent from './ArticleContent'
 import UseCaseContent from './UseCaseContent'
+import WhoWeAreContent from './WhoWeAreContent'
 
 export default function Article(props) {
     return (
@@ -8,10 +8,8 @@ export default function Article(props) {
 
             <div className='articleContentWrapper'>
                 {/* <ArticleSocialMediaContainer /> */}
-                {props.forUseCase ?
-                    <UseCaseContent /> :
-                    <ArticleContent />
-                }
+                {props.forUseCase && <UseCaseContent />}
+                {props.forWhoWeAre && <WhoWeAreContent />}
             </div>
 
         </div>
