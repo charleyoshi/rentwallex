@@ -83,7 +83,9 @@ Frontend (Client):
 * npm (Node Package Manager): npm is included with Node.js installation.
 
 Backend (Server):
-* todo
+* Node.js: [Download and install Node.js](https://nodejs.org/en)
+* npm (Node Package Manager): npm is included with Node.js installation.
+* express 
 
 
 ### Installation
@@ -108,7 +110,18 @@ Backend (Server):
 
 
 
-3. For backend: todo
+3. For backend, navigate to the "server" directory.
+   ```sh
+   cd server
+   ```
+    1. Install NPM packages
+        ```sh
+        npm install
+        ```
+    2. Running the Server
+       ```sh
+       node server.js
+       ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
