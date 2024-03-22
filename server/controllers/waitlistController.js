@@ -2,8 +2,8 @@ import firebaseApp from "../config.js";
 import { getDatabase, ref, set, push } from "firebase/database";
 
 // Initialize Realtime Database and get a reference to the service
-const db = getDatabase(firebaseApp);  
-
+const db = getDatabase(firebaseApp);
+const waitlistRef = ref(db, 'waitlist');
 
 const getWaitlist = async (req, res) => {
     res.send({ message: 'Waitlist get' });
@@ -11,14 +11,18 @@ const getWaitlist = async (req, res) => {
 
 
 const joinWaitlist = async (req, res) => {
-    const data = req.body
-    const waitlistRef = ref(db, 'waitlist');
+    const { first, middle } = req.body
     const newRef = push(waitlistRef);
-    set(newRef, {
-        ...data
-    });
 
-    res.send({ msg: "added" });
+    try {
+        set(newRef, { first, middle });
+        res.status(201).json({ message: "new item created"})
+    } catch (error){
+        res.status(400).json({ name: error.name, error: error.message })
+    }
+
+
+    
 }
 
 export { getWaitlist, joinWaitlist }

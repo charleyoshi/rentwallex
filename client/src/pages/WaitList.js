@@ -7,7 +7,6 @@ import { initAutocomplete } from '../helpers/autocompleteAddress.js';
 
 
 const resetForm = {
-    propertyAddress: "",
     propertyManagerName: "",
     rentalCost: "",
     wagePaymentFrequency: "",
@@ -18,10 +17,10 @@ const resetForm = {
 export default function WaitList() {
     const addressRef = useRef(null);
     const addressNextRef = useRef(null);
-    
+
     useEffect(() => {
         window.scrollTo(0, 0);
-        initAutocomplete(addressRef.current, addressNextRef.current);
+        initAutocomplete(addressRef.current, addressNextRef.current, updateAddress);
     }, []);
 
     const [formData, setFormData] = useState(resetForm);
@@ -30,17 +29,18 @@ export default function WaitList() {
     const handleChange = (e) => {
         const key = e.target.name;
         const value = e.target.value;
-        setFormData({ ...formData, [key]: value });
+        setFormData(prevFormData => ({ ...prevFormData, [key]: value }));
 
     };
 
+    const updateAddress = (key, value) => {
+        setFormData(prevFormData => ({ ...prevFormData, [key]: value }));
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        setFormData({ ...formData, 'propertyAddress': addressRef.current.value });
-
-        console.log(formData)
-        // console.log(addressRef.current.value)
         alert("Submitted")
+        console.log(formData)
         // if (handleValidation()) {
         //     alert("Form submitted");
         // } else {
@@ -90,7 +90,6 @@ export default function WaitList() {
                                 id="propertyAddress"
                                 required
                                 autoComplete="off"
-                                // onChange={handleChange}
                             />
                         </div>
                         <br />
@@ -101,7 +100,7 @@ export default function WaitList() {
                                 name="propertyManagerName"
                                 type="text"
                                 value={formData.propertyManagerName}
-                                required onChange={handleChange}/>
+                                required onChange={handleChange} />
                         </div>
                         <br /><br />
                         <h2>2 - Lease</h2>
@@ -149,7 +148,7 @@ export default function WaitList() {
 
 
 
-                       
+
                         <Button text="Submit" />
                     </form>
 
