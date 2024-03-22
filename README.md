@@ -86,6 +86,7 @@ Backend (Server):
 * Node.js: [Download and install Node.js](https://nodejs.org/en)
 * npm (Node Package Manager): npm is included with Node.js installation.
 * express 
+* firebase
 
 
 ### Installation
