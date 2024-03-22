@@ -13,30 +13,36 @@
 // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
 
-export function initAutocomplete(address1Field, address2Field) {
+export function initAutocomplete(address1Field, address2Field, updateAddress) {
   let autocomplete;
 
   function fillInAddress() {
     const place = autocomplete.getPlace();
     let address1 = "";
     let postcode = "";
-    console.log(place.address_components)
+    // console.log("place.address_components:")
+    // console.log(place.address_components)
+    updateAddress("lat", place.geometry.location.lat())
+    updateAddress("lng", place.geometry.location.lng())
     for (const component of place.address_components) {
       const componentType = component.types[0];
 
       switch (componentType) {
         case "street_number": {
           address1 = `${component.long_name} ${address1}`;
+          updateAddress("streetNumber", component.long_name)
           break;
         }
 
         case "route": {
           address1 += component.long_name;
+          updateAddress("route", `${component.short_name}`)
           break;
         }
 
         case "postal_code": {
           postcode = `${component.long_name}${postcode}`;
+          updateAddress("postcode", postcode)
           break;
         }
 
@@ -44,13 +50,16 @@ export function initAutocomplete(address1Field, address2Field) {
           postcode = `${postcode}-${component.long_name}`;
           break;
         }
-        case "locality":
+        case "locality": {
           // document.querySelector("#locality").value = component.long_name;
-          address1 += `, ${component.long_name}`;
+          address1 += `, ${component.long_name}`; // e.g. Calgary, Montreal, Toronto
+          updateAddress("city", component.long_name)
           break;
+        }
         case "administrative_area_level_1": {
           // document.querySelector("#state").value = component.short_name;
-          address1 += `, ${component.short_name}`;
+          address1 += `, ${component.short_name}`; // e.g. Alberta, Quebec, British Columbia
+          updateAddress("province", component.short_name)
           break;
         }
         case "sublocality_level_1": {
@@ -59,17 +68,18 @@ export function initAutocomplete(address1Field, address2Field) {
           break;
         }
         case "country":
-          // document.querySelector("#country").value = component.long_name;
           if (component.short_name === "US") {
             address1 += `, USA`;
           } else {
             address1 += `, ${component.long_name}`;
           }
+          updateAddress("country", component.short_name)
           break;
       }
     }
 
     address1Field.value = address1;
+    // console.log(address1)
     document.querySelector("#propertyAddress").value = address1;
     address2Field.focus();
   }
