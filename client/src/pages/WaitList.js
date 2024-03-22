@@ -55,6 +55,8 @@ export default function WaitList() {
             .then((response) => {
                 console.log(response)
                 // alert('Form has been successfully sent.')
+                setFormData(resetForm)
+                document.querySelector("#manualAddress").value = "";
             })
             .catch((error) => {
                 // alert('Something went wrong. Please try again later.')                
@@ -62,8 +64,7 @@ export default function WaitList() {
             })
 
         // console.log(formData)
-        setFormData(resetForm)
-        document.querySelector("#manualAddress").value = "";
+
         // if (handleValidation()) {
         //     alert("Form submitted");
         // } else {
@@ -113,7 +114,7 @@ export default function WaitList() {
                                 id="manualAddress"
                                 required
                                 autoComplete="off"
-                                // onChange={handleChange}
+                            // onChange={handleChange}
                             />
                         </div>
                         <br />

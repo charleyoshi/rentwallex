@@ -17,7 +17,7 @@
 
   --success: #1aac83;
   --error: #e7195a;
-  
+
   --navyblue: #00206B;
   --brand-blue: #0050FF;
   --brand-green: #39B54A;
@@ -505,6 +505,25 @@ img {
   }
 }
 
+.buttonSmallRound {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  
+  span {
+    color: var(--navyblue);
+    font-size: x-large;
+    font-weight: 500;
+  }
+
+
+  &:hover {
+    span {
+      font-weight: 800;
+    }
+  }
+}
 
 
 
