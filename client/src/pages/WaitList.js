@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Button from '../components/Button';
 
 import { initAutocomplete } from '../helpers/autocompleteAddress.js';
-
+import axios from 'axios';
 
 
 const resetForm = {
@@ -15,10 +15,10 @@ const resetForm = {
     postalCode: "",
     lat: null,
     lng: null,
-    propertyManagerName: "1",
-    rentalCost: "1",
-    wagePaymentFrequency: "1",
-    email: "1@fm.com",
+    propertyManagerName: "",
+    rentalCost: "",
+    wagePaymentFrequency: "",
+    email: "",
     employmentStatus: "fulltimeemployee"
 }
 
@@ -45,11 +45,23 @@ export default function WaitList() {
         setFormData(prevFormData => ({ ...prevFormData, [key]: value }));
     }
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        alert("Submitted")
         console.log(formData)
+        axios.post(`http://localhost:4000/api/waitlist`, {
+            ...formData
+        })
+            .then((response) => {
+                console.log(response)
+                // alert('Form has been successfully sent.')
+            })
+            .catch((error) => {
+                // alert('Something went wrong. Please try again later.')                
+                console.log(error.response.data) // e.g. invalid address
+            })
+
+        // console.log(formData)
         setFormData(resetForm)
         document.querySelector("#manualAddress").value = "";
         // if (handleValidation()) {

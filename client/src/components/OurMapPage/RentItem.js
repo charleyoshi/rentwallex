@@ -1,10 +1,16 @@
 import React from 'react'
 
-export default function RentItem() {
+export default function RentItem(props) {
+    const streetNumber = props.item.streetNumber
+    const route = props.item.route
+    const city = props.item.city
+    const province = props.item.province
+    const rentalCost = props.item.rentalCost
+
     return (
         <div className='rentItem'>
 
-            <div className='row one'>2004-70 Gloucester Street, Ottawa</div>
+            <div className='row one'>{streetNumber} {route}, {city}, {province}</div>
             <div className='row two'>
 
                 {/* <span className="icon material-symbols-rounded">bed</span>
@@ -17,7 +23,7 @@ export default function RentItem() {
             </div>
             <div className='row three'>
                 <div className='cost'>
-                    <span className='money'>2100.00 $ </span>
+                    <span className='money'>{rentalCost} $ </span>
                     <span className='perMonth'>&nbsp;/ Month</span>
                 </div>
                 <div className='btn'>Details</div>

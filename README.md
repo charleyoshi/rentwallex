@@ -81,13 +81,14 @@ These instructions will guide you through the process of setting up and running 
 Frontend (Client):
 * Node.js: [Download and install Node.js](https://nodejs.org/en)
 * npm (Node Package Manager): npm is included with Node.js installation.
+* axios
 
 Backend (Server):
 * Node.js: [Download and install Node.js](https://nodejs.org/en)
 * npm (Node Package Manager): npm is included with Node.js installation.
 * express 
 * firebase
-
+* cors
 
 ### Installation
 

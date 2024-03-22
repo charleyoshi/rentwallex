@@ -124,11 +124,11 @@
 
 
 .pin {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     border: white solid 2px;
-    background-color: var(--brand-blue);
+    background-color: var(--navyblue);
     color: white;
     font-size: larger;
     display: flex;
@@ -136,6 +136,7 @@
     justify-content: center; 
     
     &:hover {
-        border: white solid 4px;
+        border: var(--brand-blue) solid 4px;
+        background-color: var(--brand-blue);
     }
 }
