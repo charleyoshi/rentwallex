@@ -15,11 +15,10 @@ const resetForm = {
     postalCode: "",
     lat: null,
     lng: null,
-    manualAddress: "",
-    propertyManagerName: "",
-    rentalCost: "",
-    wagePaymentFrequency: "",
-    email: "",
+    propertyManagerName: "1",
+    rentalCost: "1",
+    wagePaymentFrequency: "1",
+    email: "1@fm.com",
     employmentStatus: "fulltimeemployee"
 }
 
@@ -102,7 +101,7 @@ export default function WaitList() {
                                 id="manualAddress"
                                 required
                                 autoComplete="off"
-                                onChange={handleChange}
+                                // onChange={handleChange}
                             />
                         </div>
                         <br />
