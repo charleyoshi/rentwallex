@@ -42,7 +42,7 @@ export function initAutocomplete(address1Field, address2Field, updateAddress) {
 
         case "postal_code": {
           postcode = `${component.long_name}${postcode}`;
-          updateAddress("postcode", postcode)
+          updateAddress("postalCode", postcode)
           break;
         }
 
@@ -80,7 +80,7 @@ export function initAutocomplete(address1Field, address2Field, updateAddress) {
 
     address1Field.value = address1;
     // console.log(address1)
-    document.querySelector("#propertyAddress").value = address1;
+    document.querySelector("#manualAddress").value = address1;
     address2Field.focus();
   }
 

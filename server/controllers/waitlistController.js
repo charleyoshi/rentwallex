@@ -11,11 +11,11 @@ const getWaitlist = async (req, res) => {
 
 
 const joinWaitlist = async (req, res) => {
-    const { first, middle } = req.body
+    const data = req.body
     const newRef = push(waitlistRef);
 
     try {
-        set(newRef, { first, middle });
+        set(newRef, { ...data });
         res.status(201).json({ message: "new item created"})
     } catch (error){
         res.status(400).json({ name: error.name, error: error.message })

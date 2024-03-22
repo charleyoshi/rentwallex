@@ -7,6 +7,15 @@ import { initAutocomplete } from '../helpers/autocompleteAddress.js';
 
 
 const resetForm = {
+    streetNumber: "",
+    route: "",
+    city: "",
+    province: "",
+    country: "",
+    postalCode: "",
+    lat: null,
+    lng: null,
+    manualAddress: "",
     propertyManagerName: "",
     rentalCost: "",
     wagePaymentFrequency: "",
@@ -39,8 +48,11 @@ export default function WaitList() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
         alert("Submitted")
         console.log(formData)
+        setFormData(resetForm)
+        document.querySelector("#manualAddress").value = "";
         // if (handleValidation()) {
         //     alert("Form submitted");
         // } else {
@@ -86,10 +98,11 @@ export default function WaitList() {
                             <label>Property address</label>
                             <input
                                 ref={addressRef}
-                                name="propertyAddress"
-                                id="propertyAddress"
+                                name="manualAddress"
+                                id="manualAddress"
                                 required
                                 autoComplete="off"
+                                onChange={handleChange}
                             />
                         </div>
                         <br />
@@ -109,6 +122,7 @@ export default function WaitList() {
                             <input
                                 name="rentalCost"
                                 type="number"
+                                min="0"
                                 value={formData.rentalCost}
                                 onChange={handleChange} required />
                         </div>
