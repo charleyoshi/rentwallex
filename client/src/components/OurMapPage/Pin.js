@@ -1,15 +1,16 @@
 import React from "react";
 
-const Pin = ({ text, tooltip, $hover }) => {
-  const handleClick = () => {
-    console.log(`You clicked on ${tooltip}`);
-  };
+const Pin = ({ text, tooltip, $hover, handleClick, handlePinHover }) => {
+  // const handleClick = () => {
+  //   console.log(`You clicked on ${tooltip}`);
+  // };
+
 
   return (
-    <div className="pin">
-      <div className={$hover ? "circle hover" : "circle"} onClick={handleClick}>
+    <div className="pin"  onClick={handleClick} onMouseOver={handlePinHover}>
+      <div className={$hover ? "circle hover" : "circle"}>
         <span className="circleText" title={tooltip}>
-          {text}
+          {/* {text} */}
         </span>
       </div>
     </div>

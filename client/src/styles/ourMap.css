@@ -49,9 +49,9 @@
     }
 
     .right {
-        border-radius: 18px;
+        border-radius: 6px;
         overflow: hidden;
-        border: var(--navyblue) solid 2px;
+        border: var(--brand-green) solid 2px;
         box-shadow: 10px 3px 10px rgba(9, 7, 7, 0.2);
         width: 70%;
         * {
@@ -69,7 +69,7 @@
     padding: 32px;
     cursor: pointer;
 
-    &:hover {
+    &:hover, .hover {
         border: var(--brand-blue) solid 1px;
         .one {
             color: var(--brand-blue);
@@ -124,11 +124,11 @@
 
 
 .pin {
-    width: 22px;
-    height: 22px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    border: white solid 2px;
-    background-color: var(--navyblue);
+    border: var(--brand-blue) solid 4px;
+    background-color: var(--brand-green);
     color: white;
     font-size: larger;
     display: flex;
