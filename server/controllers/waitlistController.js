@@ -25,11 +25,17 @@ const getWaitlist = async (req, res) => {
 
 const joinWaitlist = async (req, res) => {
     const data = req.body
+    
+    if (!data.lat || !data.lng) {
+        res.status(403).json({ message: "Invalid address." })   
+        return;
+    }
+
     const newRef = push(waitlistRef);
 
     try {
         set(newRef, { ...data });
-        res.status(201).json({ message: "new item created" })
+        res.status(201).json({ message: "New item created" })
     } catch (error) {
         res.status(400).json({ name: error.name, error: error.message })
     }
