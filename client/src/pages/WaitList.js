@@ -83,7 +83,7 @@ export default function WaitList() {
                         <h2>1 - Address</h2>
 
                         <div className="field">
-                            <label>Property address (updating)</label>
+                            <label>Property address</label>
                             <input
                                 ref={addressRef}
                                 name="propertyAddress"
