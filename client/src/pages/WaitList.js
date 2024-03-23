@@ -51,7 +51,7 @@ export default function WaitList() {
         console.log(formData)
 
         try {
-            const response = await axios.post(`http://localhost:4000/api/waitlist`, { ...formData })
+            const response = await axios.post(`https://rentwallex-server.onrender.com/api/waitlist`, { ...formData })
             console.log(response)
             setFormData(resetForm)
             document.querySelector("#manualAddress").value = "";
