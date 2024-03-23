@@ -18,7 +18,7 @@ export default function OurMap() {
     const [mapReady, setMapReady] = useState(false)
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/waitlist')
+        axios.get('https://rentwallex-server.onrender.com/api/waitlist')
             .then(function (response) {
                 // handle success
                 setItems(Object.values(response.data.result))
