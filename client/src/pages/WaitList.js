@@ -1,39 +1,76 @@
-import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import Button from "../components/Button";
+import React, { useEffect, useState, useRef } from 'react'
+import Navbar from '../components/Navbar'
+import Button from '../components/Button';
+
+import { initAutocomplete } from '../helpers/autocompleteAddress.js';
+import axios from 'axios';
+
 
 const resetForm = {
-  propertyAddress: "",
-  propertyManagerName: "",
-  rentalCost: "",
-  wagePaymentFrequency: "Weekly",
-  email: "",
-  employmentStatus: "fulltimeemployee",
-};
+    streetNumber: "",
+    route: "",
+    city: "",
+    province: "",
+    country: "",
+    postalCode: "",
+    lat: null,
+    lng: null,
+    propertyManagerName: "",
+    rentalCost: "",
+    wagePaymentFrequency: "",
+    email: "",
+    employmentStatus: "fulltimeemployee"
+}
 
 export default function WaitList() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    const addressRef = useRef(null);
+    const addressNextRef = useRef(null);
 
-  const [formData, setFormData] = useState(resetForm);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        initAutocomplete(addressRef.current, addressNextRef.current, updateAddress);
+    }, []);
 
-  const handleChange = (e) => {
-    const key = e.target.name;
-    const value = e.target.value;
-    setFormData({ ...formData, [key]: value });
-  };
+    const [formData, setFormData] = useState(resetForm);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    alert("All inputs are valid");
+
+    const handleChange = (e) => {
+        const key = e.target.name;
+        const value = e.target.value;
+        setFormData(prevFormData => ({ ...prevFormData, [key]: value }));
+
+    };
+
+    const updateAddress = (key, value) => {
+        setFormData(prevFormData => ({ ...prevFormData, [key]: value }));
+    }
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(formData)
+
+        try {
+            const response = await axios.post(`http://localhost:4000/api/waitlist`, { ...formData })
+            console.log(response)
+            setFormData(resetForm)
+            document.querySelector("#manualAddress").value = "";
+        } catch (error) {
+            if (error.response) {
+                console.log(error.response.data) // e.g. invalid address
+            } else {
+                console.log(error.message)
+            }
+        }
+
+    // console.log(formData)
+
     // if (handleValidation()) {
     //     alert("Form submitted");
     // } else {
     //     alert("Form has errors.")
     // }
-  };
+}
 
   return (
     <div className="waitlist">
@@ -89,104 +126,77 @@ export default function WaitList() {
           <form onSubmit={(e) => handleSubmit(e)}>
             <h2>1 - Address</h2>
 
-            <div className="field">
-              <label>Property address</label>
-              <input
-                name="propertyAddress"
-                type="text"
-                value={formData.propertyAddress}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <br />
-            <div className="field half">
-              <label>Property manager name</label>
-              <input
-                name="propertyManagerName"
-                type="text"
-                value={formData.propertyManagerName}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <br />
-            <br />
-            <h2>2 - Lease</h2>
-            <div className="field half">
-              <label>Rental cost</label>
-              <input
-                name="rentalCost"
-                type="number"
-                value={formData.rentalCost}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <br />
-            <div className="field half">
-              <label>Wage payment frequency</label>
-              <br />
-              <br />
-              <select
-                value={formData.wagePaymentFrequency}
-                onChange={(event) =>
-                  setFormData({
-                    ...formData,
-                    wagePaymentFrequency: event.target.value,
-                  })
-                }
-              >
-                <option value="Weekly">Weekly</option>
-                <option value="Bi-Weekly">Bi-Weeky</option>
-                <option value="Monthly">Monthly</option>
-                <option value="None">None</option>
-              </select>
-            </div>
-            <br />
-            <br />
-            <h2>3 - Identification</h2>
-            <div className="field half">
-              <label>Email</label>
-              <input
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <br />
-            <div className="field">
-              <label>Employment Status</label>
-              <br />
-              <br />
-              <select
-                value={formData.employmentStatus}
-                onChange={(event) =>
-                  setFormData({
-                    ...formData,
-                    employmentStatus: event.target.value,
-                  })
-                }
-              >
-                <option value="fulltimeemployee">Full-time employee</option>
-                <option value="partimeemployee">Part-time employee</option>
-                <option value="independentcontractor">
-                  Independent contractor
-                </option>
-                <option value="retired">Retired</option>
-                <option value="unemployed">Unemployed</option>
-              </select>
+                    <div className="field">
+                        <label>Property address</label>
+                        <input
+                            ref={addressRef}
+                            name="manualAddress"
+                            id="manualAddress"
+                            required
+                            autoComplete="off"
+                        // onChange={handleChange}
+                        />
+                    </div>
+                    <br />
+                    <div className="field half">
+                        <label>Property manager name</label>
+                        <input
+                            ref={addressNextRef}
+                            name="propertyManagerName"
+                            type="text"
+                            value={formData.propertyManagerName}
+                            required onChange={handleChange} />
+                    </div>
+                    <br /><br />
+                    <h2>2 - Lease</h2>
+                    <div className="field">
+                        <label>Rental cost</label>
+                        <input
+                            name="rentalCost"
+                            type="number"
+                            min="0"
+                            value={formData.rentalCost}
+                            onChange={handleChange} required />
+                    </div>
+                    <br />
+                    <div className="field">
+                        <label>Wage payment frequency</label>
+                        <input
+                            name="wagePaymentFrequency"
+                            type="text"
+                            value={formData.wagePaymentFrequency}
+                            onChange={handleChange} required />
+                    </div>
+                    <br /><br />
+                    <h2>3 - Identification</h2>
+                    <div className="field half">
+                        <label>Email</label>
+                        <input
+                            name="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={handleChange} required />
+                    </div>
+                    <br />
+                    <div className="field">
+                        <label>Employment Status</label><br /><br />
+                        <select value={formData.employmentStatus} onChange={(event) => setFormData({ ...formData, employmentStatus: event.target.value })}>
+                            <option value="fulltimeemployee">Full-time employee</option>
+                            <option value="partimeemployee">Part-time employee</option>
+                            <option value='independentcontractor'>Independent contractor</option>
+                            <option value="retired">Retired</option>
+                            <option value="unemployed">Unemployed</option>
+                        </select>
+                    </div>
+
+
+                        <br /><br /><br />
+                        <Button text="Submit" />
+                    </form>
+
+                </div>
             </div>
 
-            <br />
-            <br />
-            <br />
-            <Button text="Submit" />
-          </form>
         </div>
-      </div>
-    </div>
-  );
+    )
 }
