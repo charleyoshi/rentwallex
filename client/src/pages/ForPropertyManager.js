@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
@@ -16,9 +16,15 @@ const resetForm = {
   propertyManagementSoftware: "notusingany",
 };
 export default function ForPropertyManager() {
+  const requestDemo = useRef();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const scrollHandler = (elmRef) => {
+    console.log(elmRef);
+    window.scrollTo({ top: elmRef.current.offsetTop, behavior: "smooth" });
+};
 
   const [formData, setFormData] = useState(resetForm);
 
@@ -50,9 +56,9 @@ export default function ForPropertyManager() {
               <br />
               Join our growing network of satisfied partners today.
             </h4>
-            <Link to="todo">
+            <div onClick={() => scrollHandler(requestDemo)}>
               <Button text="Request a demo" />
-            </Link>
+            </div>
           </div>
           <br className="linebreak" />
           <div className="right">
@@ -124,7 +130,7 @@ export default function ForPropertyManager() {
           </div>
         </section>
       </div>
-      <section className="three">
+      <section className="three" ref={requestDemo}>
         <div className="container left">
           <h1> Get Started Today!</h1>
           <br />
