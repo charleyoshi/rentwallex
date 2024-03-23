@@ -1,6 +1,7 @@
 import express from "express";
 import waitlistRoutes from './routes/waitlistRoutes.js'
 import cors from 'cors'
+import axios from 'axios';
 
 const app = express();
 const port = 4000;
@@ -16,6 +17,37 @@ app.use((req, res, next) => {
 })
 
 app.use('/api/waitlist', waitlistRoutes)
+
+
+// Prevent cloud server from becoming inactive. Ping every 14 minutes.
+app.use('/healthCheck', (req, res) => {
+  const healthcheck = {
+      uptime: process.uptime(),
+      message: 'OK',
+      timestamp: Date.now()
+  };
+  try {
+      res.status(200).send(healthcheck);
+  } catch (error) {
+      healthcheck.message = error;
+      res.status(503).send();
+  }
+})
+
+const keepServerAlive = async () => {
+  try {
+      const response = await axios.get('https://rentwallex-server.onrender.com/healthCheck');
+      console.log('Server pinged successfully.');
+  } catch (error) {
+      console.error('Error pinging server:', error);
+  }
+}
+
+const INTERVAL_TIME = 14 * 60 * 1000; // 14 minutes in milliseconds
+
+keepServerAlive()
+setInterval(keepServerAlive, INTERVAL_TIME)
+
 
 
 
