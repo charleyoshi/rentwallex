@@ -124,7 +124,6 @@ export default function ForPropertyManager() {
           </div>
         </section>
       </div>
-
       <section className="three">
         <div className="container left">
           <h1> Get Started Today!</h1>
@@ -189,6 +188,7 @@ export default function ForPropertyManager() {
                 onChange={handleChange}
                 required
               />
+
             </div>
             {/* <br />
             <br /> */}
