@@ -410,13 +410,6 @@ img {
       line-height: 1.6rem;
     }
 
-    h1 {
-      text-align: center;
-      font-size: 260%;
-      font-weight: 400;
-      color: var(--primary-text);
-    }
-
     h3 {
       font-size: 160%;
       font-weight: 400;
@@ -441,34 +434,7 @@ img {
     }
   }
 
-  .headlineBanner {
-    width: 100%;
-    height: 100%;
-    position: relative;
 
-    img {
-      position: relative;
-      /* right: 18%; */
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-
-    }
-
-    h1 {
-      padding-left: 20px;
-      padding-right: 20px;
-      text-align: center;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: fit-content;
-      margin: auto;
-      width: 78%;
-    }
-  }
 
   .articleSocialMediaContainer {
     display: flex;
@@ -504,12 +470,45 @@ img {
   }
 }
 
+.headlineBanner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  img {
+    position: relative;
+    /* right: 18%; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+  }
+
+  h1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    margin: auto;
+    width: 78%;
+    text-align: center;
+    font-size: 260%;
+    font-weight: 400;
+    color: var(--primary-text);
+  }
+}
+
 .buttonSmallRound {
   cursor: pointer;
   width: 32px;
   height: 32px;
   border-radius: 100%;
-  
+
   span {
     color: var(--navyblue);
     font-size: x-large;
@@ -570,31 +569,31 @@ img {
     }
   }
 
-    .leftTwo {
-      background-color: var(--white);
-      margin: 12px;
-      width: 40%;
-      height: fit-content;
-      /* border: solid;
+  .leftTwo {
+    background-color: var(--white);
+    margin: 12px;
+    width: 40%;
+    height: fit-content;
+    /* border: solid;
       border-radius: 28px; */
-      padding: 38px 28px;
-      text-align: start;
-      color: var(--primary-text);
-      position: relative;
-      top: 400px;
-      right: 250px;
-  
-      h3 {
-        font-size: 180%;
-        font-weight: 600;
-      }
-  
-      h4 {
-        font-size: 110%;
-        font-weight: 300;
-        line-height: 1.3rem
-      }
+    padding: 38px 28px;
+    text-align: start;
+    color: var(--primary-text);
+    position: relative;
+    top: 400px;
+    right: 250px;
+
+    h3 {
+      font-size: 180%;
+      font-weight: 600;
     }
+
+    h4 {
+      font-size: 110%;
+      font-weight: 300;
+      line-height: 1.3rem
+    }
+  }
 
   .right {
     position: relative;
@@ -620,9 +619,8 @@ img {
     form {
       .field {
         margin: 10px auto;
-        mar
 
-        label {
+        mar label {
           font-size: 110%;
           line-height: 1rem;
         }
@@ -761,31 +759,31 @@ img {
     }
   }
 
-    section.three .left {
-      padding-left: 15px;
-      padding-right: 15px;
-      flex-direction: column;
-      display: flex;
-      margin: 0;
-      padding: 38px 18px;
-      /* box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3); */
-      position: relative;
-      left: 20%;
-      width: 25%;
-      height: 50%;
-  
-      h1 {
-        font-size: 260%;
-        font-weight: 600;
-        line-height: 5rem;
-      }
+  section.three .left {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-direction: column;
+    display: flex;
+    margin: 0;
+    padding: 38px 18px;
+    /* box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3); */
+    position: relative;
+    left: 20%;
+    width: 25%;
+    height: 50%;
 
-      h4 {
-        font-size: 110%;
-        font-weight: 300;
-        line-height: 1.8rem;
-      }
+    h1 {
+      font-size: 260%;
+      font-weight: 600;
+      line-height: 5rem;
     }
+
+    h4 {
+      font-size: 110%;
+      font-weight: 300;
+      line-height: 1.8rem;
+    }
+  }
 
 }
 
@@ -932,7 +930,7 @@ footer {
         min-width: 10px;
       }
 
-      
+
     }
 
 
@@ -945,14 +943,14 @@ footer {
       .left {
         width: 100%;
         margin: auto;
-       position: static;
+        position: static;
       }
 
       .leftTwo {
         width: 100%;
         margin: auto;
         position: static;
-            }
+      }
 
       .right {
         width: 100%;
@@ -969,11 +967,12 @@ footer {
           padding: 8px;
         }
       }
+
       .bannerWaitlist {
         display: none;
       }
     }
-    
+
   }
 
   .forPropertyManager {
@@ -1015,19 +1014,20 @@ footer {
 
     }
 
-        section.three .left {
-          position: static;
-          h1 {
-            font-size: 180%;
-          }
-    
-          .left {
-            position: static;
-            width: 100%;
-            margin: auto;
-          }
-    
-        }
+    section.three .left {
+      position: static;
+
+      h1 {
+        font-size: 180%;
+      }
+
+      .left {
+        position: static;
+        width: 100%;
+        margin: auto;
+      }
+
+    }
   }
 
   footer .container {
