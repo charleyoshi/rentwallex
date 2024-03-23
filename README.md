@@ -81,10 +81,14 @@ These instructions will guide you through the process of setting up and running 
 Frontend (Client):
 * Node.js: [Download and install Node.js](https://nodejs.org/en)
 * npm (Node Package Manager): npm is included with Node.js installation.
+* axios
 
 Backend (Server):
-* todo
-
+* Node.js: [Download and install Node.js](https://nodejs.org/en)
+* npm (Node Package Manager): npm is included with Node.js installation.
+* express 
+* firebase
+* cors
 
 ### Installation
 
@@ -108,7 +112,18 @@ Backend (Server):
 
 
 
-3. For backend: todo
+3. For backend, navigate to the "server" directory.
+   ```sh
+   cd server
+   ```
+    1. Install NPM packages
+        ```sh
+        npm install
+        ```
+    2. Running the Server
+       ```sh
+       node server.js
+       ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
