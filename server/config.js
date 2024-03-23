@@ -2,14 +2,14 @@ import { initializeApp } from "firebase/app";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBrcpShytwoinADwH_hzV5jPuDio6bBKSI",
-    authDomain: "rentwallex.firebaseapp.com",
-    projectId: "rentwallex",
-    storageBucket: "rentwallex.appspot.com",
-    messagingSenderId: "1065475443279",
-    appId: "1:1065475443279:web:606f07b62c89a62f74f83a",
-    measurementId: "G-VLDVYN4EZX",
-    databaseURL: "https://rentwallex-default-rtdb.firebaseio.com"
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId,
+    measurementId: process.env.measurementId,
+    databaseURL: process.env.databaseURL
 
 };
 
