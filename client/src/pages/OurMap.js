@@ -1,19 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react'
 import '../styles/ourMap.css';
 import Navbar from '../components/Navbar'
-import Button from '../components/Button'
 import MapPageTopBanner from '../components/OurMapPage/MapPageTopBanner'
 import RentItem from '../components/OurMapPage/RentItem';
 import Map from '../components/OurMapPage/Map';
-import GoogleMap from 'google-maps-react-markers'
 import axios from 'axios';
 import ButtonSmallRound from '../components/ButtonSmallRound';
+import { staticRentItems } from '../helpers/staticRentItems';
 
 
 export default function OurMap() {
     const [items, setItems] = useState([])
     const [isShowingDetail, setIsShowingDetail] = useState(false)
-    const [detail, setDetail] = useState()
     const [selectedItemIndex, setSelectedItemIndex] = useState()
 
     const mapRef = useRef(null)
@@ -27,7 +25,12 @@ export default function OurMap() {
             })
             .catch(function (error) {
                 // handle error
-                console.log(error);
+                // console.log(error);
+                if (error.code === "ERR_NETWORK") {
+                    // Database malfunction. Display static, fake data
+                    console.log("Network Error...")
+                    setItems(staticRentItems)
+                }
             })
     }, [])
 
@@ -46,7 +49,6 @@ export default function OurMap() {
 
     const showOneItem = (item) => {
         setIsShowingDetail(true)
-        setDetail(item)
     }
 
     const backToAllItems = () => {
