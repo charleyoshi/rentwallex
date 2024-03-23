@@ -514,17 +514,30 @@ img {
   display: flex;
   gap: 1px;
 
+  .bannerWaitlist {
+    background-color: var(--secondary-background);
+    display: block;
+    width: 100%;
+    height: 100px;
+    padding: 100px;
+    position: absolute;
+    top: 100px;
+    left: 0px
+  }
+
 
   .left {
     background-color: var(--navyblue);
     margin: 12px;
-    width: 350px;
+    width: 35%;
     height: fit-content;
     border: solid;
     border-radius: 28px;
     padding: 38px 28px;
     text-align: start;
     color: var(--white);
+    position: relative;
+    left: 140px;
 
     h3 {
       font-size: 180%;
@@ -537,14 +550,43 @@ img {
     }
   }
 
+    .leftTwo {
+      background-color: var(--white);
+      margin: 12px;
+      width: 40%;
+      height: fit-content;
+      /* border: solid;
+      border-radius: 28px; */
+      padding: 38px 28px;
+      text-align: start;
+      color: var(--primary-text);
+      position: relative;
+      top: 400px;
+      right: 250px;
+  
+      h3 {
+        font-size: 180%;
+        font-weight: 600;
+      }
+  
+      h4 {
+        font-size: 110%;
+        font-weight: 300;
+        line-height: 1.3rem
+      }
+    }
+
   .right {
+    position: relative;
     top: 0;
-    width: 80%;
+    width: 45%;
     margin: 0 auto;
     padding: 38px 18px;
+    right: 140px;
+    box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3);
 
     h1 {
-      font-size: 400%;
+      font-size: 340%;
       font-weight: 700;
       line-height: 5rem;
     }
@@ -557,7 +599,8 @@ img {
 
     form {
       .field {
-        margin: 18px auto;
+        margin: 10px auto;
+        mar
 
         label {
           font-size: 110%;
@@ -609,14 +652,17 @@ img {
 
 /* For Property Manager Page */
 .forPropertyManager {
-  section.three {
+  section.three .right {
     padding-left: 15px;
     padding-right: 15px;
     flex-direction: column;
-
-    top: 0;
-    margin: 0 auto;
+    display: flex;
+    margin: 0;
     padding: 38px 18px;
+    box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    left: 25%;
+    width: 30%;
 
     h1 {
       font-size: 260%;
@@ -658,14 +704,14 @@ img {
 
 
         select {
-          min-width: 300px;
+          width: 285px;
           appearance: none;
           outline: none;
           /* safari */
           -webkit-appearance: none;
           /* other styles for aesthetics */
           font-size: 1.15rem;
-          padding: 0.675em 6em 0.675em 1em;
+          padding: 0.675em 1em 0.675em 1em;
           background-color: #fff;
           border: 1px solid #caced1;
           border-radius: 0.25rem;
@@ -694,6 +740,32 @@ img {
       }
     }
   }
+
+    section.three .left {
+      padding-left: 15px;
+      padding-right: 15px;
+      flex-direction: column;
+      display: flex;
+      margin: 0;
+      padding: 38px 18px;
+      /* box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3); */
+      position: relative;
+      left: 20%;
+      width: 25%;
+      height: 50%;
+  
+      h1 {
+        font-size: 260%;
+        font-weight: 600;
+        line-height: 5rem;
+      }
+
+      h4 {
+        font-size: 110%;
+        font-weight: 300;
+        line-height: 1.8rem;
+      }
+    }
 
 }
 
@@ -835,6 +907,12 @@ footer {
       h1 {
         font-size: 650%;
       }
+
+      select {
+        min-width: 10px;
+      }
+
+      
     }
 
 
@@ -847,14 +925,22 @@ footer {
       .left {
         width: 100%;
         margin: auto;
+       position: static;
       }
 
-      .right {
-
+      .leftTwo {
         width: 100%;
+        margin: auto;
+        position: static;
+            }
+
+      .right {
+        width: 100%;
+        margin: auto;
+        position: static;
 
         h1 {
-          font-size: 300%;
+          font-size: 240%;
         }
 
         form .field select {
@@ -863,11 +949,19 @@ footer {
           padding: 8px;
         }
       }
+      .bannerWaitlist {
+        display: none;
+      }
     }
+    
   }
 
   .forPropertyManager {
-    section.three {
+    section.three .right {
+      width: 100%;
+      margin: 0 6%;
+      position: static;
+
       h1 {
         font-size: 180%;
       }
@@ -900,6 +994,20 @@ footer {
       }
 
     }
+
+        section.three .left {
+          position: static;
+          h1 {
+            font-size: 180%;
+          }
+    
+          .left {
+            position: static;
+            width: 100%;
+            margin: auto;
+          }
+    
+        }
   }
 
   footer .container {
