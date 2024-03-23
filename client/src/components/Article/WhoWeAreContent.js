@@ -16,7 +16,7 @@ export default function WhoWeAreContent() {
                 <br /><br />
             </div>
 
-            <div className='textWrapper bgWrapper-brand-blue-whiteText'>
+            <div className='textWrapper'>
                 <br /><br />
                 <h3>Our Mission</h3>
                 <br />
