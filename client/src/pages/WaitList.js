@@ -39,8 +39,8 @@ export default function WaitList() {
     <div className="waitlist">
       <Navbar />
       <div className="pageWrapper">
-        <div className="bannerWaitlist"> </div>
-        <div className="left">
+        {/* <div className="bannerWaitlist"> </div> */}
+        <div className="leftAbove">
           <h3>Join Rentwallex community to revolutionize E rent payment</h3>
           <br />
           <br />
@@ -49,37 +49,38 @@ export default function WaitList() {
             are revolutionizing rent collection with Rentwallex. Streamline your
             operations, improve cash flow, and enhance tenant satisfaction.
           </h4>
-          {/* <br />
-          <br /> */}
-        </div>
-        <div className="leftTwo">
-          <h3>Why partner with Rentwallex?</h3>
           <br />
-          <h4>
-            &#10003; Reduce late rent payment <br /> <br /> Minimize the risk of
-            rent defaults and late payments with Rentwallex&#39;s automated
-            payment system and reminder notifications.
-          </h4>
           <br />
-          <h4>
-            &#10003; Improved Cash Flow <br /> <br /> Enjoy consistent cash flow
-            with Rentwallex&#39;s reliable payment system. Say goodbye to
-            unpredictable rent cycles and hello to financial stability.
-          </h4>
-          <br />
-          <h4>
-            &#10003; Enhanced Tenant Satisfaction <br /> <br /> Happy tenants
-            lead to higher retention rates. With Rentwallex, you can offer a
-            convenient payment solution that prioritizes tenant satisfaction,
-            fostering positive relationships and long-term leases.
-          </h4>
-          <br />
-          <h4>
-            &#10003; Secure and Transparent Transactions <br /> <br /> Rest
-            assured, your financial information is safe with Rentwallex. We
-            prioritize security and transparency to ensure a seamless experience
-            for property managers and landlords.
-          </h4>
+
+          <div className="leftUnder">
+            <h3>Why partner with Rentwallex?</h3>
+            <br />
+            <h4>
+              &#10003; Reduce late rent payment <br /> <br /> Minimize the risk
+              of rent defaults and late payments with Rentwallex&#39;s automated
+              payment system and reminder notifications.
+            </h4>
+            <br />
+            <h4>
+              &#10003; Improved Cash Flow <br /> <br /> Enjoy consistent cash
+              flow with Rentwallex&#39;s reliable payment system. Say goodbye to
+              unpredictable rent cycles and hello to financial stability.
+            </h4>
+            <br />
+            <h4>
+              &#10003; Enhanced Tenant Satisfaction <br /> <br /> Happy tenants
+              lead to higher retention rates. With Rentwallex, you can offer a
+              convenient payment solution that prioritizes tenant satisfaction,
+              fostering positive relationships and long-term leases.
+            </h4>
+            <br />
+            <h4>
+              &#10003; Secure and Transparent Transactions <br /> <br /> Rest
+              assured, your financial information is safe with Rentwallex. We
+              prioritize security and transparency to ensure a seamless
+              experience for property managers and landlords.
+            </h4>
+          </div>
         </div>
 
         <div className="right">
@@ -100,7 +101,7 @@ export default function WaitList() {
               />
             </div>
             <br />
-            <div className="field half">
+            <div className="field">
               <label>Property manager name</label>
               <input
                 name="propertyManagerName"
@@ -113,7 +114,7 @@ export default function WaitList() {
             <br />
             <br />
             <h2>2 - Lease</h2>
-            <div className="field half">
+            <div className="field">
               <label>Rental cost</label>
               <input
                 name="rentalCost"
@@ -124,7 +125,7 @@ export default function WaitList() {
               />
             </div>
             <br />
-            <div className="field half">
+            <div className="field">
               <label>Wage payment frequency</label>
               <br />
               <br />
@@ -146,7 +147,7 @@ export default function WaitList() {
             <br />
             <br />
             <h2>3 - Identification</h2>
-            <div className="field half">
+            <div className="field ">
               <label>Email</label>
               <input
                 name="email"
