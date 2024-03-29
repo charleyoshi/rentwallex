@@ -24,7 +24,7 @@ export default function ForPropertyManager() {
   const scrollHandler = (elmRef) => {
     console.log(elmRef);
     window.scrollTo({ top: elmRef.current.offsetTop, behavior: "smooth" });
-};
+  };
 
   const [formData, setFormData] = useState(resetForm);
 
@@ -130,20 +130,17 @@ export default function ForPropertyManager() {
           </div>
         </section>
       </div>
-
-
-      <section className="three">
+      <section className="three" ref={requestDemo}>
         <div className="sectionWrapper">
+
           <div className="container left">
             <h1> Get Started Today!</h1>
-
             <br />
             {/* <br /> */}
             <h3>
               Join the growing community of property managers and landlords who
-              are revolutionizing rent collection with Rentwallex. Streamline
-              your operations, improve cash flow, and enhance tenant
-              satisfaction.
+              are revolutionizing rent collection with Rentwallex. Streamline your
+              operations, improve cash flow, and enhance tenant satisfaction.
             </h3>
             <br />
             <br />
@@ -155,8 +152,8 @@ export default function ForPropertyManager() {
             <h4>
               Our dedicated support team is here to help. If you have any
               questions or need assistance, please don&#39;t hesitate to contact
-              us. We&#39;re committed to providing exceptional service and
-              support to all our property managers and landlords.
+              us. We&#39;re committed to providing exceptional service and support
+              to all our property managers and landlords.
             </h4>
             <br />
             <br />
@@ -199,6 +196,7 @@ export default function ForPropertyManager() {
                   onChange={handleChange}
                   required
                 />
+
               </div>
               {/* <br />
             <br /> */}
@@ -228,31 +226,34 @@ export default function ForPropertyManager() {
                 <label>Province</label>
                 <br />
                 <br />
+                <div className="form-dropdown">
+                  <select
+                    value={formData.locationProvice}
+                    onChange={(event) =>
+                      setFormData({
+                        ...formData,
+                        locationProvice: event.target.value,
+                      })
+                    }
+                  >
+                    <option value="Ontario"> Ontario</option>
+                    <option value="Newfoundland and Labrador">
+                      Newfoundland and Labrador
+                    </option>
+                    <option value="Prince Edward Island">
+                      Prince Edward Island
+                    </option>
+                    <option value="Nova Scotia">Nova Scotia</option>
+                    <option value="New Brunswick">New Brunswick</option>
+                    <option value="Quebec">Quebec</option>
+                    <option value="Manitoba">Manitoba</option>
+                    <option value="Saskatchewan">Saskatchewan</option>
+                    <option value="Alberta">Alberta</option>
+                    <option value="British Columbia">British Columbia</option>
 
-                <select
-                  value={formData.locationProvice}
-                  onChange={(event) =>
-                    setFormData({
-                      ...formData,
-                      locationProvice: event.target.value,
-                    })
-                  }
-                >
-                  <option value="Ontario"> Ontario</option>
-                  <option value="Newfoundland and Labrador">
-                    Newfoundland and Labrador
-                  </option>
-                  <option value="Prince Edward Island">
-                    Prince Edward Island
-                  </option>
-                  <option value="Nova Scotia">Nova Scotia</option>
-                  <option value="New Brunswick">New Brunswick</option>
-                  <option value="Quebec">Quebec</option>
-                  <option value="Manitoba">Manitoba</option>
-                  <option value="Saskatchewan">Saskatchewan</option>
-                  <option value="Alberta">Alberta</option>
-                  <option value="British Columbia">British Columbia</option>
-                </select>
+                  </select>
+                  <div className="arrow"></div>
+                </div>
               </div>
               {/* <br />
             <br /> */}
@@ -297,23 +298,26 @@ export default function ForPropertyManager() {
                 <label>What property management software do you use?</label>{" "}
                 <br />
                 <br />
-                <select
-                  value={formData.propertyManagementSoftware}
-                  onChange={(event) =>
-                    setFormData({
-                      ...formData,
-                      propertyManagementSoftware: event.target.value,
-                    })
-                  }
-                >
-                  <option value="buildingstack">Building Stack</option>
-                  <option value="buildium">Buildium</option>
-                  <option value="capterra">Capterra</option>
-                  <option value="doorloop">Doorloop</option>
-                  <option value="totalmanagement">Total management</option>
-                  <option value="notusingany">Not using any</option>
-                  <option value="others">Others</option>
-                </select>
+                <div className="form-dropdown">
+                  <select
+                    value={formData.propertyManagementSoftware}
+                    onChange={(event) =>
+                      setFormData({
+                        ...formData,
+                        propertyManagementSoftware: event.target.value,
+                      })
+                    }
+                  >
+                    <option value="buildingstack">Building Stack</option>
+                    <option value="buildium">Buildium</option>
+                    <option value="capterra">Capterra</option>
+                    <option value="doorloop">Doorloop</option>
+                    <option value="totalmanagement">Total management</option>
+                    <option value="notusingany">Not using any</option>
+                    <option value="others">Others</option>
+                  </select>
+                  <div className="arrow"></div>
+                </div>
               </div>
 
               <br />
@@ -322,8 +326,7 @@ export default function ForPropertyManager() {
               <Button text="Submit" />
             </form>
           </div>
-        </div>
-      </section>
+        </div></section>
     </div>
   );
 }

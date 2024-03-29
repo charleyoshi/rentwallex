@@ -13,7 +13,6 @@ import UseCase from './pages/UseCase';
 import Privacy from './pages/Privacy';
 import TermAndAgreement from './pages/TermAndAgreement';
 
-
 function App() {
   
   return (
@@ -31,7 +30,6 @@ function App() {
             <Route path ="TermAndAgreement" element ={<TermAndAgreement/>}/>
             <Route path="404" element={<NotFound />} />
             <Route path="*" element={<Navigate replace to="/404" />} />
-            
           </Routes>
         </div>
         <Footer />
