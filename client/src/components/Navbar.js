@@ -46,7 +46,7 @@ export default function Navbar(props) {
             <span className="icon-menu material-symbols-rounded">menu</span>
           </div>
           <div className={`menu-items ${menuOpen ? "open" : ""}`}>
-            <Link to="/who-we-are"style={{ fontWeight: 'bold' }}>Who we are</Link>
+            <Link to="/who-we-are" style={{ fontWeight: 'bold' }}>Who we are</Link>
             <Link to="/usecase" style={{ fontWeight: 'bold' }}>Use case</Link>
             <Link to="/ourmap" style={{ fontWeight: 'bold' }}>Our Map</Link>
             <Link to="/for-property-manager" style={{ fontWeight: 'bold' }}>For Property Managers</Link>
