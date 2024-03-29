@@ -20,10 +20,10 @@ export default function Footer() {
             <img src={RentwallexLogo} alt="Rentwallex Logo" style={logoStyle} />
           </Link>
           <div>
-            <a href="/privacy">Privacy</a>
+            <Link to="/Privacy">Privacy</Link>
           </div>
           <div>
-            <a href="/terms">Terms and Agreement</a>
+            <Link to="/TermAndAgreement">Terms and Agreement</Link>
           </div>
         </div>
         <br className='linebreak' />

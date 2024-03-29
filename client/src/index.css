@@ -1045,3 +1045,19 @@ footer {
 
 
 }
+
+/* For Privacy */
+.blue-link {
+  color: blue;
+}
+
+.textWrapper{
+  max-width: 78%;
+      margin: auto;
+      padding-left: 25px;
+      padding-right: 25px;
+}
+
+.tabbed {
+  padding-left: 40px; 
+}
