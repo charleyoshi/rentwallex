@@ -7,7 +7,7 @@ export default function WhoWeAre() {
     <div className='whoweare'>
       {/* todo: change Navbar content if needed */}
       <Navbar />
-      <Article />
+      <Article forWhoWeAre={true} />
 
 
 
