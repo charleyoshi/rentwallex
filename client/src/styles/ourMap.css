@@ -1,5 +1,16 @@
 .mapPageTopBanner {
-    background-color: var(--secondary-background);
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    margin: auto;
+    width: 78%;
+
     display: flex;
     align-items: center;
     gap: 18px;
@@ -8,21 +19,21 @@
 
     .left {
         span {
-            font-size: 540%;
+            font-size: 640%;
             display: flex;
             vertical-align: middle;
-            color: black;
+            color: var(--primary-text);
         }
     }
 
     .right {
         text-align: left;
-        max-width: 50%;
+        /* max-width: 50%; */
 
         span {
-            font-size: 140%;
-            font-weight: 300;
-            color: black;
+            font-size: 260%;
+            font-weight: 400;
+            color: var(--primary-text);
         }
     }
 }
@@ -42,6 +53,7 @@
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
         overflow-y: auto;
         height: 100vh;
+
         .title {
             margin: 16px auto;
             font-weight: 600;
@@ -49,16 +61,17 @@
     }
 
     .right {
-        border-radius: 18px;
+        border-radius: 6px;
         overflow: hidden;
-        border:  #0050FF solid 4px;
+        border: var(--brand-green) solid 2px;
         box-shadow: 10px 3px 10px rgba(9, 7, 7, 0.2);
         width: 70%;
+
         * {
             transition: none;
         }
     }
-    
+
 }
 
 
@@ -69,12 +82,15 @@
     padding: 32px;
     cursor: pointer;
 
-    &:hover {
-        border:  #0050FF solid 1px;
+    &:hover,
+    .hover {
+        border: var(--brand-blue) solid 1px;
+
         .one {
-            color: #0050FF;
+            color: var(--brand-blue);
         }
     }
+
     .one {
         font-size: larger;
         font-weight: 600;
@@ -90,7 +106,7 @@
         gap: 6px;
         font-size: small;
         color: grey;
-       
+
     }
 
     .three {
@@ -100,8 +116,8 @@
         font-size: small;
 
         .cost {
-            background-color: #0050FF;
-            color: white;
+            background-color: var(--secondary-background);
+            color: var(--navyblue);
             border-radius: 50px;
             padding: 6px 12px;
             display: flex;
@@ -116,23 +132,27 @@
             display: flex;
             align-items: center;
             font-weight: 600;
-            color: black;
-            border-bottom: solid #0050FF 2px;
+            color: var(--navyblue);
+            border-bottom: solid var(--brand-blue) 2px;
         }
     }
 }
 
 
 .pin {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    border: white solid 2px;
-    background-color: darkgreen;
+    border: var(--brand-blue) solid 4px;
+    background-color: var(--brand-green);
     color: white;
     font-size: larger;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 
+    &:hover {
+        border: var(--brand-blue) solid 4px;
+        background-color: var(--brand-blue);
+    }
 }

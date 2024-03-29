@@ -1,26 +1,43 @@
 import React from 'react'
 
-export default function RentItem() {
+export default function RentItem(props) {
+    const streetNumber = props.item.streetNumber
+    const route = props.item.route
+    const city = props.item.city
+    const province = props.item.province
+    const rentalCost = props.item.rentalCost
+    const wagePaymentFrequency = props.item.wagePaymentFrequency
+    const propertyManagerName = props.item.propertyManagerName
+
+    const isDetail = props.isDetail
+
     return (
-        <div className='rentItem'>
+        <div className={`rentItem ${props.focus ? ".hover" : " "}`} onClick={() => props.show(props.item, props.id)} >
 
-            <div className='row one'>2004-70 Gloucester Street, Ottawa</div>
-            <div className='row two'>
+            <div className='row one'>{streetNumber} {route}, {city}, {province}</div>
 
-                {/* <span className="icon material-symbols-rounded">bed</span>
-                <span className='text'>2 bedrooms</span>
-                &nbsp;
-                <span className="icon material-symbols-rounded">payments</span>
-                <span className='text'>bi-weekly</span> */}
+            <br />
+            {isDetail &&
+                <>
+                    <div className='row two'>
+                        <span className="icon material-symbols-rounded">domain</span>
+                        <span className='text'>{propertyManagerName}</span>
+                    </div>
+                    <div className='row two'>
+                        <span className="icon material-symbols-rounded">payments</span>
+                        <span className='text'>{wagePaymentFrequency}</span>
+                    </div>
+                </>
+            }
 
-
-            </div>
             <div className='row three'>
                 <div className='cost'>
-                    <span className='money'>2100.00 $ </span>
+                    <span className='money'>{rentalCost} $ </span>
                     <span className='perMonth'>&nbsp;/ Month</span>
                 </div>
-                <div className='btn'>Details</div>
+                {!isDetail &&
+                    <div className='btn'>Details</div>
+                }
             </div>
         </div>
     )
