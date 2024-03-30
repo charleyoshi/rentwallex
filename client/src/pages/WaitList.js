@@ -42,6 +42,8 @@ export default function WaitList() {
   const updateAddress = (key, value) => {
     setFormData((prevFormData) => ({ ...prevFormData, [key]: value }));
   };
+  
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -178,20 +180,23 @@ export default function WaitList() {
               </h3>
               <br />
               <br />
-              <select
-                value={formData.wagePaymentFrequency}
-                onChange={(event) =>
-                  setFormData({
-                    ...formData,
-                    wagePaymentFrequency: event.target.value,
-                  })
-                }
-              >
-                <option value="Weekly">Weekly</option>
-                <option value="Bi-Weekly">Bi-Weeky</option>
-                <option value="Monthly">Monthly</option>
-                <option value="None">None</option>
-              </select>
+              <div className="form-dropdown">
+                                <select
+                                    value={formData.wagePaymentFrequency}
+                                    onChange={(event) =>
+                                        setFormData({
+                                            ...formData,
+                                            wagePaymentFrequency: event.target.value,
+                                        })
+                                    }
+                                >
+                                    <option value="Weekly">Weekly</option>
+                                    <option value="Bi-Weekly">Bi-Weeky</option>
+                                    <option value="Monthly">Monthly</option>
+                                    <option value="None">None</option>
+                                </select>
+                                <div className="arrow"></div>
+                        </div>
             </div>
             <br />
             <br />
@@ -216,22 +221,23 @@ export default function WaitList() {
               <br />
               <br />
               <select
-                value={formData.employmentStatus}
-                onChange={(event) =>
-                  setFormData({
-                    ...formData,
-                    employmentStatus: event.target.value,
-                  })
-                }
-              >
-                <option value="fulltimeemployee">Full-time employee</option>
-                <option value="partimeemployee">Part-time employee</option>
-                <option value="independentcontractor">
-                  Independent contractor
-                </option>
-                <option value="retired">Retired</option>
-                <option value="unemployed">Unemployed</option>
-              </select>
+               <div className="form-dropdown">
+                                <select value={formData.employmentStatus} onChange={(event) => setFormData({ ...formData, employmentStatus: event.target.value })}>
+                                    <option value="fulltimeemployee">Full-time employee</option>
+                                    <option value="partimeemployee">Part-time employee</option>
+                                    <option value='independentcontractor'>Independent contractor</option>
+                                    <option value="retired">Retired</option>
+                                    <option value="unemployed">Unemployed</option>
+                                </select>
+                                <div className="arrow"></div>
+                            </div>
+
+                        <br /><br /><br />
+                        <Button text="Submit" />
+                    </form>
+
+                </div>
+
             </div>
           </form>
         </div>

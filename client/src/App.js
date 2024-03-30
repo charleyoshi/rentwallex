@@ -10,7 +10,8 @@ import WhoWeAre from './pages/WhoWeAre';
 import OurMap from './pages/OurMap';
 import ForPropertyManager from './pages/ForPropertyManager';
 import UseCase from './pages/UseCase';
-
+import Privacy from './pages/Privacy';
+import TermAndAgreement from './pages/TermAndAgreement';
 
 function App() {
   
@@ -25,6 +26,8 @@ function App() {
             <Route path="usecase" element={<UseCase />} />
             <Route path="ourmap" element={<OurMap />} />
             <Route path="for-property-manager" element={<ForPropertyManager />} />
+            <Route path ="Privacy" element ={<Privacy />} />
+            <Route path ="TermAndAgreement" element ={<TermAndAgreement/>}/>
             <Route path="404" element={<NotFound />} />
             <Route path="*" element={<Navigate replace to="/404" />} />
           </Routes>

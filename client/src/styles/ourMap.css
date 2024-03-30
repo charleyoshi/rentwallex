@@ -29,7 +29,6 @@
     .right {
         text-align: left;
         /* max-width: 50%; */
-
         span {
             font-size: 260%;
             font-weight: 400;
@@ -72,6 +71,55 @@
         }
     }
 
+}
+
+
+.place-dropdowns {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    gap: 10px;
+
+}
+
+.dropdown {
+    position: relative;
+    
+    flex-grow: 1; /* Distribute available space equally among dropdowns */
+    max-width: calc(50% - 10px); 
+}
+
+.form-dropdown {
+    position: relative;
+    
+    flex-grow: 1;
+}
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 12px 10px 12px 20px; /* Adjust padding */
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%; /* Let the width be determined by content */
+    outline: none;
+    color: var(--navyblue);
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #555; /* Change arrow color */
+    pointer-events: none;
 }
 
 
@@ -156,3 +204,46 @@
         background-color: var(--brand-blue);
     }
 }
+
+
+@media only screen and (max-width: 768px) {
+    .mapPageTopBanner {
+        padding-bottom: 24px;
+        /* flex-direction: column; Revert to row layout for larger screens */
+
+        .left {
+            /* width: 100%; */
+            span {
+                font-size: 200%;
+            }   
+        }
+        .right {
+            
+            span {
+                font-size: 100%;
+
+                .linebreak_remove_for_mobile {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .mapContentWrapper {
+        flex-direction: column;
+        .right {
+            order: -1;
+            width: 100%; 
+            
+            border: none;
+        }
+
+        .left {
+            width: 100%;
+            
+        }
+    }
+
+
+}
+
