@@ -3,18 +3,32 @@ import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 import banner_placeholder from "../assets/banner_placeholder2.png";
 
+import { initAutocomplete } from "../helpers/autocompleteAddress.js";
+import axios from "axios";
+
 const resetForm = {
-  propertyAddress: "",
+  streetNumber: "",
+  route: "",
+  city: "",
+  province: "",
+  country: "",
+  postalCode: "",
+  lat: null,
+  lng: null,
   propertyManagerName: "",
   rentalCost: "",
-  wagePaymentFrequency: "Weekly",
+  wagePaymentFrequency: "",
   email: "",
   employmentStatus: "fulltimeemployee",
 };
 
 export default function WaitList() {
+  const addressRef = useRef(null);
+  const addressNextRef = useRef(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    initAutocomplete(addressRef.current, addressNextRef.current, updateAddress);
   }, []);
 
   const [formData, setFormData] = useState(resetForm);
@@ -22,13 +36,35 @@ export default function WaitList() {
   const handleChange = (e) => {
     const key = e.target.name;
     const value = e.target.value;
-    setFormData({ ...formData, [key]: value });
+    setFormData((prevFormData) => ({ ...prevFormData, [key]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const updateAddress = (key, value) => {
+    setFormData((prevFormData) => ({ ...prevFormData, [key]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-    alert("All inputs are valid");
+
+    try {
+      const response = await axios.post(
+        `https://rentwallex-server.onrender.com/api/waitlist`,
+        { ...formData }
+      );
+      console.log(response);
+      setFormData(resetForm);
+      document.querySelector("#manualAddress").value = "";
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data); // e.g. invalid address
+      } else {
+        console.log(error.message);
+      }
+    }
+
+    // console.log(formData)
+
     // if (handleValidation()) {
     //     alert("Form submitted");
     // } else {
@@ -45,7 +81,6 @@ export default function WaitList() {
         <br />
       </div>
       <div className="pageWrapper">
-        {/* <div className="bannerWaitlist"> </div> */}
         <div className="leftAbove">
           <h3>Join Rentwallex community to revolutionize E rent payment</h3>
           <br />
@@ -198,11 +233,6 @@ export default function WaitList() {
                 <option value="unemployed">Unemployed</option>
               </select>
             </div>
-
-            <br />
-            <br />
-            <br />
-            <Button text="Submit" />
           </form>
         </div>
       </div>
