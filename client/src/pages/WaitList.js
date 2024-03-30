@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
+import banner_placeholder from "../assets/banner_placeholder2.png";
 
 const resetForm = {
   propertyAddress: "",
@@ -38,6 +39,11 @@ export default function WaitList() {
   return (
     <div className="waitlist">
       <Navbar />
+      <div className="headlineBanner">
+        <img src={banner_placeholder} alt="Use Case Banner" />
+        <br />
+        <br />
+      </div>
       <div className="pageWrapper">
         {/* <div className="bannerWaitlist"> </div> */}
         <div className="leftAbove">
@@ -88,10 +94,12 @@ export default function WaitList() {
           <br />
           <br />
           <form onSubmit={(e) => handleSubmit(e)}>
-            <h2>1 - Address</h2>
+            {/* <h2>1 - Address</h2> */}
 
             <div className="field">
-              <label>Property address</label>
+              <h3>
+                <label>Property address</label>
+              </h3>
               <input
                 name="propertyAddress"
                 type="text"
@@ -102,7 +110,9 @@ export default function WaitList() {
             </div>
             <br />
             <div className="field">
-              <label>Property manager name</label>
+              <h3>
+                <label>Property manager name</label>
+              </h3>
               <input
                 name="propertyManagerName"
                 type="text"
@@ -113,9 +123,11 @@ export default function WaitList() {
             </div>
             <br />
             <br />
-            <h2>2 - Lease</h2>
+            {/* <h2>2 - Lease</h2> */}
             <div className="field">
-              <label>Rental cost</label>
+              <h3>
+                <label>Rental cost</label>
+              </h3>
               <input
                 name="rentalCost"
                 type="number"
@@ -126,7 +138,9 @@ export default function WaitList() {
             </div>
             <br />
             <div className="field">
-              <label>Wage payment frequency</label>
+              <h3>
+                <label>Wage payment frequency</label>
+              </h3>
               <br />
               <br />
               <select
@@ -146,9 +160,11 @@ export default function WaitList() {
             </div>
             <br />
             <br />
-            <h2>3 - Identification</h2>
+            {/* <h2>3 - Identification</h2> */}
             <div className="field ">
-              <label>Email</label>
+              <h3>
+                <label>Email</label>
+              </h3>
               <input
                 name="email"
                 type="email"
@@ -159,7 +175,9 @@ export default function WaitList() {
             </div>
             <br />
             <div className="field">
-              <label>Employment Status</label>
+              <h3>
+                <label>Employment Status</label>
+              </h3>
               <br />
               <br />
               <select

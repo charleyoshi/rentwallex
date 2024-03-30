@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import dummy_picture from "../assets/picture_placeholder.png";
 
@@ -35,6 +35,13 @@ export default function ForPropertyManager() {
     alert("All inputs are valid");
   };
 
+  const scrollToDemoSection = () => {
+    const demoSection = document.getElementById("demoSection");
+    if (demoSection) {
+      demoSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="forPropertyManager">
       <Navbar forPage="home" />
@@ -50,9 +57,10 @@ export default function ForPropertyManager() {
               <br />
               Join our growing network of satisfied partners today.
             </h4>
-            <Link to="todo">
+            {/* <Link to="#demoSection">
               <Button text="Request a demo" />
-            </Link>
+            </Link> */}
+            <Button text="Request a demo" action={scrollToDemoSection} />
           </div>
           <br className="linebreak" />
           <div className="right">
@@ -130,7 +138,7 @@ export default function ForPropertyManager() {
           <div className="container left">
             <h1> Get Started Today!</h1>
             <br />
-            {/* <br /> */}
+            <br />
             <h3>
               Join the growing community of property managers and landlords who
               are revolutionizing rent collection with Rentwallex. Streamline
@@ -166,14 +174,16 @@ export default function ForPropertyManager() {
             <br />
             <h4>Join our growing network of satisfied partners today.</h4>
           </div>
-          <div className="container right">
+          <div className="container right" id="demoSection">
             <form onSubmit={(e) => handleSubmit(e)}>
               <h1>Sign up</h1>
               <br />
               <br />
-              <h2>1 - Identification</h2>
+              {/* <h2>1 - Identification</h2> */}
               <div className="field">
-                <label>First name</label>
+                <h3>
+                  <label>First name</label>
+                </h3>
                 <input
                   name="firstName"
                   type="text"
@@ -182,8 +192,11 @@ export default function ForPropertyManager() {
                   required
                 />
               </div>
+              {/* <br /> */}
               <div className="field">
-                <label>Last name</label>
+                <h3>
+                  <label>Last name</label>
+                </h3>
                 <input
                   name="lastName"
                   type="text"
@@ -192,11 +205,12 @@ export default function ForPropertyManager() {
                   required
                 />
               </div>
-              {/* <br />
-            <br /> */}
-              <h2>2 - Business information</h2>
+              <br />
+              {/* <h2>2 - Business information</h2> */}
               <div className="field">
-                <label>Business name</label>
+                <h3>
+                  <label>Business name</label>
+                </h3>
                 <input
                   name="businessName"
                   type="text"
@@ -205,9 +219,10 @@ export default function ForPropertyManager() {
                   required
                 />
               </div>
-              <br />
               <div className="field">
-                <label>City</label>
+                <h3>
+                  <label>City</label>
+                </h3>
                 <input
                   name="locationCity"
                   type="text"
@@ -217,10 +232,10 @@ export default function ForPropertyManager() {
                 />
               </div>
               <div className="field">
-                <label>Province</label>
+                <h3>
+                  <label>Province</label>
+                </h3>
                 <br />
-                <br />
-
                 <select
                   value={formData.locationProvice}
                   onChange={(event) =>
@@ -246,11 +261,12 @@ export default function ForPropertyManager() {
                   <option value="British Columbia">British Columbia</option>
                 </select>
               </div>
-              {/* <br />
-            <br /> */}
-              <h2>3 - Contact</h2>
+              <br />
+              {/* <h2>3 - Contact</h2> */}
               <div className="field">
-                <label>Email</label>
+                <h3>
+                  <label>Email</label>
+                </h3>
                 <input
                   name="email"
                   type="email"
@@ -260,7 +276,9 @@ export default function ForPropertyManager() {
                 />
               </div>
               <div className="field">
-                <label>Phone Number</label>
+                <h3>
+                  <label>Phone Number</label>
+                </h3>
                 <input
                   name="phoneNumber"
                   type="tel"
@@ -270,13 +288,12 @@ export default function ForPropertyManager() {
                   required
                 />
               </div>
-              {/* <br />
-            <br /> */}
-              <h2>4 - Business scale</h2>
+              <br />
+              {/* <h2>4 - Business scale</h2> */}
               <div className="field">
-                <label>Total units managed in portfolio</label>
-                {/* <br />
-                <br /> */}
+                <h3>
+                  <label>Total units managed in portfolio</label>
+                </h3>
                 <input
                   name="totalUnitsManagedInPortfolio"
                   type="number"
@@ -286,8 +303,9 @@ export default function ForPropertyManager() {
                 />
               </div>
               <div className="field">
-                <label>What property management software do you use?</label>{" "}
-                <br />
+                <h3>
+                  <label>What property management software do you use?</label>{" "}
+                </h3>
                 <br />
                 <select
                   value={formData.propertyManagementSoftware}
