@@ -526,6 +526,15 @@ img {
 
 
 /* Wait List Page */
+.waitlist .bannerWaitlist {
+  img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+  }
+  
+}
 .waitlist .pageWrapper {
   padding: 28px 15px;
   max-width: 1200px;
@@ -772,12 +781,8 @@ img {
     position: relative;
     width: 45%;
     height: 70%;
+    align-items: start;
 
-    h1 {
-      font-size: 260%;
-      font-weight: 600;
-      line-height: 5rem;
-    }
 
     h1 {
       font-size: 260%;
@@ -945,20 +950,24 @@ footer {
   }
 
   .waitlist {
+    .bannerWaitlist {
+      img {
+        position: static;
+      }
+    }
+  }
+
+  .waitlist {
     .pageWrapper {
       flex-direction: column;
 
-      .left {
+      .leftAbove {
         width: 100%;
         margin: auto;
         position: static;
       }
 
-      .leftTwo {
-        width: 100%;
-        margin: auto;
-        position: static;
-      }
+      
 
       .right {
         width: 100%;
@@ -983,11 +992,13 @@ footer {
 
   }
 
-  .forPropertyManager {
-    section.three .right {
-      width: 100%;
-      margin: 0 6%;
-      position: static;
+  .forPropertyManager .three {
+    .sectionWrapper {
+      flex-direction: column;
+      .right {
+        width: 110%;
+        margin: auto;
+        position: static;
 
       h1 {
         font-size: 180%;
@@ -1032,6 +1043,7 @@ footer {
       }
 
     }
+  }
   }
 
   footer .container {
