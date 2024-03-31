@@ -142,12 +142,11 @@ export default function ForPropertyManager() {
               your operations, improve cash flow, and enhance tenant
               satisfaction.
             </h3>
-            <br />
-            <br />
+            {/* <br /> */}
+            {/* <br /> */}
             <br />
             <br />
             <h3>Have Questions ?</h3>
-            <br />
             <br />
             <h4>
               Our dedicated support team is here to help. If you have any
@@ -157,10 +156,7 @@ export default function ForPropertyManager() {
             </h4>
             <br />
             <br />
-            <br />
-            <br />
             <h4>Trusted by Property Managers and Landlords</h4>
-            <br />
             <br />
             <h4>
               Rentwallex is proud to partner with leading property managers and
