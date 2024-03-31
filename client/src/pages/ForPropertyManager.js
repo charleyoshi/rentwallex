@@ -130,17 +130,17 @@ export default function ForPropertyManager() {
           </div>
         </section>
       </div>
-      <section className="three" ref={requestDemo}>
+      <section className="three">
         <div className="sectionWrapper">
-
           <div className="container left">
             <h1> Get Started Today!</h1>
             <br />
             {/* <br /> */}
             <h3>
               Join the growing community of property managers and landlords who
-              are revolutionizing rent collection with Rentwallex. Streamline your
-              operations, improve cash flow, and enhance tenant satisfaction.
+              are revolutionizing rent collection with Rentwallex. Streamline
+              your operations, improve cash flow, and enhance tenant
+              satisfaction.
             </h3>
             <br />
             <br />
@@ -152,8 +152,8 @@ export default function ForPropertyManager() {
             <h4>
               Our dedicated support team is here to help. If you have any
               questions or need assistance, please don&#39;t hesitate to contact
-              us. We&#39;re committed to providing exceptional service and support
-              to all our property managers and landlords.
+              us. We&#39;re committed to providing exceptional service and
+              support to all our property managers and landlords.
             </h4>
             <br />
             <br />
@@ -171,14 +171,15 @@ export default function ForPropertyManager() {
             <br />
             <h4>Join our growing network of satisfied partners today.</h4>
           </div>
-          <div className="container right">
+          <div className="container right" ref={requestDemo}>
             <form onSubmit={(e) => handleSubmit(e)}>
               <h1>Sign up</h1>
               <br />
               <br />
-              <h2>1 - Identification</h2>
               <div className="field">
-                <label>First name</label>
+                <h3>
+                  <label>First name</label>
+                </h3>
                 <input
                   name="firstName"
                   type="text"
@@ -188,7 +189,9 @@ export default function ForPropertyManager() {
                 />
               </div>
               <div className="field">
-                <label>Last name</label>
+                <h3>
+                  <label>Last name</label>
+                </h3>
                 <input
                   name="lastName"
                   type="text"
@@ -196,13 +199,13 @@ export default function ForPropertyManager() {
                   onChange={handleChange}
                   required
                 />
-
               </div>
               {/* <br />
             <br /> */}
-              <h2>2 - Business information</h2>
               <div className="field">
-                <label>Business name</label>
+                <h3>
+                  <label>Business name</label>
+                </h3>
                 <input
                   name="businessName"
                   type="text"
@@ -211,9 +214,10 @@ export default function ForPropertyManager() {
                   required
                 />
               </div>
-              <br />
               <div className="field">
-                <label>City</label>
+                <h3>
+                  <label>City</label>
+                </h3>
                 <input
                   name="locationCity"
                   type="text"
@@ -223,7 +227,9 @@ export default function ForPropertyManager() {
                 />
               </div>
               <div className="field">
-                <label>Province</label>
+                <h3>
+                  <label>Province</label>
+                </h3>
                 <br />
                 <br />
                 <div className="form-dropdown">
@@ -250,16 +256,16 @@ export default function ForPropertyManager() {
                     <option value="Saskatchewan">Saskatchewan</option>
                     <option value="Alberta">Alberta</option>
                     <option value="British Columbia">British Columbia</option>
-
                   </select>
                   <div className="arrow"></div>
                 </div>
               </div>
               {/* <br />
             <br /> */}
-              <h2>3 - Contact</h2>
               <div className="field">
-                <label>Email</label>
+                <h3>
+                  <label>Email</label>
+                </h3>
                 <input
                   name="email"
                   type="email"
@@ -269,7 +275,9 @@ export default function ForPropertyManager() {
                 />
               </div>
               <div className="field">
-                <label>Phone Number</label>
+                <h3>
+                  <label>Phone Number</label>
+                </h3>
                 <input
                   name="phoneNumber"
                   type="tel"
@@ -281,9 +289,10 @@ export default function ForPropertyManager() {
               </div>
               {/* <br />
             <br /> */}
-              <h2>4 - Business scale</h2>
               <div className="field">
-                <label>Total units managed in portfolio</label>
+                <h3>
+                  <label>Total units managed in portfolio</label>
+                </h3>
                 {/* <br />
                 <br /> */}
                 <input
@@ -295,7 +304,9 @@ export default function ForPropertyManager() {
                 />
               </div>
               <div className="field">
-                <label>What property management software do you use?</label>{" "}
+                <h3>
+                  <label>What property management software do you use?</label>{" "}
+                </h3>
                 <br />
                 <br />
                 <div className="form-dropdown">
@@ -326,7 +337,8 @@ export default function ForPropertyManager() {
               <Button text="Submit" />
             </form>
           </div>
-        </div></section>
+        </div>
+      </section>
     </div>
   );
 }
