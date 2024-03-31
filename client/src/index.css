@@ -80,7 +80,7 @@ img {
 
 .container {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
 
   width: 100%;
@@ -781,12 +781,8 @@ img {
     position: relative;
     width: 45%;
     height: 70%;
+    align-items: start;
 
-    h1 {
-      font-size: 260%;
-      font-weight: 600;
-      line-height: 5rem;
-    }
 
     h1 {
       font-size: 260%;
