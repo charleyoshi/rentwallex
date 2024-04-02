@@ -62,7 +62,7 @@
     .right {
         border-radius: 6px;
         overflow: hidden;
-        border: var(--brand-green) solid 2px;
+        border: var(--navyblue) solid 2px;
         box-shadow: 10px 3px 10px rgba(9, 7, 7, 0.2);
         width: 70%;
 
