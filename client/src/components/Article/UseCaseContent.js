@@ -1,13 +1,13 @@
 import React from 'react'
 import banner_placeholder from '../../assets/banner_placeholder2.png'
-
+import usecasepage_banner from '../../assets/usecasepage_banner.png'
 
 export default function UseCaseContent() {
     return (
         <div className='useCaseContent'>
 
             <div className='headlineBanner'>
-                <img src={banner_placeholder} alt="Use Case Banner" />
+                <img src={usecasepage_banner} alt="Use case page banner" />
                 <h1>Transforming Rent Payments for Affordability, Convenience, and Financial Well-being</h1>
                 <br /><br />
             </div>

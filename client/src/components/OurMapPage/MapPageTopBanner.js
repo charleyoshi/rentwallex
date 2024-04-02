@@ -1,5 +1,5 @@
 import React from 'react'
-import banner_placeholder from '../../assets/banner_placeholder2.png'
+import mappage_banner from '../../assets/mappage_banner.png'
 
 export default function MapPageTopBanner() {
     return (
@@ -13,7 +13,7 @@ export default function MapPageTopBanner() {
         // </div>
 
         <div className='headlineBanner'>
-            <img src={banner_placeholder} alt="Our Map Banner" />
+            <img src={mappage_banner} alt="Map page banner" />
             <div className='mapPageTopBanner'>
                 <div className='left'>
                     <span>150+</span>
