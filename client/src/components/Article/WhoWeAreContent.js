@@ -28,12 +28,14 @@ export default function WhoWeAreContent() {
                 <br /><br />
 
                 <h3>Why Rentwallex?</h3><br />
-                <ol>
-                    <li>Community of Trust: Our community is more than just a collection of individuals; it's a collective force driving positive change.</li>
-                    <li>Empowerment: We believe in empowering our users to take control of their financial journey, providing tools (such as split rent payment and credit profile growth) that enhance financial well-being.</li>
-                    <li>Simplicity: Our user-friendly platform makes rent payments a breeze, with just a few clicks to set up and manage your payment plans.</li>
-                    <li>Innovation: At Rentwallex, we're committed to staying at the forefront of financial technology, bringing you cutting-edge solutions for a modern and stress-free renting experience.</li>
-                </ol>
+                <strong>Community of Trust: </strong>Our community is more than just a collection of individuals; it's a collective force driving positive change.
+                <br /><br />
+                <strong>Empowerment:</strong> We believe in empowering our users to take control of their financial journey, providing tools (such as split rent payment and credit profile growth) that enhance financial well-being.
+                <br /><br />
+                <strong>Simplicity:</strong> Our user-friendly platform makes rent payments a breeze, with just a few clicks to set up and manage your payment plans.
+                <br /><br />
+                <strong>Innovation:</strong> At Rentwallex, we're committed to staying at the forefront of financial technology, bringing you cutting-edge solutions for a modern and stress-free renting experience.
+
                 <br /><br />
             </div>
 
