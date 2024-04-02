@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/howItWorks.css";
-import dummy_picture from '../assets/picture_placeholder.png'
 import homepage_howitworks_1 from '../assets/homepage_howitworks_1.png'
 import homepage_howitworks_2 from '../assets/homepage_howitworks_2.png'
 import homepage_howitworks_3 from '../assets/homepage_howitworks_3.png'

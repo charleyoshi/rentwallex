@@ -1,11 +1,11 @@
 import React from 'react'
-import banner_placeholder from '../../assets/banner_placeholder2.png'
+import whowearepage_banner from '../../assets/whowearepage_banner.png'
 
 export default function WhoWeAreContent() {
     return (
         <div className='articleContent'>
             <div className='headlineBanner'>
-                <img src={banner_placeholder} alt="Use Case Banner" />
+                <img src={whowearepage_banner} alt="Who we are page banner" />
                 <h1>We are changing the way people think about rent payment</h1>
                 <br /><br />
             </div>
