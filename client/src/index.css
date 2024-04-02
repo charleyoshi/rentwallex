@@ -264,6 +264,18 @@ img {
         text-align: left;
         line-height: 1.6rem;
 
+        .iconWrapper {
+          width: 100%;
+          align-items: center;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          img {
+            height: 120px;
+            width: auto;
+          }
+        }
+
         p {
           text-align: center;
           font-size: 160%;
@@ -532,8 +544,9 @@ img {
     position: relative;
     object-fit: cover;
   }
-  
+
 }
+
 .waitlist .pageWrapper {
   padding: 28px 15px;
   max-width: 1200px;
@@ -966,7 +979,7 @@ footer {
         position: static;
       }
 
-      
+
 
       .right {
         width: 100%;
@@ -994,55 +1007,56 @@ footer {
   .forPropertyManager .three {
     .sectionWrapper {
       flex-direction: column;
+
       .right {
         width: 110%;
         margin: auto;
         position: static;
 
-      h1 {
-        font-size: 180%;
-      }
-
-      form {
-        h2 {
-          font-size: 120%;
+        h1 {
+          font-size: 180%;
         }
 
-        .field {
-
-          width: 100%;
-
-          input {
-            width: 100%;
+        form {
+          h2 {
+            font-size: 120%;
           }
-        }
-
-        .sameRow {
-          flex-direction: column;
 
           .field {
+
             width: 100%;
 
             input {
               width: 100%;
             }
           }
+
+          .sameRow {
+            flex-direction: column;
+
+            .field {
+              width: 100%;
+
+              input {
+                width: 100%;
+              }
+            }
+          }
         }
+
       }
 
-    }
+      .left {
+        position: static;
+        width: 110%;
+        margin: auto;
 
-    .left {
-      position: static;
-      width: 110%;
-      margin: auto;
+        h1 {
+          font-size: 180%;
+        }
 
-      h1 {
-        font-size: 180%;
       }
-
     }
-  }
   }
 
   footer .container {

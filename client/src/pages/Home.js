@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Button from '../components/Button'
 import HowItWorks from "../components/howItWorks";
 import dummy_picture from '../assets/picture_placeholder.png'
+import homepage_main_image from '../assets/homepage_main_image.png'
 import { Link } from 'react-router-dom';
 
 
@@ -66,8 +67,8 @@ export default function Home() {
           <div className="right">
             <img
               referrerPolicy="no-referrer"
-              src={dummy_picture}
-              alt="dummy_picture"
+              src={homepage_main_image}
+              alt="home page main image"
               width="100%"
             />
           </div>
