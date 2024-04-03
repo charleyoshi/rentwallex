@@ -97,7 +97,8 @@ export default function OurMap() {
   const onClickOneItem = (item, index) => {
     console.log("This is ->", index);
     // setSelectedItemIndex(index)
-    setSelectedItemIndex((old) => [...old, item]);
+    // setSelectedItemIndex((old) => [...old, item]);
+    setSelectedItemIndex([item]);
 
     showOneItem(item);
     focusMap(item);
