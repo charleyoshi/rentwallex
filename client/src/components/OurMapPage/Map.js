@@ -15,7 +15,7 @@ export default function Map(props) {
       // options={mapOptions}
       mapMinHeight="100vh"
       onGoogleApiLoaded={props.onGoogleApiLoaded}
-    // onChange={(map) => console.log('Map moved', map)}
+      onChange={props.handleBoundsChanged}
     >
       {coordinates.map((coordinate, index) => (
         <Pin
