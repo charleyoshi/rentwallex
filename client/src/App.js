@@ -24,7 +24,7 @@ function App() {
             <Route path="waitlist" element={<WaitList/>} />
             <Route path="who-we-are" element={<WhoWeAre />} />
             <Route path="usecase" element={<UseCase />} />
-            <Route path="ourmap" element={<OurMap />} />
+            <Route path="our-reach" element={<OurMap />} />
             <Route path="for-property-manager" element={<ForPropertyManager />} />
             <Route path ="Privacy" element ={<Privacy />} />
             <Route path ="TermAndAgreement" element ={<TermAndAgreement/>}/>
