@@ -2,6 +2,11 @@ import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 import dummy_picture from "../assets/picture_placeholder.png";
+import forpropertymanager_image from "../assets/forpropertymanager_image.jpg";
+import forpropertymanager_step1 from "../assets/forpropertymanager_step1.png"
+import forpropertymanager_step2 from "../assets/forpropertymanager_step2.png"
+import forpropertymanager_step3 from "../assets/forpropertymanager_step3.png"
+import forpropertymanager_step4 from "../assets/forpropertymanager_step4.png"
 
 const resetForm = {
   firstName: "",
@@ -63,7 +68,7 @@ export default function ForPropertyManager() {
           <div className="right">
             <img
               referrerPolicy="no-referrer"
-              src={dummy_picture}
+              src={forpropertymanager_image}
               alt="dummy_picture"
               width="100%"
             />
@@ -75,13 +80,12 @@ export default function ForPropertyManager() {
         <section className="two">
           <div className="howItWorks">
             <h1>How Rentwallex Works for Property Managers and Landlords</h1>
-            {/* <h2>We partner with property managers and registered landlords to make it easy to split your rent into manageable payments.</h2> */}
+            <br />
             <div className="steps">
-              {/* <br className="linebreak" />
-              <br className="linebreak" /> */}
               <div className="step">
-                {/* <p>Step 2</p> */}
-                <img src={dummy_picture} alt="dummy_picture" />
+                <div className="iconWrapper">
+                  <img src={forpropertymanager_step1} alt="Step 1" />
+                </div>
                 <h3>Invite Tenants</h3>
                 <h4>
                   Once your account is set up, invite your tenants to join
@@ -93,7 +97,10 @@ export default function ForPropertyManager() {
               <br className="linebreak" />
               <div className="step">
                 {/* <p>Step 3</p> */}
-                <img src={dummy_picture} alt="dummy_picture" />
+
+                <div className="iconWrapper">
+                  <img src={forpropertymanager_step2} alt="Step 2" />
+                </div>
                 <h3>Automated Rent Collection</h3>
                 <h4>
                   Sit back and relax as Rentwallex automates the rent collection
@@ -104,8 +111,9 @@ export default function ForPropertyManager() {
               <br className="linebreak" />
               <br className="linebreak" />
               <div className="step">
-                {/* <p>Step 4</p> */}
-                <img src={dummy_picture} alt="dummy_picture" />
+                <div className="iconWrapper">
+                  <img src={forpropertymanager_step3} alt="Step 3" />
+                </div>
                 <h3>Monitor Payments</h3>
                 <h4>
                   Keep track of rent payments and account activity through the
@@ -116,8 +124,9 @@ export default function ForPropertyManager() {
               <br className="linebreak" />
               <br className="linebreak" />
               <div className="step">
-                {/* <p>Step 5</p> */}
-                <img src={dummy_picture} alt="dummy_picture" />
+              <div className="iconWrapper">
+                  <img src={forpropertymanager_step4} alt="Step 4" />
+                </div>
                 <h3>Dedicated Support</h3>
                 <h4>
                   Enjoy personalized support from the Rentwallex team, ensuring
