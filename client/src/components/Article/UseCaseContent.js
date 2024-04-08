@@ -1,6 +1,5 @@
 import React from 'react'
-import banner_placeholder from '../../assets/banner_placeholder2.png'
-import usecasepage_banner from '../../assets/usecasepage_banner.png'
+import usecasepage_banner from '../../assets/usecasepage_banner.jpg'
 
 export default function UseCaseContent() {
     return (

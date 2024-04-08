@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Button from '../components/Button'
 import HowItWorks from "../components/howItWorks";
-import homepage_main_image from '../assets/homepage_main_image.png'
+import homepage_main_image from '../assets/homepage_main_image.jpg'
 import { Link } from 'react-router-dom';
 
 
