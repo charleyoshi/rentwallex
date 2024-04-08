@@ -30,16 +30,26 @@ export default function Footer() {
         <br className='linebreak' />
         {/* Right section */}
         <div className='right'>
-          <img src={linkedIn} alt="LinkedIn" style={iconsStyle} />
+          <Link target="_blank" to="https://www.linkedin.com/company/rentwallex/">
+            <img src={linkedIn} alt="LinkedIn" style={iconsStyle} />
+          </Link>
+
           <img src={facebook} alt="Facebook" style={iconsStyle} />
-          <img src={instagram} alt="Instagram" style={iconsStyle} />
-          <img src={twitter} alt="Twitter" style={iconsStyle} />
+
+          <Link target="_blank" to="https://www.instagram.com/rentwallex/">
+            <img src={instagram} alt="Instagram" style={iconsStyle} />
+          </Link>
+          <Link target='_blank' to="https://twitter.com/rentwallex">
+            <img src={twitter} alt="Twitter" style={iconsStyle} />
+          </Link>
+
+
         </div>
         <br className='linebreak' />
-        <br className='linebreak'/>
+        <br className='linebreak' />
       </div>
 
-      
+
     </footer>
   );
 }
