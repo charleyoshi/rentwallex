@@ -615,9 +615,9 @@ img {
     box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3);
 
     h1 {
-      font-size: 340%;
+      font-size: 180%;
       font-weight: 700;
-      line-height: 5rem;
+      line-height: 2rem;
     }
 
     h2 {
@@ -630,8 +630,8 @@ img {
       .field {
         margin: 10px auto;
 
-        mar label {
-          font-size: 110%;
+        label {
+          font-weight: normal;
           line-height: 1rem;
         }
 

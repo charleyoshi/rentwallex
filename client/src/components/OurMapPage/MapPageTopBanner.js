@@ -15,12 +15,12 @@ export default function MapPageTopBanner() {
         <div className='headlineBanner'>
             <img src={mappage_banner} alt="Map page banner" />
             <div className='mapPageTopBanner'>
-                <div className='left'>
+                {/* <div className='left'>
                     <span>150+</span>
-                </div>
+                </div> */}
                 <div className='right'>
                     <span>Renters from across Canada are
-                        <br />
+                        {/* <br /> */}
                         excited to try Rentwallex.</span>
                 </div>
             </div>

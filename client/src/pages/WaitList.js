@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
-import banner_placeholder from "../assets/banner_placeholder2.png";
+import waitlist_banner from "../assets/waitlist_banner.jpg";
 
 import { initAutocomplete } from "../helpers/autocompleteAddress.js";
 import axios from "axios";
@@ -77,7 +77,7 @@ export default function WaitList() {
       <Navbar />
       {/* <div className="bannerWaitlist"> </div> */}
       <div className="bannerWaitlist">
-        <img src={banner_placeholder} alt="WaitList Banner" />
+        <img src={waitlist_banner} alt="WaitList Banner" />
         <br />
         <br />
       </div>
@@ -132,7 +132,7 @@ export default function WaitList() {
           <form onSubmit={(e) => handleSubmit(e)}>
             <div className="field">
               <h3>
-                <label>Property address</label>
+                <label>Rental address</label>
               </h3>
               <input
                 ref={addressRef}
@@ -140,13 +140,15 @@ export default function WaitList() {
                 id="manualAddress"
                 required
                 autoComplete="off"
-                // onChange={handleChange}
+              // onChange={handleChange}
               />
             </div>
             <br />
+            <br />
+
             <div className="field">
               <h3>
-                <label>Property manager name</label>
+                <label>Property management company</label>
               </h3>
               <input
                 ref={addressNextRef}
@@ -161,7 +163,7 @@ export default function WaitList() {
             <br />
             <div className="field">
               <h3>
-                <label>Rental cost</label>
+                <label>How much does your rent cost?</label>
               </h3>
               <input
                 name="rentalCost"
@@ -173,12 +175,11 @@ export default function WaitList() {
               />
             </div>
             <br />
-
+            <br />
             <div className="field">
               <h3>
-                <label>Wage payment frequency</label>
+                <label>How often do you get paid?</label>
               </h3>
-              <br />
               <br />
               <div className="form-dropdown">
                 <select
@@ -203,22 +204,8 @@ export default function WaitList() {
             <br />
             <div className="field">
               <h3>
-                <label>Email</label>
+                <label>What is your employment status?</label>
               </h3>
-              <input
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <br />
-            <div className="field">
-              <h3>
-                <label>Employment Status</label>
-              </h3>
-              <br />
               <br />
               <div className="form-dropdown">
                 <select
@@ -240,6 +227,20 @@ export default function WaitList() {
                 </select>
                 <div className="arrow"></div>
               </div>
+            </div>
+            <br />
+            <br />
+            <div className="field">
+              <h3>
+                <label>Contact email</label>
+              </h3>
+              <input
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
             </div>
 
             <br />
