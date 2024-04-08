@@ -1,5 +1,5 @@
 import React from 'react'
-import mappage_banner from '../../assets/mappage_banner.png'
+import mappage_banner from '../../assets/mappage_banner.jpg'
 
 export default function MapPageTopBanner() {
     return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import whowearepage_banner from '../../assets/whowearepage_banner.png'
+import whowearepage_banner from '../../assets/whowearepage_banner.jpg'
 
 export default function WhoWeAreContent() {
     return (
