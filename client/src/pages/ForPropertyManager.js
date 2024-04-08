@@ -177,12 +177,10 @@ export default function ForPropertyManager() {
           </div>
           <div className="container right" ref={requestDemo}>
             <form onSubmit={(e) => handleSubmit(e)}>
-              <h1>Sign up</h1>
-              <br />
-              <br />
+              {/* <h1>Sign up</h1> */}
               <div className="field">
                 <h3>
-                  <label>First name</label>
+                  <label>First name (todo: change to full name)</label>
                 </h3>
                 <input
                   name="firstName"
