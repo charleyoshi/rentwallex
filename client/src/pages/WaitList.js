@@ -17,7 +17,7 @@ const resetForm = {
   lng: null,
   propertyManagerName: "",
   rentalCost: "",
-  wagePaymentFrequency: "",
+  wagePaymentFrequency: "Weekly",
   email: "",
   employmentStatus: "fulltimeemployee",
 };
@@ -25,6 +25,8 @@ const resetForm = {
 export default function WaitList() {
   const addressRef = useRef(null);
   const addressNextRef = useRef(null);
+  const [errorMessage, setErrorMessage] = useState();
+  const [sentMessage, setSentMessage] = useState();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -54,12 +56,17 @@ export default function WaitList() {
       );
       console.log(response);
       setFormData(resetForm);
+      setErrorMessage(null);
+      setSentMessage("Submitted!")
       document.querySelector("#manualAddress").value = "";
     } catch (error) {
+      setSentMessage(null);
       if (error.response) {
-        console.log(error.response.data); // e.g. invalid address
+        console.log(error.response.data.message); // e.g. invalid address
+        setErrorMessage(error.response.data.message)
       } else {
         console.log(error.message);
+        setErrorMessage(error.message)
       }
     }
 
@@ -247,6 +254,19 @@ export default function WaitList() {
             <br />
             <br />
             <Button text="Submit" />
+            <br />
+            {errorMessage &&
+              <span className="errorMessage">
+                {errorMessage}
+              </span>
+            }
+            
+            {
+              sentMessage &&
+              <span >
+                {sentMessage}
+              </span>
+            }
           </form>
         </div>
       </div>
