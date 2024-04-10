@@ -36,7 +36,7 @@ app.use('/healthCheck', (req, res) => {
 
 const keepServerAlive = async () => {
   try {
-      const response = await axios.get('https://rentwallex-server.onrender.com/healthCheck');
+      const response = await axios.get('https://rentwallex-server-jk0x.onrender.com/healthCheck');
       console.log('Server pinged successfully.');
   } catch (error) {
       console.error('Error pinging server:', error);
