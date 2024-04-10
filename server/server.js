@@ -1,5 +1,6 @@
 import express from "express";
 import waitlistRoutes from './routes/waitlistRoutes.js'
+import propertyManagerRoutes from './routes/propertyManagerRoutes.js'
 import cors from 'cors'
 import axios from 'axios';
 
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/api/waitlist', waitlistRoutes)
+app.use('/api/propertymanagers', propertyManagerRoutes)
 
 
 // Prevent cloud server from becoming inactive. Ping every 14 minutes.

@@ -53,7 +53,9 @@ html {
   scroll-behavior: smooth;
 }
 
-
+.errorMessage {
+  color: var(--error);
+}
 /* All images must not be larger than parent container */
 img {
   width: 100%;

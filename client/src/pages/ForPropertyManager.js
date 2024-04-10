@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
-import dummy_picture from "../assets/picture_placeholder.png";
+import axios from "axios";
 import forpropertymanager_image from "../assets/forpropertymanager_image.jpg";
 import forpropertymanager_step1 from "../assets/forpropertymanager_step1.png"
 import forpropertymanager_step2 from "../assets/forpropertymanager_step2.png"
@@ -9,40 +9,77 @@ import forpropertymanager_step3 from "../assets/forpropertymanager_step3.png"
 import forpropertymanager_step4 from "../assets/forpropertymanager_step4.png"
 
 const resetForm = {
-  firstName: "",
-  lastName: "",
-  businessName: "",
-  locationCity: "",
+  fullName: "",
+  companyName: "",
   locationProvice: "Ontario",
-  email: "",
+  workEmail: "",
   phoneNumber: "",
   totalUnitsManagedInPortfolio: "",
   propertyManagementSoftware: "notusingany",
+  otherSoftware: "",
 };
 export default function ForPropertyManager() {
   const requestDemo = useRef();
+  const [errorMessage, setErrorMessage] = useState();
+  const [sentMessage, setSentMessage] = useState();
+  const [showOtherInput, setShowOtherInput] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const scrollHandler = (elmRef) => {
-    console.log(elmRef);
     window.scrollTo({ top: elmRef.current.offsetTop, behavior: "smooth" });
   };
 
   const [formData, setFormData] = useState(resetForm);
 
+  
+
+  const handleSoftwareChange = (event) => {
+    const value = event.target.value;
+    setFormData({
+      ...formData,
+      propertyManagementSoftware: value
+    });
+    if (value === "other") {
+      setShowOtherInput(true);
+    } else {
+      setShowOtherInput(false);
+    }
+  };
+
   const handleChange = (e) => {
     const key = e.target.name;
     const value = e.target.value;
     setFormData({ ...formData, [key]: value });
-    console.log(formData);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("All inputs are valid");
+
+    try {
+      const response = await axios.post(
+        `https://rentwallex-server.onrender.com/api/propertymanagers`,
+        { ...formData }
+      );
+      
+      setFormData(resetForm);
+      setShowOtherInput(false);
+      setErrorMessage(null);
+      setSentMessage("Submitted!")
+      document.querySelector("#manualAddress").value = "";
+    } catch (error) {
+      setSentMessage(null);
+      if (error.response) {
+        console.log(error.response.data.message); // e.g. invalid address
+        setErrorMessage(error.response.data.message)
+      } else {
+        console.log(error.message);
+        setErrorMessage(error.message)
+      }
+    }
+    
   };
 
   return (
@@ -124,7 +161,7 @@ export default function ForPropertyManager() {
               <br className="linebreak" />
               <br className="linebreak" />
               <div className="step">
-              <div className="iconWrapper">
+                <div className="iconWrapper">
                   <img src={forpropertymanager_step4} alt="Step 4" />
                 </div>
                 <h3>Dedicated Support</h3>
@@ -180,59 +217,34 @@ export default function ForPropertyManager() {
               {/* <h1>Sign up</h1> */}
               <div className="field">
                 <h3>
-                  <label>First name (todo: change to full name)</label>
+                  <label>Full names</label>
                 </h3>
                 <input
-                  name="firstName"
+                  name="fullName"
                   type="text"
-                  value={formData.firstName}
+                  value={formData.fullName}
                   onChange={handleChange}
                   required
                 />
               </div>
+              <br />
               <div className="field">
                 <h3>
-                  <label>Last name</label>
+                  <label>Company name</label>
                 </h3>
                 <input
-                  name="lastName"
+                  name="companyName"
                   type="text"
-                  value={formData.lastName}
+                  value={formData.companyName}
                   onChange={handleChange}
                   required
                 />
               </div>
-              {/* <br />
-            <br /> */}
-              <div className="field">
-                <h3>
-                  <label>Business name</label>
-                </h3>
-                <input
-                  name="businessName"
-                  type="text"
-                  value={formData.businessName}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="field">
-                <h3>
-                  <label>City</label>
-                </h3>
-                <input
-                  name="locationCity"
-                  type="text"
-                  value={formData.locationCity}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+              <br />
               <div className="field">
                 <h3>
                   <label>Province</label>
                 </h3>
-                <br />
                 <br />
                 <div className="form-dropdown">
                   <select
@@ -262,20 +274,20 @@ export default function ForPropertyManager() {
                   <div className="arrow"></div>
                 </div>
               </div>
-              {/* <br />
-            <br /> */}
+              <br />
               <div className="field">
                 <h3>
-                  <label>Email</label>
+                  <label>Work email</label>
                 </h3>
                 <input
-                  name="email"
+                  name="workEmail"
                   type="email"
-                  value={formData.email}
+                  value={formData.workEmail}
                   onChange={handleChange}
                   required
                 />
               </div>
+              <br />
               <div className="field">
                 <h3>
                   <label>Phone Number</label>
@@ -289,14 +301,11 @@ export default function ForPropertyManager() {
                   required
                 />
               </div>
-              {/* <br />
-            <br /> */}
+              <br />
               <div className="field">
                 <h3>
-                  <label>Total units managed in portfolio</label>
+                  <label>How many rental units do you manage?</label>
                 </h3>
-                {/* <br />
-                <br /> */}
                 <input
                   name="totalUnitsManagedInPortfolio"
                   type="number"
@@ -305,21 +314,16 @@ export default function ForPropertyManager() {
                   required
                 />
               </div>
+              <br />
               <div className="field">
                 <h3>
                   <label>What property management software do you use?</label>{" "}
                 </h3>
                 <br />
-                <br />
                 <div className="form-dropdown">
                   <select
                     value={formData.propertyManagementSoftware}
-                    onChange={(event) =>
-                      setFormData({
-                        ...formData,
-                        propertyManagementSoftware: event.target.value,
-                      })
-                    }
+                    onChange={handleSoftwareChange}
                   >
                     <option value="buildingstack">Building Stack</option>
                     <option value="buildium">Buildium</option>
@@ -327,16 +331,43 @@ export default function ForPropertyManager() {
                     <option value="doorloop">Doorloop</option>
                     <option value="totalmanagement">Total management</option>
                     <option value="notusingany">Not using any</option>
-                    <option value="others">Others</option>
+                    <option value="other">Other</option>
                   </select>
                   <div className="arrow"></div>
+                  
                 </div>
+                <br />
+                {showOtherInput && (
+                    <div>
+                      <input
+                      type="text"
+                      name="otherSoftware"
+                        value={formData.otherSoftware}
+                        onChange={handleChange}
+                      placeholder="Please specify"
+                      required
+                      />
+                    </div>
+                  )}
               </div>
 
               <br />
               <br />
               <br />
               <Button text="Submit" />
+              <br />
+              {errorMessage &&
+              <span className="errorMessage">
+                {errorMessage}
+              </span>
+            }
+            
+            {
+              sentMessage &&
+              <span >
+                {sentMessage}
+              </span>
+            }
             </form>
           </div>
         </div>
