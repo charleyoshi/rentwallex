@@ -68,15 +68,14 @@ export default function ForPropertyManager() {
       setShowOtherInput(false);
       setErrorMessage(null);
       setSentMessage("Submitted!")
-      document.querySelector("#manualAddress").value = "";
     } catch (error) {
       setSentMessage(null);
       if (error.response) {
-        console.log(error.response.data.message); // e.g. invalid address
-        setErrorMessage(error.response.data.message)
+        console.log("1: " + error.response.data.message); // e.g. invalid address
+        setErrorMessage("1: " + error.response.data.message)
       } else {
-        console.log(error.message);
-        setErrorMessage(error.message)
+        console.log("2: " + error.message);
+        setErrorMessage("2: " + error.message)
       }
     }
     
