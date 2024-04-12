@@ -71,11 +71,11 @@ export default function ForPropertyManager() {
     } catch (error) {
       setSentMessage(null);
       if (error.response) {
-        console.log("1: " + error.response.data.message); // e.g. invalid address
-        setErrorMessage("1: " + error.response.data.message)
+        console.log(error.response.data.message); // e.g. invalid address
+        setErrorMessage(error.response.data.message)
       } else {
-        console.log("2: " + error.message);
-        setErrorMessage("2: " + error.message)
+        console.log(error.message);
+        setErrorMessage(error.message)
       }
     }
     
@@ -308,6 +308,7 @@ export default function ForPropertyManager() {
                 <input
                   name="totalUnitsManagedInPortfolio"
                   type="number"
+                  min="0"
                   value={formData.totalUnitsManagedInPortfolio}
                   onChange={handleChange}
                   required
