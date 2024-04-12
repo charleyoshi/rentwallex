@@ -51,7 +51,7 @@ export default function WaitList() {
 
     try {
       const response = await axios.post(
-        `https://rentwallex-server.onrender.com/api/waitlist`,
+        `https://rentwallex-server-jk0x.onrender.com/api/waitlist`,
         { ...formData }
       );
       console.log(response);

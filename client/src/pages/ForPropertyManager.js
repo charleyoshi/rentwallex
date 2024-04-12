@@ -60,7 +60,7 @@ export default function ForPropertyManager() {
 
     try {
       const response = await axios.post(
-        `https://rentwallex-server.onrender.com/api/propertymanagers`,
+        `https://rentwallex-server-jk0x.onrender.com/api/propertymanagers`,
         { ...formData }
       );
       
