@@ -10,7 +10,20 @@ const port = 4000;
 
 // middleware: fire every time receive a request. Fire BEFORE the route to the root path ('/')
 app.use(express.json())
-app.use(cors())
+
+const allowedOrigins = ['https://rentwallex.onrender.com'];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Check if the request origin is allowed
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
 app.use((req, res, next) => {
   console.log("Path detected:")
   console.log(req.path, req.method)
