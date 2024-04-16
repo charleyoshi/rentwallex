@@ -7,7 +7,12 @@ export default function UseCaseContent() {
 
             <div className='headlineBanner'>
                 <img src={usecasepage_banner} alt="Use case page banner" />
-                <h1>Transforming Rent Payments for Affordability, Convenience, and Financial Well-being</h1>
+                <div className='mapPageTopBanner'>
+                    <div className='right'>
+                        <span>Transforming Rent Payments for Affordability, Convenience, and Financial Well-being</span>
+                    </div>
+                </div>
+
                 <br /><br />
             </div>
 

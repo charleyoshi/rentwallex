@@ -497,7 +497,7 @@ img {
 
   }
 
-  h1 {
+  span {
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
@@ -510,7 +510,7 @@ img {
     margin: auto;
     width: 78%;
     text-align: center;
-    font-size: 100%;
+    font-size: 260%;
     font-weight: 400;
     color: var(--primary-text);
   }

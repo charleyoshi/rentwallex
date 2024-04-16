@@ -6,7 +6,10 @@ export default function WhoWeAreContent() {
         <div className='articleContent'>
             <div className='headlineBanner'>
                 <img src={whowearepage_banner} alt="Who we are page banner" />
-                <h1>We are changing the way people think about rent payment</h1>
+                <div className='mapPageTopBanner'>
+                    <div className='right'>
+                        <span>We are changing the way people think about rent payment</span>
+                    </div></div>
                 <br /><br />
             </div>
 
@@ -29,13 +32,13 @@ export default function WhoWeAreContent() {
 
                 <h3>Why Rentwallex?</h3><br />
                 <h5>
-                <strong>Community of Trust: </strong>Our community is more than just a collection of individuals; it's a collective force driving positive change.
-                <br /><br />
-                <strong>Empowerment:</strong> We believe in empowering our users to take control of their financial journey, providing tools (such as split rent payment and credit profile growth) that enhance financial well-being.
-                <br /><br />
-                <strong>Simplicity:</strong> Our user-friendly platform makes rent payments a breeze, with just a few clicks to set up and manage your payment plans.
-                <br /><br />
-                <strong>Innovation:</strong> At Rentwallex, we're committed to staying at the forefront of financial technology, bringing you cutting-edge solutions for a modern and stress-free renting experience.
+                    <strong>Community of Trust: </strong>Our community is more than just a collection of individuals; it's a collective force driving positive change.
+                    <br /><br />
+                    <strong>Empowerment:</strong> We believe in empowering our users to take control of their financial journey, providing tools (such as split rent payment and credit profile growth) that enhance financial well-being.
+                    <br /><br />
+                    <strong>Simplicity:</strong> Our user-friendly platform makes rent payments a breeze, with just a few clicks to set up and manage your payment plans.
+                    <br /><br />
+                    <strong>Innovation:</strong> At Rentwallex, we're committed to staying at the forefront of financial technology, bringing you cutting-edge solutions for a modern and stress-free renting experience.
                 </h5>
                 <br /><br />
             </div>
