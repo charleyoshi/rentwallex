@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Button from '../components/Button'
 import HowItWorks from "../components/howItWorks";
 import homepage_main_image from '../assets/homepage_main_image.jpg'
 import { Link } from 'react-router-dom';
-
+import axios from "axios";
 
 //Can Input Any Question and Answer Here: (Can Be Moved to Database)
 const FAQs = [
@@ -37,9 +37,44 @@ const scrollTo = (elemRef) => {
 export default function Home() {
   const howItWorksSection = useRef(null);
   const [activeIndex, setActiveIndex] = useState(null);
+  const [waitlistLength, setWaitlistLength] = useState(0);
+  const [propertyManagersLength, setPropertyManagersLength] = useState(0);
+  const [totalSumRegisteredRenters, setTotalSumRegisteredRenters] = useState(0);
   const toggleAnswer = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+
+
+  useEffect(() => {
+    axios
+      .get("https://rentwallex-server-jk0x.onrender.com/api/waitlist")
+      .then(function (response) {
+        // handle success
+        setWaitlistLength(Object.values(response.data.result).length);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+        setWaitlistLength(75);
+      });
+
+    axios
+      .get("https://rentwallex-server-jk0x.onrender.com/api/propertymanagers")
+      .then(function (response) {
+        // handle success
+        setPropertyManagersLength(Object.values(response.data.result).length);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+        setPropertyManagersLength(75);
+      });
+  }, []);
+
+    // Calculate total sum
+    useEffect(() => {
+      setTotalSumRegisteredRenters(waitlistLength + propertyManagersLength);
+    }, [waitlistLength, propertyManagersLength]);
 
 
   return (
@@ -83,7 +118,7 @@ export default function Home() {
 
       <div className="bgWrapper-navyblue">
         <section className="three container">
-          <h1>1,250</h1>
+          <h1>{totalSumRegisteredRenters}</h1>
           <h4>Renters registered to date</h4>
           <h5>Become part of a growing community of renters who are taking control of their finances with
             Rentwallex. <br />Say goodbye to rent-related stress and hello to peace of mind!</h5>
