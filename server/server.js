@@ -8,9 +8,20 @@ const app = express();
 const port = 4000;
 
 
-// middleware: fire every time receive a request. Fire BEFORE the route to the root path ('/')
+
+const allowedOrigins = ['https://rentwallex.onrender.com'];
+
+const corsOptions = {
+  origin: allowedOrigins,
+  optionsSuccessStatus: 200 // some legacy browsers (e.g., IE11) choke on 204
+};
+
+app.use(cors(corsOptions));
+
+app.use(cors());
+
 app.use(express.json())
-app.use(cors())
+
 app.use((req, res, next) => {
   console.log("Path detected:")
   console.log(req.path, req.method)
@@ -21,34 +32,20 @@ app.use('/api/waitlist', waitlistRoutes)
 app.use('/api/propertymanagers', propertyManagerRoutes)
 
 
-// Prevent cloud server from becoming inactive. Ping every 14 minutes.
 app.use('/healthCheck', (req, res) => {
   const healthcheck = {
-      uptime: process.uptime(),
-      message: 'OK',
-      timestamp: Date.now()
+    uptime: process.uptime(),
+    message: 'OK',
+    timestamp: Date.now()
   };
   try {
-      res.status(200).send(healthcheck);
+    res.status(200).send(healthcheck);
   } catch (error) {
-      healthcheck.message = error;
-      res.status(503).send();
+    healthcheck.message = error;
+    res.status(503).send();
   }
 })
 
-const keepServerAlive = async () => {
-  try {
-      const response = await axios.get('https://rentwallex-server-jk0x.onrender.com/healthCheck');
-      console.log('Server pinged successfully.');
-  } catch (error) {
-      console.error('Error pinging server:', error);
-  }
-}
-
-const INTERVAL_TIME = 14 * 60 * 1000; // 14 minutes in milliseconds
-
-keepServerAlive()
-setInterval(keepServerAlive, INTERVAL_TIME)
 
 
 
