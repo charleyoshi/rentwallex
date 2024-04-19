@@ -9,7 +9,7 @@ export default function Map(props) {
 
   return (
     <GoogleMap
-      apiKey="AIzaSyCNzb5Q_WOFQDs9bU5ljVwZPWTwDPxJ0Wg"
+      apiKey={process.env.REACT_APP_API_KEY}
       defaultCenter={{ lat: 43.639, lng: -79.37729 }}
       defaultZoom={15}
       // options={mapOptions}
