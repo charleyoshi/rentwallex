@@ -13,16 +13,7 @@ const port = 4000;
 
 const allowedOrigins = ['https://rentwallex.onrender.com'];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    // Check if the request origin is allowed
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+app.use(cors());
 
 app.use(express.json())
 
@@ -51,23 +42,6 @@ app.use('/healthCheck', (req, res) => {
   }
 })
 
-// Prevent cloud server from becoming inactive. Ping every 14 minutes.
-// const keepServerAlive = async () => {
-//   try {
-//     // const response = await axios.get('https://rentwallex-server-jk0x.onrender.com/healthCheck');
-//     const response = await axios.get('/healthCheck');
-
-//     console.log('Server pinged successfully.');
-//   } catch (error) {
-//     console.error('Error pinging server:', error);
-//   }
-// }
-
-
-const INTERVAL_TIME = 1 * 60 * 1000; // 14 minutes in milliseconds
-
-// keepServerAlive()
-// setInterval(keepServerAlive, INTERVAL_TIME)
 
 
 
