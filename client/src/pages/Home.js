@@ -47,7 +47,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("https://rentwallex-server-jk0x.onrender.com/api/waitlist")
+      .get(process.env.REACT_APP_WAITLIST_API)
       .then(function (response) {
         // handle success
         setWaitlistLength(Object.values(response.data.result).length);
@@ -59,7 +59,7 @@ export default function Home() {
       });
 
     axios
-      .get("https://rentwallex-server-jk0x.onrender.com/api/propertymanagers")
+      .get(process.env.REACT_APP_PROPERTYMANAGERS_API)
       .then(function (response) {
         // handle success
         setPropertyManagersLength(Object.values(response.data.result).length);

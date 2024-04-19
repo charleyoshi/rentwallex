@@ -63,7 +63,7 @@ export default function OurMap() {
 
   useEffect(() => {
     axios
-      .get("https://rentwallex-server-jk0x.onrender.com/api/waitlist")
+      .get(process.env.REACT_APP_WAITLIST_API)
       .then(function (response) {
         // handle success
         setItems(Object.values(response.data.result));
