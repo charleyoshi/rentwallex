@@ -8,8 +8,6 @@ const app = express();
 const port = 4000;
 
 
-// middleware: fire every time receive a request. Fire BEFORE the route to the root path ('/')
-
 
 const allowedOrigins = ['https://rentwallex.onrender.com'];
 
