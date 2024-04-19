@@ -36,31 +36,33 @@ app.use('/api/waitlist', waitlistRoutes)
 app.use('/api/propertymanagers', propertyManagerRoutes)
 
 
-// Prevent cloud server from becoming inactive. Ping every 14 minutes.
 app.use('/healthCheck', (req, res) => {
   const healthcheck = {
-      uptime: process.uptime(),
-      message: 'OK',
-      timestamp: Date.now()
+    uptime: process.uptime(),
+    message: 'OK',
+    timestamp: Date.now()
   };
   try {
-      res.status(200).send(healthcheck);
+    res.status(200).send(healthcheck);
   } catch (error) {
-      healthcheck.message = error;
-      res.status(503).send();
+    healthcheck.message = error;
+    res.status(503).send();
   }
 })
 
+// Prevent cloud server from becoming inactive. Ping every 14 minutes.
 const keepServerAlive = async () => {
   try {
-      const response = await axios.get('https://rentwallex-server-jk0x.onrender.com/healthCheck');
-      console.log('Server pinged successfully.');
+    // const response = await axios.get('https://rentwallex-server-jk0x.onrender.com/healthCheck');
+    const response = await axios.get('http://localhost:4000/healthCheck');
+
+    console.log('Server pinged successfully.');
   } catch (error) {
-      console.error('Error pinging server:', error);
+    console.error('Error pinging server:', error);
   }
 }
 
-const INTERVAL_TIME = 14 * 60 * 1000; // 14 minutes in milliseconds
+const INTERVAL_TIME = 1 * 60 * 1000; // 14 minutes in milliseconds
 
 keepServerAlive()
 setInterval(keepServerAlive, INTERVAL_TIME)
