@@ -37,7 +37,7 @@ app.use('/api/waitlist', waitlistRoutes)
 app.use('/api/propertymanagers', propertyManagerRoutes)
 
 
-app.get('/healthCheck', (req, res) => {
+app.use('/healthCheck', (req, res) => {
   const healthcheck = {
     uptime: process.uptime(),
     message: 'OK',
