@@ -4,16 +4,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  Current progress:
-  <img src="currentProgress.png" alt="Current Progress" width="80" height="80">
-  
 
   <h3 align="center">Rentwallex's Landing Page</h3>
 
-  <p align="center">
-    todo: add subtitle
-    <br />
-  </p>
+ 
 </div>
 
 
@@ -35,8 +29,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#collaborators">Collaborators</a></li>
@@ -49,23 +41,18 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-todo: enter description about the project
+A landing page for a property management solution where people who are interested can sign up for the waitlist. User data will be used for demographic display and leads generation.
 
-Features:
-* todo
-* todo
-* todo
-
-todo: enter more description about the project, if any
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 ### Built With
 
 * [React](https://reactjs.org/)
-
+* [Node](https://nodejs.org/en)
+* [express](https://expressjs.com/)
+* [Firebase](https://firebase.google.com/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -75,7 +62,7 @@ todo: enter more description about the project, if any
 <!-- GETTING STARTED -->
 ## Getting Started
 
-These instructions will guide you through the process of setting up and running the React app `client` on your local machine, as well as the backend `server` (not implemented yet). Ensure that you have Node.js and npm installed before proceeding.
+These instructions will guide you through the process of setting up and running the React app `client` on your local machine, as well as the backend `server`. Ensure that you have Node.js and npm installed before proceeding.
 
 ### Prerequisites
 Frontend (Client):
@@ -94,7 +81,7 @@ Backend (Server):
 
 1. Clone the repository to your local machine
     ```sh
-    git clone https://github.com/charleyoshi/rentwallex.git
+    git clone <repo URL>
     ```
 2. For frontend, navigate to the "client" directory.
    ```sh
@@ -129,38 +116,11 @@ Backend (Server):
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
-todo
-<!--Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.-->
-
-<!--_For more examples, please refer to the [Documentation](https://example.com)_-->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Landing page 
-- [ ] Build buttons, forms, and links 
-- [ ] Users can sign up for the waitlist
-- [ ] Property managers sign up 
-- [ ] The waitlist form that captures emails without names, the amount of their monthly rent, and their area of residence (e.g. zip code)
-- [ ] Map integration
-- [ ] Users can see a Google map of locations interested in the website
-- [ ] A count of users registered for the website
-
-
-See the [open issues](https://github.com/charleyoshi/rentwallex/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- LICENSE -->
 ## License
-todo: add license (if needed)
+Todo: add license
 <!-- Distributed under the MIT License. See `LICENSE.txt` for more information. -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
